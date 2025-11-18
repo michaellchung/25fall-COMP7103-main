@@ -1,0 +1,131 @@
+{
+  "test_date": "2025-11-15 21:33:54",
+  "connection_tests": {
+    "杭州": {
+      "status": "success",
+      "city": "杭州",
+      "url": "https://piao.qunar.com/ticket/list.htm?keyword=杭州&region=&from=mpl_search_suggest",
+      "response_size": 138946,
+      "html_title": "杭州景点门票,杭州门票价格,杭州景点门票预订,去哪儿网门票",
+      "page_structure": {
+        "class_sight_item": 15,
+        "class_result_list": 1,
+        "title_elements": 26,
+        "total_links": 367,
+        "total_images": 22
+      }
+    },
+    "南京": {
+      "status": "success",
+      "city": "南京",
+      "url": "https://piao.qunar.com/ticket/list.htm?keyword=南京&region=&from=mpl_search_suggest",
+      "response_size": 0,
+      "html_title": "No title",
+      "page_structure": {
+        "title_elements": 0,
+        "total_links": 0,
+        "total_images": 0
+      }
+    },
+    "苏州": {
+      "status": "success",
+      "city": "苏州",
+      "url": "https://piao.qunar.com/ticket/list.htm?keyword=苏州&region=&from=mpl_search_suggest",
+      "response_size": 139501,
+      "html_title": "苏州景点门票,苏州门票价格,苏州景点门票预订,去哪儿网门票",
+      "page_structure": {
+        "class_sight_item": 15,
+        "class_result_list": 1,
+        "title_elements": 26,
+        "total_links": 372,
+        "total_images": 22
+      }
+    }
+  },
+  "sample_data": {
+    "city": "杭州",
+    "attractions": [
+      {
+        "index": 1,
+        "name": "",
+        "rating": null,
+        "price": 45,
+        "address": "Unknown",
+        "description": "No description",
+        "url": "https://piao.qunar.com/ticket/detail_1064944660.html?st=a3clM0QlRTYlOUQlQUQlRTUlQjclOUUlMjZpZCUzRDQ2Mjk4OSUyNnR5cGUlM0QwJTI2aWR4JTNEMSUyNnF0JTNEJTI2YXBrJTNEMiUyNnNjJTNEV1dXJTI2dXIlM0QlRTYlQjclQjElRTUlOUMlQjMlMjZsciUzRCVFNiVCNyVCMSVFNSU5QyVCMyUyNmZ0JTNEJTdCJTdE#from=mpl_search_suggest"
+      },
+      {
+        "index": 2,
+        "name": "",
+        "rating": null,
+        "price": 150,
+        "address": "Unknown",
+        "description": "No description",
+        "url": "https://piao.qunar.com/ticket/detail_4016940423.html?st=a3clM0QlRTYlOUQlQUQlRTUlQjclOUUlMjZpZCUzRDUxNDk3NyUyNnR5cGUlM0QwJTI2aWR4JTNEMiUyNnF0JTNEJTI2YXBrJTNEMiUyNnNjJTNEV1dXJTI2dXIlM0QlRTYlQjclQjElRTUlOUMlQjMlMjZsciUzRCVFNiVCNyVCMSVFNSU5QyVCMyUyNmZ0JTNEJTdCJTdE#from=mpl_search_suggest"
+      },
+      {
+        "index": 3,
+        "name": "",
+        "rating": null,
+        "price": 45,
+        "address": "Unknown",
+        "description": "No description",
+        "url": "https://piao.qunar.com/ticket/detail_3834620844.html?st=a3clM0QlRTYlOUQlQUQlRTUlQjclOUUlMjZpZCUzRDMxMzA3JTI2dHlwZSUzRDAlMjZpZHglM0QzJTI2cXQlM0QlMjZhcGslM0QyJTI2c2MlM0RXV1clMjZ1ciUzRCVFNiVCNyVCMSVFNSU5QyVCMyUyNmxyJTNEJUU2JUI3JUIxJUU1JTlDJUIzJTI2ZnQlM0QlN0IlN0Q%3D#from=mpl_search_suggest"
+      },
+      {
+        "index": 4,
+        "name": "",
+        "rating": null,
+        "price": 300,
+        "address": "Unknown",
+        "description": "No description",
+        "url": "https://piao.qunar.com/ticket/detail_312481614.html?st=a3clM0QlRTYlOUQlQUQlRTUlQjclOUUlMjZpZCUzRDQ2OTA5MiUyNnR5cGUlM0QwJTI2aWR4JTNENCUyNnF0JTNEJTI2YXBrJTNEMiUyNnNjJTNEV1dXJTI2dXIlM0QlRTYlQjclQjElRTUlOUMlQjMlMjZsciUzRCVFNiVCNyVCMSVFNSU5QyVCMyUyNmZ0JTNEJTdCJTdE#from=mpl_search_suggest"
+      },
+      {
+        "index": 5,
+        "name": "",
+        "rating": null,
+        "price": 30,
+        "address": "Unknown",
+        "description": "No description",
+        "url": "https://piao.qunar.com/ticket/detail_2754697666.html?st=a3clM0QlRTYlOUQlQUQlRTUlQjclOUUlMjZpZCUzRDY3OCUyNnR5cGUlM0QwJTI2aWR4JTNENSUyNnF0JTNEJTI2YXBrJTNEMiUyNnNjJTNEV1dXJTI2dXIlM0QlRTYlQjclQjElRTUlOUMlQjMlMjZsciUzRCVFNiVCNyVCMSVFNSU5QyVCMyUyNmZ0JTNEJTdCJTdE#from=mpl_search_suggest"
+      }
+    ]
+  },
+  "quality_metrics": {
+    "total_items": 5,
+    "name_complete": 0,
+    "price_complete": 5,
+    "rating_complete": 0,
+    "url_complete": 5,
+    "name_rate": "0.0%",
+    "price_rate": "100.0%",
+    "rating_rate": "0.0%",
+    "url_rate": "100.0%",
+    "average_completeness": "50.0%",
+    "quality_grade": "良好 ⚠️"
+  },
+  "project_assessment": {
+    "数据源价值": "⭐⭐⭐⭐⭐",
+    "优点": [
+      "✅ 去哪儿网是主流旅游平台，数据权威",
+      "✅ 覆盖城市广，景点数量多",
+      "✅ 包含价格、评分等关键信息",
+      "✅ 数据实时更新",
+      "✅ 用户评价可作为补充数据"
+    ],
+    "潜在问题": [
+      "⚠️ 可能有反爬虫机制",
+      "⚠️ 页面结构可能变化",
+      "⚠️ 需要处理动态加载内容",
+      "⚠️ 数据清洗工作量大"
+    ],
+    "建议使用方式": [
+      "💡 作为主要景点数据来源之一",
+      "💡 结合携程、马蜂窝多源爬取",
+      "💡ç 先手动收集种子数据",
+      "💡 使用代理池避免IP封禁",
+      "💡 定期增量更新数据"
+    ]
+  }
+}

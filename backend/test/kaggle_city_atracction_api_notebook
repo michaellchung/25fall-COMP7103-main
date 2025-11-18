@@ -1,0 +1,447 @@
+import os
+import csv
+import time
+import random
+import requests
+from bs4 import BeautifulSoup
+#name
+def sight_name(beautifulSoupDoc):
+
+    name_list = []
+
+    item_tag = beautifulSoupDoc.find_all('li', class_="item")
+    for i in item_tag:
+        name = i.find_all('span', class_="cn_tit")
+        if len(name) > 0:
+            name_list.append(name[0].text)
+    
+    return(name_list)
+#景区细节链接
+def sight_link(beautifulSoupDoc):
+
+    link_list = []
+    
+
+    link_tag = beautifulSoupDoc.find_all('a', target='_blank', class_= 'titlink')
+    for i in link_tag:
+        link_list.append(i['href'])
+
+    return(link_list)
+#景区图片url
+
+def detail_picture(beautifulSoupDoc):
+
+    picutre_tag = beautifulSoupDoc.find_all('li', class_='imgbox')
+    return(picutre_tag[0].find('img')['src'])
+#景区评分，/5
+
+def detail_rating(beautifulSoupDoc):
+
+    score_tag = beautifulSoupDoc.find('span', class_="cur_score")
+    return(score_tag.text)
+#建议游玩时间
+
+def detail_rec_time(beautifulSoupDoc):
+
+    time_tag = beautifulSoupDoc.find('div', class_="time")
+    return(time_tag.string)
+#景点介绍
+
+def detail_intro(beautifulSoupDoc):
+
+    intro = ""
+
+    intro_tag = beautifulSoupDoc.find_all('p', style="text-indent: 2em")
+    for i in intro_tag:
+        intro += i.text
+
+    return (intro)
+#地址, 电话，官网
+
+def detail_address(beautifulSoupDoc):
+
+    address = ""
+
+    address_tag = beautifulSoupDoc.find_all('td', class_='td_l')
+    for i in address_tag:
+        address += i.text
+
+    return(address)
+#开放时间
+
+def detail_open_time(beautifulSoupDoc):
+
+    open_time = beautifulSoupDoc.find('dt', text="开放时间:").find_next_sibling('dd').text
+    return open_time
+
+    #return open_time
+#门票
+
+
+
+def detail_ticket(beautifulSoupDoc):
+    ticket_dict = {}
+
+
+    ticket_tag = beautifulSoupDoc.find("div", class_='b_detail_section b_detail_ticket')
+    #print(ticket_tag)
+
+
+    text = ticket_tag.find('div', class_="e_db_content_box e_db_content_dont_indent").text
+    
+    
+    try:
+        tags = ticket_tag.find('div', class_='e_ticket_info').find_all('dl', class_='clrfix')
+        for i in tags:
+            if len(ticket_dict) < 3:
+                ticket_dict[i.find('dt').text] = [i.find('dd', class_='e_now_price').text]
+            else:
+                continue
+
+        
+        return(ticket_dict)
+    
+    except Exception:
+        return(text)
+
+    # for i in tags:
+    #     if len(ticket_dict) < 3:
+    #         project = i.find('dt').text
+    #         price = i.find('dd', class_='e_now_price').text
+    #         ticket_dict[project] = price
+    #     else:
+    #         return ticket_dict
+#旅游时节
+
+def detail_season(beautifulSoupDoc):
+
+
+    season_tag = beautifulSoupDoc.find('div', class_='b_detail_section b_detail_travelseason').find('div', class_='e_db_content_box e_db_content_dont_indent')
+    text = season_tag.text
+    return (text)
+#小贴士
+
+def detail_tip(beautifulSoupDoc):
+
+    tip_tag = beautifulSoupDoc.find('div', class_='b_detail_section b_detail_tips').find('div', class_='e_db_content_box e_db_content_dont_indent')
+    text = tip_tag.text
+    return(text)
+myDict = {'金昌': 'http://travel.qunar.com/p-cs299905-jinchang-jingdian-1-', '白银': 'http://travel.qunar.com/p-cs299906-baiyin-jingdian-1-', '乌鲁木齐': 'http://travel.qunar.com/p-cs299846-wulumuqi-jingdian-1-', '吐鲁番': 'http://travel.qunar.com/p-cs299860-tulufan-jingdian-1-', '喀什': 'http://travel.qunar.com/p-cs299889-kashi-jingdian-1-', '哈密': 'http://travel.qunar.com/p-cs299888-hami-jingdian-1-', '阿勒泰': 'http://travel.qunar.com/p-cs299862-aletai-jingdian-1-', '巴音郭楞': 'http://travel.qunar.com/p-cs297622-bayinguoleng-jingdian-1-', '和田': 'http://travel.qunar.com/p-cs299891-hetian-jingdian-1-', '伊犁': 'http://travel.qunar.com/p-cs299845-yili-jingdian-1-', '阿克苏': 'http://travel.qunar.com/p-cs299869-akesu-jingdian-1-', '克拉玛依': 'http://travel.qunar.com/p-cs299848-kelamayi-jingdian-1-', '昌吉': 'http://travel.qunar.com/p-cs299875-changji-jingdian-1-', '石河子': 'http://travel.qunar.com/p-cs299867-shihezi-jingdian-1-', '塔城': 'http://travel.qunar.com/p-cs299886-tacheng-jingdian-1-', '博尔塔拉': 'http://travel.qunar.com/p-cs299859-boertala-jingdian-1-', '阿拉尔': 'http://travel.qunar.com/p-cs297557-alaer-jingdian-1-', '五家渠': 'http://travel.qunar.com/p-cs297420-wujiaqu-jingdian-1-', '图木舒克': 'http://travel.qunar.com/p-cs297640-tumushuke-jingdian-1-', '克孜勒苏柯尔克孜': 'http://travel.qunar.com/p-cs297452-kezilesukeerkezi-jingdian-1-', '北屯': 'http://travel.qunar.com/p-cs1047466-beitun-jingdian-1-', '铁门关': 'http://travel.qunar.com/p-cs1061997-tiemenguan-jingdian-1-', '双河': 'http://travel.qunar.com/p-cs1061998-shuanghe-jingdian-1-', '可克达拉': 'http://travel.qunar.com/p-cs1801531-kekedala-jingdian-1-', '昆玉': 'http://travel.qunar.com/p-cs1804796-kunyu-jingdian-1-', '贵阳': 'http://travel.qunar.com/p-cs299856-guiyang-jingdian-1-', '黔东南': 'http://travel.qunar.com/p-cs300125-qiandongnan-jingdian-1-', '遵义': 'http://travel.qunar.com/p-cs299854-zunyi-jingdian-1-', '安顺': 'http://travel.qunar.com/p-cs299852-anshun-jingdian-1-', '黔南': 'http://travel.qunar.com/p-cs300122-qiannan-jingdian-1-', '铜仁': 'http://travel.qunar.com/p-cs300126-tongren-jingdian-1-', '黔西南': 'http://travel.qunar.com/p-cs300139-qianxinan-jingdian-1-', '毕节': 'http://travel.qunar.com/p-cs299850-bijie-jingdian-1-', '六盘水': 'http://travel.qunar.com/p-cs299832-liupanshui-jingdian-1-', '银川': 'http://travel.qunar.com/p-cs300033-yinchuan-jingdian-1-', '中卫': 'http://travel.qunar.com/p-cs300040-zhongwei-jingdian-1-', '固原': 'http://travel.qunar.com/p-cs300037-guyuan-jingdian-1-', '吴忠': 'http://travel.qunar.com/p-cs300036-wuzhong-jingdian-1-', '石嘴山': 'http://travel.qunar.com/p-cs300034-shizuishan-jingdian-1-'}
+failed_page_link = []
+failed_sight_link = []
+def getProxy():
+
+    proxyurl = 'http://api.dmdaili.com/dmgetip.asp?apikey=148265c0&pwd=11e3166bc7298abf7cec1e3e8cb35212&getnum=1&httptype=0&geshi=1&fenge=1&fengefu=&Contenttype=1&operate=all'
+    proxyIp = ""
+    outPutProxy = []
+
+    response = requests.get(proxyurl, headers=my_header, timeout=20)
+    response.encoding = response.apparent_encoding
+    proxyIp = response.text
+    if "{" in proxyIp:
+        raise Exception("[错误]"+proxyIp)
+    outPutProxy = proxyIp.split("\r\n")
+    px = outPutProxy.pop(0)
+    proxy = {
+                    "http": "http://"+px,
+                    "https": "http://"+px
+                }
+    print(px)
+    return proxy
+def get_proxy(headers):
+    #proxy_url为您在网站上的API
+    proxy_url = 'http://api.dmdaili.com/dmgetip.asp?apikey=148265c0&pwd=11e3166bc7298abf7cec1e3e8cb35212&getnum=1&httptype=0&geshi=1&fenge=1&fengefu=&Contenttype=1&operate=all'
+    aaa=requests.get(proxy_url, headers=headers).text
+    proxy_host = aaa.splitlines()[0]
+    print('代理IP为：'+proxy_host)
+    #proxy_host='125.87.84.25:22022'
+    proxy = {
+        'http': 'http://'+proxy_host,
+        'https': 'http://'+proxy_host,
+    }
+    return proxy
+failed_url = []
+connection_errors = {}
+
+def page_scrape(page_url, pageNum):
+
+
+
+
+    my_header = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", 
+            "Accept-Encoding": "gzip, deflate, br", 
+            "Accept-Language": "en-US,en;q=0.9", 
+            "Sec-Ch-Ua": "\"Chromium\";v=\"110\", \"Not A(Brand\";v=\"24\", \"Google Chrome\";v=\"110\"", 
+            "Sec-Ch-Ua-Mobile": "?0", 
+            "Sec-Ch-Ua-Platform": "\"Windows\"", 
+            "Sec-Fetch-Dest": "document", 
+            "Sec-Fetch-Mode": "navigate", 
+            "Sec-Fetch-Site": "none", 
+            "Sec-Fetch-User": "?1", 
+            "Upgrade-Insecure-Requests": "1", 
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        }
+
+
+
+
+
+    page_csv_list = []
+
+    url = page_url
+
+
+    while True:
+
+        try:
+            html_text = requests.get(url, headers=my_header, timeout=20, proxies=get_proxy(my_header))
+
+            
+            print (html_text.status_code)
+
+            if html_text.status_code == 200:
+            
+
+                doc = BeautifulSoup(html_text.text, "html.parser")
+
+                names =  sight_name(doc)
+                print(len(names))
+
+
+                links =  sight_link(doc)
+                print(len(links))
+
+
+            
+
+                for i in range(len(names)):
+
+
+
+                    
+                    
+
+                    failed_num = 0
+                    
+
+                    sightDict = {}
+                    sightDict["Page"] = pageNum
+                    sightDict["名字"] = names[i]
+
+                    print(names[i])
+
+                    link = links[i]
+                    sightDict["链接"] = link
+                    print(link)
+
+
+                    sight_url = link
+
+
+
+
+    
+                    while True:
+
+                        try:
+
+                            sight_html_text = requests.get(sight_url, headers=my_header, proxies=get_proxy(my_header), timeout=15)
+
+                            print(sight_html_text.status_code)
+
+                            if sight_html_text.status_code == 200:
+
+                                sight_doc = BeautifulSoup(sight_html_text.text, "html.parser")
+
+                                try:
+                                    sightDict["地址"] = detail_address(sight_doc)
+                                except Exception:
+                                    print("adress failed")
+                                    failed_num += 1
+                                    pass
+
+                                try:
+                                    sightDict["介绍"] = detail_intro(sight_doc)
+                                except Exception:
+                                    print("intro failed")
+                                    failed_num += 1
+
+                                    pass
+                                
+
+                                
+
+
+                                try:
+                                    sightDict["开放时间"] = detail_open_time(sight_doc)
+                                except Exception:
+                                    print("open time failed")
+                                    failed_num += 1
+                                    pass
+                                
+                                try:
+                                    sightDict["图片链接"] = detail_picture(sight_doc)
+                                except Exception:
+                                    print("picture failed")
+                                    failed_num += 1
+                                    pass
+                                
+                                try:
+                                    sightDict["评分"] = detail_rating(sight_doc)
+                                except Exception:
+                                    print("rating failed")
+                                    failed_num += 1
+                                    pass
+
+                                
+
+                            
+                                
+                            
+                                try:
+                                    sightDict["建议游玩时间"] = detail_rec_time(sight_doc)
+                                except Exception:
+                                    print("rec time failed")
+                                    failed_num += 1
+                                    pass
+                                
+                                try:
+                                    sightDict["建议季节"] = detail_season(sight_doc)
+                                except Exception:
+                                    print("season failed")
+                                    failed_num += 1
+                                    pass
+                                
+                                
+                                
+                                
+
+
+                                try:
+                                    sightDict["门票"] = detail_ticket(sight_doc)
+                                except Exception:
+                                    print("ticket failed")
+                                    failed_num += 1
+                                    pass
+                                
+
+                                try:
+                                    sightDict["小贴士"] = detail_tip(sight_doc)
+                                except Exception:
+                                    print("tip failed")
+                                    failed_num += 1
+                                    pass
+                            
+
+                                if failed_num > 5:
+                                    print(str(names[i]) + " 没爬成功")
+                                    failed_sight_link.append(link)
+
+
+
+
+                            
+
+                                page_csv_list.append(sightDict)
+                                time.sleep(2)
+
+                                
+                                break
+
+                            else:
+                                pass
+
+                        except Exception as e:
+                            print(e)
+                            print(names[i] + "  failed to connnect")
+                            connection_errors[names[i]] = link
+                    
+                
+                
+                
+                break
+            else:
+                pass
+
+
+            
+
+        except Exception as e:
+            print(e)
+            print("这个链接error："+ "\n"+url)
+            failed_url.append(url)
+    
+    return page_csv_list
+import os
+import csv
+import time
+import random
+import requests
+from bs4 import BeautifulSoup
+
+fields = ["名字", "链接", "地址", "介绍", "开放时间", "图片链接", "评分", "建议游玩时间", "建议季节", "门票","小贴士", "Page"]
+
+
+
+folderpath = "/Users/az/Desktop/去哪儿城市景点数据/test4"
+
+my_header = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", 
+            "Accept-Encoding": "gzip, deflate, br", 
+            "Accept-Language": "en-US,en;q=0.9", 
+            "Sec-Ch-Ua": "\"Chromium\";v=\"110\", \"Not A(Brand\";v=\"24\", \"Google Chrome\";v=\"110\"", 
+            "Sec-Ch-Ua-Mobile": "?0", 
+            "Sec-Ch-Ua-Platform": "\"Windows\"", 
+            "Sec-Fetch-Dest": "document", 
+            "Sec-Fetch-Mode": "navigate", 
+            "Sec-Fetch-Site": "none", 
+            "Sec-Fetch-User": "?1", 
+            "Upgrade-Insecure-Requests": "1", 
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        }
+
+
+
+
+
+for city_name, city_link in myDict.items():
+
+    page_num = 1
+
+    if city_link != "city without sight":
+        city_csv_list = []
+
+        output_file = os.path.join(folderpath, f"{city_name}.csv")
+
+        while page_num < 11:
+            city_csv_list.extend(page_scrape(page_url = city_link + str(page_num), pageNum=page_num))
+
+            if random.randint(0, 100000000) % 3 == 0:
+              sleep_time = random.randint(0, 10)
+              print(f"sleeping for {sleep_time} sec")
+              time.sleep(sleep_time)
+            else:
+              sleep_time = random.randint(0, 5)
+              print(f"sleeping for {sleep_time} sec")
+              time.sleep(sleep_time)
+              
+            print("page " + str(page_num) + " finished")
+            page_num += 1
+
+        with open(output_file, "w", encoding="utf-8", newline="") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fields)
+            writer.writeheader()  # write the header row with field names
+            for d in city_csv_list:
+                writer.writerow(d)
+
+
+        print(city_name + "done")
+
+        
+
+    else:
+        pass
+print(failed_sight_link)
+print(connection_error)
+print(failed_url)

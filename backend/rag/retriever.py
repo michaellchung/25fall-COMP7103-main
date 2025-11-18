@@ -1,0 +1,244 @@
+"""
+成员B：RAG检索服务
+负责从知识库中检索相关景点、路线和旅游信息
+"""
+from typing import List, Dict
+from loguru import logger
+from dataclasses import dataclass
+
+
+@dataclass
+class Attraction:
+    """景点数据模型"""
+    id: str
+    name: str
+    city: str
+    province: str
+    category: str  # 自然景观/历史文化/现代建筑/美食/购物等
+    description: str
+    address: str
+    opening_hours: str
+    ticket_price: float
+    duration_hours: float
+    rating: float  # 1-5分
+    best_season: str
+    tips: str
+
+
+class RAGRetriever:
+    """RAG检索器 - 模拟向量数据库检索"""
+    
+    # 模拟知识库数据
+    ATTRACTIONS_DB = {
+        "杭州": [
+            Attraction(
+                id="hz001",
+                name="西湖",
+                city="杭州",
+                province="浙江",
+                category="自然景观",
+                description="中国最美的湖泊，有'人间天堂'之称，拥有十景各具特色",
+                address="浙江省杭州市西湖区",
+                opening_hours="全天",
+                ticket_price=0,
+                duration_hours=3,
+                rating=4.8,
+                best_season="春秋两季",
+                tips="建议清晨或傍晚游览，避开人流高峰"
+            ),
+            Attraction(
+                id="hz002",
+                name="灵隐寺",
+                city="杭州",
+                province="浙江",
+                category="历史文化",
+                description="中国最古老的佛刹，距今已有1700多年历史，雕刻精美",
+                address="浙江省杭州市西湖区灵隐路1号",
+                opening_hours="08:00-17:00",
+                ticket_price=30,
+                duration_hours=2,
+                rating=4.5,
+                best_season="全年",
+                tips="穿着得体，尊重宗教信仰"
+            ),
+            Attraction(
+                id="hz003",
+                name="茅家埠",
+                city="杭州",
+                province="浙江",
+                category="美食",
+                description="杭州特色美食街，汇集了龙井虾仁、东坡肉等名菜",
+                address="浙江省杭州市西湖区南山路48号",
+                opening_hours="10:00-22:00",
+                ticket_price=0,
+                duration_hours=1.5,
+                rating=4.3,
+                best_season="全年",
+                tips="周末人多，建议工作日前往"
+            ),
+        ],
+        "南京": [
+            Attraction(
+                id="nj001",
+                name="中山陵",
+                city="南京",
+                province="江苏",
+                category="历史文化",
+                description="孙中山先生的陵墓，宏伟壮观，是南京最著名景点",
+                address="江苏省南京市玄武区石象路7号",
+                opening_hours="08:00-17:00",
+                ticket_price=0,
+                duration_hours=2,
+                rating=4.6,
+                best_season="春秋",
+                tips="需爬390级台阶，穿着舒适的鞋子"
+            ),
+            Attraction(
+                id="nj002",
+                name="夫子庙",
+                city="南京",
+                province="江苏",
+                category="历史文化",
+                description="中国最大的孔庙，拥有2500年历史，夜景特别美",
+                address="江苏省南京市秦淮区平江府路1号",
+                opening_hours="09:30-22:00",
+                ticket_price=25,
+                duration_hours=1.5,
+                rating=4.4,
+                best_season="全年",
+                tips="晚上夜景迷人，建议7点后前往"
+            ),
+        ],
+        "广州": [
+            Attraction(
+                id="gz001",
+                name="广州塔",
+                city="广州",
+                province="广东",
+                category="现代建筑",
+                description="广州地标，高600米，可俯瞰整个珠江",
+                address="广东省广州市海珠区阅江中路222号",
+                opening_hours="09:00-23:00",
+                ticket_price=150,
+                duration_hours=2,
+                rating=4.5,
+                best_season="全年",
+                tips="预订可享受优惠，高空旋转餐厅体验绝佳"
+            ),
+            Attraction(
+                id="gz002",
+                name="陈家祠",
+                city="广州",
+                province="广东",
+                category="历史文化",
+                description="清代建筑艺术的典范，木雕石雕精美绝伦",
+                address="广东省广州市荔湾区中山七路恩宁路34号",
+                opening_hours="10:00-17:30",
+                ticket_price=10,
+                duration_hours=1.5,
+                rating=4.3,
+                best_season="全年",
+                tips="免费讲解服务，建议跟随讲解员"
+            ),
+        ]
+    }
+    
+    def __init__(self):
+        logger.info("RAG检索器初始化完成")
+    
+    def retrieve_attractions(
+        self,
+        city: str,
+        preferences: List[str] = None,
+        top_k: int = 10,
+        budget_min: float = 0,
+        budget_max: float = 1000
+    ) -> List[Attraction]:
+        """
+        检索景点信息
+        
+        Args:
+            city: 城市名称
+            preferences: 偏好类别列表
+            top_k: 返回前k个结果
+            budget_min: 预算最小值
+            budget_max: 预算最大值
+        
+        Returns:
+            景点列表
+        """
+        try:
+            attractions = self.ATTRACTIONS_DB.get(city, [])
+            
+            # 按偏好过滤
+            if preferences:
+                attractions = [
+                    a for a in attractions 
+                    if any(pref in a.category for pref in preferences)
+                ]
+            
+            # 按价格过滤
+            attractions = [
+                a for a in attractions 
+                if budget_min <= a.ticket_price <= budget_max
+            ]
+            
+            # 按评分排序
+            attractions = sorted(attractions, key=lambda x: x.rating, reverse=True)
+            
+            # 返回前k个
+            result = attractions[:top_k]
+            logger.info(f"检索到 {len(result)} 个景点 (城市: {city})")
+            
+            return result
+        
+        except Exception as e:
+            logger.error(f"检索景点时出错: {e}")
+            return []
+    
+    def get_route_suggestions(
+        self,
+        city: str,
+        days: int,
+        preferences: List[str] = None
+    ) -> Dict:
+        """
+        获取推荐路线
+        
+        Args:
+            city: 城市名称
+            days: 天数
+            preferences: 偏好类别
+        
+        Returns:
+            路线建议字典
+        """
+        attractions = self.retrieve_attractions(city, preferences, top_k=min(5 * days, 15))
+        
+        return {
+            "city": city,
+            "days": days,
+            "recommended_attractions": [
+                {
+                    "name": a.name,
+                    "category": a.category,
+                    "rating": a.rating,
+                    "ticket_price": a.ticket_price,
+                    "duration_hours": a.duration_hours
+                }
+                for a in attractions
+            ],
+            "estimated_cost": sum(a.ticket_price for a in attractions)
+        }
+
+
+# 全局RAG检索器实例
+_retriever = None
+
+def get_retriever() -> RAGRetriever:
+    """获取全局RAG检索器实例"""
+    global _retriever
+    if _retriever is None:
+        _retriever = RAGRetriever()
+    return _retriever
+
