@@ -13,9 +13,11 @@ class TransportOption:
     method: str  # "飞机" | "高铁" | "普通火车"
     duration_hours: float  # 时长（小时）
     cost_per_person: float  # 单人费用
+    total_cost: float  # 总费用
     departure_time: str  # 建议出发时间
     arrival_time: str  # 预计到达时间
     description: str  # 方案描述
+    recommendation_score: float  # 推荐分数 (0-1)
     details: Dict  # 详细信息
 
 

@@ -10,6 +10,7 @@ from loguru import logger
 @dataclass
 class Hotel:
     """酒店信息"""
+    id: str
     name: str
     city: str
     hotel_type: str  # "经济型" | "舒适型" | "高档型"
@@ -20,6 +21,7 @@ class Hotel:
     room_type: str  # "标准间" | "大床房" | "套房"
     description: str  # 酒店描述
     tags: List[str]  # ["近地铁", "景区附近", "商圈"]
+    phone: str  # 联系电话
 
 
 class AccommodationTool:

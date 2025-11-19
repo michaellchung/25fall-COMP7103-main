@@ -10,16 +10,19 @@ from loguru import logger
 @dataclass
 class Restaurant:
     """餐厅信息"""
+    id: str
     name: str
     city: str
     cuisine_type: str  # "杭帮菜" | "小吃" | "火锅"
     rating: float  # 评分 (0-5)
     avg_price: float  # 人均消费
     location: Dict  # {"lat": 30.25, "lng": 120.13, "address": "..."}
+    distance_km: float  # 距离参考点的距离
     signature_dishes: List[str]  # 招牌菜
     description: str  # 店铺描述
     opening_hours: str  # 营业时间
     tags: List[str]  # ["必吃", "网红店", "老字号"]
+    phone: str  # 联系电话
 
 
 class FoodTool:
