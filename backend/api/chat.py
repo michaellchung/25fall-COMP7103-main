@@ -16,6 +16,7 @@ class ChatRequest(BaseModel):
     session_id: str
     message: str
     context: Optional[Dict[str, Any]] = None
+    selection: Optional[Dict[str, Any]] = None  # 用户选择数据
 
 
 class ChatResponse(BaseModel):
@@ -38,14 +39,21 @@ async def chat(request: ChatRequest) -> ChatResponse:
     接收用户消息，返回Agent回复
     """
     try:
+        logger.info(f"📨 API收到请求 - session: {request.session_id}")
+        logger.info(f"💬 消息内容: {request.message}")
+        logger.info(f"📦 selection数据: {request.selection}")
+        
         # 获取Agent实例
         agent = get_agent_core()
         
         # 处理消息
         result = agent.process_message(
             session_id=request.session_id,
-            user_message=request.message
+            user_message=request.message,
+            selection=request.selection
         )
+        
+        logger.info(f"✅ API返回成功")
         
         return ChatResponse(
             success=True,

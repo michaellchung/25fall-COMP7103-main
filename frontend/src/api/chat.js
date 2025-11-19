@@ -4,6 +4,11 @@ import request from './index'
  * 发送消息
  */
 export function sendMessage(data) {
+  console.log('🌐 [API] sendMessage被调用')
+  console.log('📦 [API] 发送的数据:', data)
+  console.log('💬 [API] message:', data.message)
+  console.log('🎁 [API] selection:', data.selection)
+  
   return request({
     url: '/chat',
     method: 'post',

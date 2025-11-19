@@ -1,6 +1,6 @@
 """
-Tool 3: 美食查询工具
-查询目的地的美食餐厅
+美食推荐工具
+根据景点位置查询附近美食店铺
 """
 from typing import List, Dict
 from dataclasses import dataclass, asdict
@@ -12,8 +12,7 @@ class Restaurant:
     """餐厅信息"""
     id: str
     name: str
-    city: str
-    cuisine_type: str  # "杭帮菜" | "小吃" | "火锅"
+    cuisine_type: str  # "杭帮菜" | "小吃" | "火锅" | "西餐"
     rating: float  # 评分 (0-5)
     avg_price: float  # 人均消费
     location: Dict  # {"lat": 30.25, "lng": 120.13, "address": "..."}
@@ -25,171 +24,256 @@ class Restaurant:
     phone: str  # 联系电话
 
 
-class FoodTool:
-    """美食查询工具 - Tool 3"""
+class FoodRecommendationService:
+    """美食推荐服务"""
     
     def __init__(self):
-        logger.info("美食查询工具初始化完成")
+        logger.info("美食推荐服务初始化完成")
+        # Mock数据库
+        self.restaurants_db = self._init_mock_data()
     
-    def query_restaurants(
+    def get_restaurants_for_attractions(
         self,
-        city: str,
-        category: str = None,  # 类别
-        preferences: List[str] = None,  # 偏好
-        price_max: float = 1000,
-        rating_min: float = 0.0,
-        location_range: Dict = None,  # 位置范围
-        top_k: int = 5
-    ) -> List[Dict]:
+        attractions: List[Dict],
+        top_k_per_attraction: int = 2
+    ) -> Dict[str, List[Dict]]:
         """
-        查询美食餐厅
+        为每个景点推荐附近餐厅
         
         Args:
-            city: 城市
-            category: 类别（中餐、西餐、小吃等）
-            preferences: 偏好
-            price_max: 最高人均价格
-            rating_min: 最低评分
-            location_range: 位置范围
-            top_k: 返回数量
+            attractions: 景点列表
+            top_k_per_attraction: 每个景点推荐餐厅数量
         
         Returns:
-            餐厅列表
+            {景点名称: [餐厅列表]}
         """
-        logger.info(f"查询美食: {city}, 类别: {category}, topK: {top_k}")
+        logger.info(f"为 {len(attractions)} 个景点推荐餐厅")
         
-        # Mock数据 - 返回杭州美食
-        restaurants = self._get_mock_hangzhou_restaurants()
+        result = {}
+        for attraction in attractions:
+            attraction_name = attraction.get("name", "")
+            # 根据景点名称返回附近餐厅
+            nearby_restaurants = self._get_nearby_restaurants(
+                attraction_name, 
+                top_k_per_attraction
+            )
+            result[attraction_name] = [asdict(r) for r in nearby_restaurants]
         
-        # 过滤
-        filtered = []
-        for rest in restaurants:
-            # 价格过滤
-            if rest.avg_price > price_max:
-                continue
-            # 评分过滤
-            if rest.rating < rating_min:
-                continue
-            # 类别过滤
-            if category and category not in rest.cuisine_type:
-                continue
-            
-            filtered.append(rest)
-        
-        # 按评分排序
-        filtered.sort(key=lambda x: x.rating, reverse=True)
-        
-        return [asdict(rest) for rest in filtered[:top_k]]
+        return result
     
-    def _get_mock_hangzhou_restaurants(self) -> List[Restaurant]:
-        """返回杭州的Mock美食数据"""
-        return [
+    def _get_nearby_restaurants(
+        self, 
+        attraction_name: str, 
+        top_k: int
+    ) -> List[Restaurant]:
+        """获取景点附近餐厅（Mock）"""
+        
+        # 根据景点返回对应的餐厅
+        attraction_restaurants = {
+            "西湖": ["外婆家(湖滨店)", "楼外楼(孤山店)", "知味观(湖滨店)"],
+            "灵隐寺": ["灵隐寺素斋", "龙井茶室", "山外山"],
+            "雷峰塔": "西湖周边餐厅",
+            "河坊街": ["状元馆", "咬不得生煎", "新丰小吃"],
+            "宋城": ["宋城千古情餐厅", "杭州酒家", "外婆家(宋城店)"],
+            "西溪湿地": ["西溪湿地餐厅", "绿茶餐厅", "炉鱼"],
+            "千岛湖": ["千岛湖鱼头", "农家菜", "湖鲜馆"],
+            "南浔古镇": ["南浔特色菜", "古镇小吃", "江南菜馆"]
+        }
+        
+        # 获取餐厅名称列表
+        restaurant_names = attraction_restaurants.get(attraction_name, [])
+        if isinstance(restaurant_names, str):
+            # 如果是字符串，使用西湖的餐厅作为默认
+            restaurant_names = attraction_restaurants["西湖"]
+        
+        # 返回Top K
+        restaurants = []
+        for name in restaurant_names[:top_k]:
+            restaurant = self.restaurants_db.get(name)
+            if restaurant:
+                restaurants.append(restaurant)
+        
+        return restaurants
+    
+    def _init_mock_data(self) -> Dict[str, Restaurant]:
+        """初始化Mock餐厅数据"""
+        restaurants = [
+            # 西湖周边
             Restaurant(
-                name="外婆家（湖滨店）",
-                city="杭州",
+                id="hz_food_001",
+                name="外婆家(湖滨店)",
                 cuisine_type="杭帮菜",
-                rating=4.6,
+                rating=4.5,
                 avg_price=80,
-                location={"lat": 30.2547, "lng": 120.1619, "address": "浙江省杭州市上城区湖滨路53号"},
-                signature_dishes=["西湖醋鱼", "龙井虾仁", "东坡肉"],
-                description="杭州知名连锁餐厅，主打杭帮菜，性价比高，环境优雅。",
-                opening_hours="11:00-21:30",
-                tags=["必吃", "高性价比", "连锁品牌"]
+                location={"lat": 30.2591, "lng": 120.1653, "address": "杭州市上城区平海路124号"},
+                distance_km=0.5,
+                signature_dishes=["西湖醋鱼", "东坡肉", "龙井虾仁"],
+                description="杭州知名连锁餐厅，主打杭帮菜，性价比高",
+                opening_hours="10:30-21:30",
+                tags=["必吃", "网红店", "排队"],
+                phone="0571-87777777"
             ),
             Restaurant(
-                name="楼外楼（孤山路店）",
-                city="杭州",
+                id="hz_food_002",
+                name="楼外楼(孤山店)",
                 cuisine_type="杭帮菜",
                 rating=4.7,
                 avg_price=150,
-                location={"lat": 30.2566, "lng": 120.1421, "address": "浙江省杭州市西湖区孤山路30号"},
-                signature_dishes=["西湖醋鱼", "叫化童鸡", "宋嫂鱼羹"],
-                description="百年老字号，位于西湖边，是品尝正宗杭帮菜的首选之地。",
-                opening_hours="11:00-14:00, 17:00-21:00",
-                tags=["必吃", "老字号", "湖景餐厅"]
+                location={"lat": 30.2611, "lng": 120.1423, "address": "杭州市西湖区孤山路30号"},
+                distance_km=0.8,
+                signature_dishes=["叫化鸡", "西湖醋鱼", "龙井虾仁", "宋嫂鱼羹"],
+                description="百年老字号，西湖边最有名的餐厅，杭帮菜代表",
+                opening_hours="11:00-21:00",
+                tags=["老字号", "必吃", "景观好"],
+                phone="0571-87969682"
             ),
             Restaurant(
-                name="知味观（湖滨店）",
-                city="杭州",
+                id="hz_food_003",
+                name="知味观(湖滨店)",
+                cuisine_type="杭帮菜/小吃",
+                rating=4.4,
+                avg_price=60,
+                location={"lat": 30.2571, "lng": 120.1643, "address": "杭州市上城区仁和路83号"},
+                distance_km=0.6,
+                signature_dishes=["猫耳朵", "片儿川", "小笼包", "虾爆鳝面"],
+                description="杭州老字号小吃店，早餐和小吃很受欢迎",
+                opening_hours="06:30-21:00",
+                tags=["老字号", "小吃", "早餐"],
+                phone="0571-87065921"
+            ),
+            
+            # 灵隐寺周边
+            Restaurant(
+                id="hz_food_004",
+                name="灵隐寺素斋",
+                cuisine_type="素食",
+                rating=4.6,
+                avg_price=100,
+                location={"lat": 30.2411, "lng": 120.0967, "address": "杭州市西湖区灵隐路法云弄16号"},
+                distance_km=0.2,
+                signature_dishes=["罗汉斋", "素鹅", "素鸡", "笋干老鸭煲"],
+                description="寺庙素斋，环境清幽，菜品精致",
+                opening_hours="10:30-20:00",
+                tags=["素食", "特色", "环境好"],
+                phone="0571-87968665"
+            ),
+            Restaurant(
+                id="hz_food_005",
+                name="龙井茶室",
+                cuisine_type="茶餐厅",
+                rating=4.5,
+                avg_price=80,
+                location={"lat": 30.2381, "lng": 120.1087, "address": "杭州市西湖区龙井路1号"},
+                distance_km=1.5,
+                signature_dishes=["龙井虾仁", "龙井茶", "茶香鸡", "茶叶蛋"],
+                description="龙井茶园旁，可以品茶用餐，环境优美",
+                opening_hours="09:00-21:00",
+                tags=["特色", "茶文化", "环境好"],
+                phone="0571-87964221"
+            ),
+            Restaurant(
+                id="hz_food_006",
+                name="山外山",
+                cuisine_type="杭帮菜",
+                rating=4.6,
+                avg_price=120,
+                location={"lat": 30.2421, "lng": 120.1007, "address": "杭州市西湖区玉古路5号"},
+                distance_km=0.8,
+                signature_dishes=["西湖醋鱼", "东坡肉", "叫化鸡"],
+                description="西湖边老牌餐厅，环境好，菜品正宗",
+                opening_hours="11:00-21:00",
+                tags=["老字号", "环境好"],
+                phone="0571-87977688"
+            ),
+            
+            # 河坊街周边
+            Restaurant(
+                id="hz_food_007",
+                name="状元馆",
+                cuisine_type="杭帮菜",
+                rating=4.3,
+                avg_price=70,
+                location={"lat": 30.2451, "lng": 120.1701, "address": "杭州市上城区河坊街85号"},
+                distance_km=0.1,
+                signature_dishes=["状元蹄", "叫化鸡", "西湖醋鱼"],
+                description="河坊街老店，环境古色古香",
+                opening_hours="10:30-21:30",
+                tags=["老字号", "特色"],
+                phone="0571-87813777"
+            ),
+            Restaurant(
+                id="hz_food_008",
+                name="咬不得生煎",
                 cuisine_type="小吃",
                 rating=4.5,
-                avg_price=60,
-                location={"lat": 30.2541, "lng": 120.1635, "address": "浙江省杭州市上城区仁和路83号"},
-                signature_dishes=["猫耳朵", "鲜肉小笼", "片儿川"],
-                description="杭州著名小吃店，提供各种传统杭式点心和面食。",
-                opening_hours="07:00-21:00",
-                tags=["必吃", "老字号", "小吃", "早餐推荐"]
+                avg_price=30,
+                location={"lat": 30.2461, "lng": 120.1691, "address": "杭州市上城区河坊街158号"},
+                distance_km=0.05,
+                signature_dishes=["生煎包", "小笼包", "馄饨"],
+                description="河坊街网红小吃店，生煎很有特色",
+                opening_hours="08:00-20:00",
+                tags=["网红店", "小吃", "排队"],
+                phone="0571-87065432"
             ),
             Restaurant(
-                name="绿茶餐厅（龙井店）",
-                city="杭州",
+                id="hz_food_009",
+                name="新丰小吃",
+                cuisine_type="小吃",
+                rating=4.4,
+                avg_price=25,
+                location={"lat": 30.2471, "lng": 120.1681, "address": "杭州市上城区中山中路123号"},
+                distance_km=0.3,
+                signature_dishes=["虾肉小笼", "牛肉粉丝", "馄饨"],
+                description="杭州本地连锁小吃店，价格实惠",
+                opening_hours="06:30-21:00",
+                tags=["小吃", "实惠", "早餐"],
+                phone="0571-87023456"
+            ),
+            
+            # 宋城周边
+            Restaurant(
+                id="hz_food_010",
+                name="外婆家(宋城店)",
+                cuisine_type="杭帮菜",
+                rating=4.4,
+                avg_price=75,
+                location={"lat": 30.2121, "lng": 120.1143, "address": "杭州市西湖区之江路148号"},
+                distance_km=0.5,
+                signature_dishes=["茶香鸡", "麻婆豆腐", "青豆泥"],
+                description="外婆家连锁店，宋城附近用餐方便",
+                opening_hours="10:30-21:30",
+                tags=["连锁", "性价比高"],
+                phone="0571-87333333"
+            ),
+            
+            # 西溪湿地周边
+            Restaurant(
+                id="hz_food_011",
+                name="绿茶餐厅",
                 cuisine_type="创意杭帮菜",
                 rating=4.6,
                 avg_price=90,
-                location={"lat": 30.2158, "lng": 120.1204, "address": "浙江省杭州市西湖区龙井路1号"},
+                location={"lat": 30.2691, "lng": 120.0753, "address": "杭州市西湖区文二西路551号"},
+                distance_km=1.0,
                 signature_dishes=["面包诱惑", "绿茶烤鱼", "石锅牛蛙"],
-                description="人气网红餐厅，融合传统杭帮菜与现代创意，环境清新。",
-                opening_hours="11:00-22:00",
-                tags=["网红店", "创意菜", "环境好"]
+                description="网红餐厅，环境好，菜品创新",
+                opening_hours="10:30-22:00",
+                tags=["网红店", "环境好", "排队"],
+                phone="0571-88812345"
             ),
-            Restaurant(
-                name="奎元馆（解放路店）",
-                city="杭州",
-                cuisine_type="面食",
-                rating=4.5,
-                avg_price=40,
-                location={"lat": 30.2629, "lng": 120.1694, "address": "浙江省杭州市上城区解放路154号"},
-                signature_dishes=["虾爆鳝面", "片儿川", "牛肉粉丝"],
-                description="百年面馆，以虾爆鳝面闻名，是杭州人的最爱。",
-                opening_hours="06:30-20:00",
-                tags=["老字号", "面食", "早餐推荐"]
-            ),
-            Restaurant(
-                name="新白鹿餐厅",
-                city="杭州",
-                cuisine_type="杭帮菜",
-                rating=4.6,
-                avg_price=85,
-                location={"lat": 30.2473, "lng": 120.1598, "address": "浙江省杭州市上城区平海路124号"},
-                signature_dishes=["酱鸭", "糖醋里脊", "油焖春笋"],
-                description="杭州本地连锁品牌，菜品丰富，量大实惠，性价比高。",
-                opening_hours="11:00-21:30",
-                tags=["高性价比", "量大", "本地人推荐"]
-            ),
-            Restaurant(
-                name="胡庆余堂药膳",
-                city="杭州",
-                cuisine_type="药膳",
-                rating=4.4,
-                avg_price=120,
-                location={"lat": 30.2451, "lng": 120.1672, "address": "浙江省杭州市上城区大井巷95号"},
-                signature_dishes=["虫草花炖鸡", "药膳排骨", "养生粥"],
-                description="老字号药店开设的药膳餐厅，注重养生保健。",
-                opening_hours="11:00-14:00, 17:00-20:30",
-                tags=["特色餐厅", "养生", "药膳"]
-            ),
-            Restaurant(
-                name="南宋御街小吃",
-                city="杭州",
-                cuisine_type="小吃",
-                rating=4.3,
-                avg_price=35,
-                location={"lat": 30.2412, "lng": 120.1681, "address": "浙江省杭州市上城区中山中路"},
-                signature_dishes=["定胜糕", "葱包桧", "臭豆腐"],
-                description="汇集各种杭州传统小吃，价格实惠，适合边走边吃。",
-                opening_hours="09:00-22:00",
-                tags=["小吃", "街边美食", "实惠"]
-            )
         ]
+        
+        # 转换为字典
+        return {r.name: r for r in restaurants}
 
 
-# 全局单例
-_food_tool = None
+# 单例
+_food_service = None
 
-def get_food_tool() -> FoodTool:
-    """获取美食工具实例"""
-    global _food_tool
-    if _food_tool is None:
-        _food_tool = FoodTool()
-    return _food_tool
+def get_food_service() -> FoodRecommendationService:
+    """获取美食服务单例"""
+    global _food_service
+    if _food_service is None:
+        _food_service = FoodRecommendationService()
+    return _food_service
 

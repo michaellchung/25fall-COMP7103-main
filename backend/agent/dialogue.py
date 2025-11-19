@@ -4,7 +4,7 @@
 from typing import Dict, Optional
 from loguru import logger
 
-from agent.state import ConversationState, UserRequirements
+from agent.state import ConversationState, UserRequirements, ItineraryStage
 from utils.llm import get_llm_client
 from config import prompts
 
@@ -35,28 +35,30 @@ class DialogueManager:
         state.add_message("user", user_input)
         
         # 根据当前阶段决定处理方式
-        if state.current_stage == "greeting":
+        if state.current_stage == ItineraryStage.GREETING:
             response = self._handle_initial_input(state, user_input)
-            state.current_stage = "collecting"
+            state.current_stage = ItineraryStage.COLLECTING_REQUIREMENTS
             
-        elif state.current_stage == "collecting":
+        elif state.current_stage == ItineraryStage.COLLECTING_REQUIREMENTS:
             # 提取需求信息
             self._extract_requirements(state, user_input)
             
             # 检查是否完整
             if state.user_requirements.is_complete():
                 response = self._confirm_requirements(state)
-                state.current_stage = "confirming"
+                state.current_stage = ItineraryStage.CONFIRMING_REQUIREMENTS
             else:
                 response = self._ask_missing_info(state)
                 
-        elif state.current_stage == "confirming":
+        elif state.current_stage == ItineraryStage.CONFIRMING_REQUIREMENTS:
             if self._is_confirmation(user_input):
-                state.current_stage = "generating"
+                # 确认后不再直接生成，而是返回确认消息
+                # 由core.py处理后续的交通推荐阶段
+                state.current_stage = ItineraryStage.CONFIRMING_REQUIREMENTS
                 response = "好的！正在为您生成行程，请稍候...⏳"
             else:
                 # 用户想修改，回到收集阶段
-                state.current_stage = "collecting"
+                state.current_stage = ItineraryStage.COLLECTING_REQUIREMENTS
                 response = "好的，请告诉我需要修改哪些内容～"
                 
         else:
@@ -267,7 +269,9 @@ class DialogueManager:
 
             只返回YES或NO，不要其他内容。"""
 
-            response = self.llm.chat(prompt, user_input)
+            # 调用LLM
+            messages = [{"role": "user", "content": prompt}]
+            response = self.llm.chat(messages)
             result = response.strip().upper()
             
             logger.debug(f"确认判断 - 用户输入: '{user_input}' | LLM返回: '{result}'")

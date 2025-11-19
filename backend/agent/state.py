@@ -2,8 +2,34 @@
 对话状态管理
 """
 from pydantic import BaseModel, Field
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 from datetime import datetime
+from enum import Enum
+
+
+class ItineraryStage(str, Enum):
+    """行程规划阶段"""
+    # 需求收集阶段
+    GREETING = "greeting"
+    COLLECTING_REQUIREMENTS = "collecting_requirements"
+    CONFIRMING_REQUIREMENTS = "confirming_requirements"
+    
+    # 分步推荐阶段
+    RECOMMENDING_TRANSPORT = "recommending_transport"
+    WAITING_TRANSPORT_SELECTION = "waiting_transport_selection"
+    
+    RECOMMENDING_ATTRACTIONS = "recommending_attractions"
+    WAITING_ATTRACTIONS_SELECTION = "waiting_attractions_selection"
+    
+    RECOMMENDING_FOOD = "recommending_food"
+    WAITING_FOOD_SELECTION = "waiting_food_selection"
+    
+    RECOMMENDING_ACCOMMODATION = "recommending_accommodation"
+    WAITING_ACCOMMODATION_SELECTION = "waiting_accommodation_selection"
+    
+    # 最终生成阶段
+    GENERATING_FINAL_ITINERARY = "generating_final_itinerary"
+    COMPLETED = "completed"
 
 
 class UserRequirements(BaseModel):
@@ -42,14 +68,35 @@ class UserRequirements(BaseModel):
         return missing
 
 
+class UserSelections(BaseModel):
+    """用户在各阶段的选择记录"""
+    
+    # 交通选择
+    transport_choice: Optional[Dict[str, Any]] = None
+    # 格式: {"outbound": {...}, "return": {...}}
+    
+    # 景点选择（按天）
+    attractions_by_day: Optional[Dict[int, List[Dict[str, Any]]]] = None
+    # 格式: {1: [景点1, 景点2], 2: [景点3, 景点4], ...}
+    
+    # 美食选择（按天）
+    food_by_day: Optional[Dict[int, List[Dict[str, Any]]]] = None
+    # 格式: {1: [餐厅1, 餐厅2], 2: [餐厅3], ...}
+    
+    # 住宿选择
+    accommodation_choice: Optional[Dict[str, Any]] = None
+
+
 class ConversationState(BaseModel):
     """对话状态"""
     session_id: str
     user_requirements: UserRequirements = Field(default_factory=UserRequirements)
+    user_selections: UserSelections = Field(default_factory=UserSelections)
     dialogue_history: List[Dict[str, str]] = Field(default_factory=list)
     tool_calls: List[Dict] = Field(default_factory=list)
-    current_stage: str = "greeting"  # greeting, collecting, generating, modifying
+    current_stage: ItineraryStage = ItineraryStage.GREETING
     created_at: datetime = Field(default_factory=datetime.now)
+    last_recommendation_data: Optional[Dict[str, Any]] = None  # 保存最后一次推荐的数据
     
     def add_message(self, role: str, content: str):
         """添加对话消息"""

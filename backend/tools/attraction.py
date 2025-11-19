@@ -1,228 +1,277 @@
 """
-Tool 2: 景点查询工具
-基于向量数据库查询景点信息
+成员B：RAG检索服务
+负责从知识库中检索相关景点、路线和旅游信息
 """
 from typing import List, Dict
-from dataclasses import dataclass, asdict
 from loguru import logger
+from dataclasses import dataclass
 
 
 @dataclass
 class Attraction:
-    """景点信息"""
+    """景点数据模型"""
+    id: str
     name: str
     city: str
-    category: List[str]  # ["自然风光", "历史文化"]
-    rating: float  # 评分 (0-5)
-    ticket_price: float  # 门票价格
-    duration_hours: float  # 建议游玩时长
-    location: Dict  # {"lat": 30.25, "lng": 120.13, "address": "..."}
-    description: str  # 景点描述
-    tags: List[str]  # ["必游", "免费", "适合拍照"]
-    opening_hours: str  # 开放时间
-    best_season: List[str]  # 最佳季节
+    province: str
+    category: str  # 自然景观/历史文化/现代建筑/美食/购物等
+    description: str
+    address: str
+    opening_hours: str
+    ticket_price: float
+    duration_hours: float
+    rating: float  # 1-5分
+    best_season: str
+    tips: str
+    location: Dict = None  # 位置信息 {"lat": 纬度, "lng": 经度, "address": "详细地址"}
+    tags: List[str] = None  # 标签列表
+    
+    def __post_init__(self):
+        """初始化后处理"""
+        if self.tags is None:
+            # 根据category自动生成tags
+            self.tags = [self.category]
+        
+        if self.location is None:
+            # 如果没有提供location，根据address生成默认位置
+            # 这里使用Mock数据，实际应该调用地图API
+            self.location = {
+                "lat": 30.25,  # 杭州大致纬度
+                "lng": 120.15,  # 杭州大致经度
+                "address": self.address
+            }
 
 
-class AttractionTool:
-    """景点查询工具 - Tool 2"""
+class AttractionService:
+    """RAG检索器 - 模拟向量数据库检索"""
+    
+    # 模拟知识库数据
+    ATTRACTIONS_DB = {
+        "杭州": [
+            Attraction(
+                id="hz001",
+                name="西湖",
+                city="杭州",
+                province="浙江",
+                category="自然景观",
+                description="中国最美的湖泊，有'人间天堂'之称，拥有十景各具特色",
+                address="浙江省杭州市西湖区",
+                opening_hours="全天",
+                ticket_price=0,
+                duration_hours=3,
+                rating=4.8,
+                best_season="春秋两季",
+                tips="建议清晨或傍晚游览，避开人流高峰",
+                location={"lat": 30.2547, "lng": 120.1487, "address": "浙江省杭州市西湖区"}
+            ),
+            Attraction(
+                id="hz002",
+                name="灵隐寺",
+                city="杭州",
+                province="浙江",
+                category="历史文化",
+                description="中国最古老的佛刹，距今已有1700多年历史，雕刻精美",
+                address="浙江省杭州市西湖区灵隐路1号",
+                opening_hours="08:00-17:00",
+                ticket_price=30,
+                duration_hours=2,
+                rating=4.5,
+                best_season="全年",
+                tips="穿着得体，尊重宗教信仰",
+                location={"lat": 30.2415, "lng": 120.0985, "address": "浙江省杭州市西湖区灵隐路1号"}
+            ),
+            Attraction(
+                id="hz003",
+                name="茅家埠",
+                city="杭州",
+                province="浙江",
+                category="美食",
+                description="杭州特色美食街，汇集了龙井虾仁、东坡肉等名菜",
+                address="浙江省杭州市西湖区南山路48号",
+                opening_hours="10:00-22:00",
+                ticket_price=0,
+                duration_hours=1.5,
+                rating=4.3,
+                best_season="全年",
+                tips="周末人多，建议工作日前往",
+                location={"lat": 30.2358, "lng": 120.1298, "address": "浙江省杭州市西湖区南山路48号"}
+            ),
+        ],
+        "南京": [
+            Attraction(
+                id="nj001",
+                name="中山陵",
+                city="南京",
+                province="江苏",
+                category="历史文化",
+                description="孙中山先生的陵墓，宏伟壮观，是南京最著名景点",
+                address="江苏省南京市玄武区石象路7号",
+                opening_hours="08:00-17:00",
+                ticket_price=0,
+                duration_hours=2,
+                rating=4.6,
+                best_season="春秋",
+                tips="需爬390级台阶，穿着舒适的鞋子",
+                location={"lat": 32.0589, "lng": 118.8486, "address": "江苏省南京市玄武区石象路7号"}
+            ),
+            Attraction(
+                id="nj002",
+                name="夫子庙",
+                city="南京",
+                province="江苏",
+                category="历史文化",
+                description="中国最大的孔庙，拥有2500年历史，夜景特别美",
+                address="江苏省南京市秦淮区平江府路1号",
+                opening_hours="09:30-22:00",
+                ticket_price=25,
+                duration_hours=1.5,
+                rating=4.4,
+                best_season="全年",
+                tips="晚上夜景迷人，建议7点后前往",
+                location={"lat": 32.0186, "lng": 118.7938, "address": "江苏省南京市秦淮区平江府路1号"}
+            ),
+        ],
+        "广州": [
+            Attraction(
+                id="gz001",
+                name="广州塔",
+                city="广州",
+                province="广东",
+                category="现代建筑",
+                description="广州地标，高600米，可俯瞰整个珠江",
+                address="广东省广州市海珠区阅江中路222号",
+                opening_hours="09:00-23:00",
+                ticket_price=150,
+                duration_hours=2,
+                rating=4.5,
+                best_season="全年",
+                tips="预订可享受优惠，高空旋转餐厅体验绝佳",
+                location={"lat": 23.1088, "lng": 113.3191, "address": "广东省广州市海珠区阅江中路222号"}
+            ),
+            Attraction(
+                id="gz002",
+                name="陈家祠",
+                city="广州",
+                province="广东",
+                category="历史文化",
+                description="清代建筑艺术的典范，木雕石雕精美绝伦",
+                address="广东省广州市荔湾区中山七路恩宁路34号",
+                opening_hours="10:00-17:30",
+                ticket_price=10,
+                duration_hours=1.5,
+                rating=4.3,
+                best_season="全年",
+                tips="免费讲解服务，建议跟随讲解员",
+                location={"lat": 23.1258, "lng": 113.2438, "address": "广东省广州市荔湾区中山七路恩宁路34号"}
+            ),
+        ]
+    }
     
     def __init__(self):
-        logger.info("景点查询工具初始化完成")
+        logger.info("RAG检索器初始化完成")
     
-    def query_attractions(
+    def retrieve_attractions(
         self,
         city: str,
-        ticket_price_max: float = 1000,
-        time_point: str = None,  # 时间点
-        location_range: Dict = None,  # 位置范围
-        rating_min: float = 0.0,
         preferences: List[str] = None,
-        top_k: int = 10
-    ) -> List[Dict]:
+        top_k: int = 10,
+        budget_min: float = 0,
+        budget_max: float = 1000
+    ) -> List[Attraction]:
         """
-        查询景点
+        检索景点信息
         
         Args:
-            city: 城市
-            ticket_price_max: 最高门票价格
-            time_point: 时间点
-            location_range: 位置范围
-            rating_min: 最低评分
-            preferences: 偏好标签
-            top_k: 返回数量
+            city: 城市名称
+            preferences: 偏好类别列表
+            top_k: 返回前k个结果
+            budget_min: 预算最小值
+            budget_max: 预算最大值
         
         Returns:
             景点列表
         """
-        logger.info(f"查询景点: {city}, 偏好: {preferences}, topK: {top_k}")
-        
-        # Mock数据 - 返回杭州景点
-        attractions = self._get_mock_hangzhou_attractions()
-        
-        # 过滤
-        filtered = []
-        for attr in attractions:
-            # 价格过滤
-            if attr.ticket_price > ticket_price_max:
-                continue
-            # 评分过滤
-            if attr.rating < rating_min:
-                continue
-            # 偏好过滤
-            if preferences:
-                if not any(pref in attr.category for pref in preferences):
-                    continue
+        try:
+            attractions = self.ATTRACTIONS_DB.get(city, [])
+            logger.info(f"城市 {city} 共有 {len(attractions)} 个景点")
             
-            filtered.append(attr)
+            # 按偏好过滤（如果有偏好，优先推荐匹配的，但不完全排除其他）
+            if preferences:
+                matched = [
+                    a for a in attractions 
+                    if any(pref in a.category or pref in str(a.tags) for pref in preferences)
+                ]
+                unmatched = [
+                    a for a in attractions 
+                    if not any(pref in a.category or pref in str(a.tags) for pref in preferences)
+                ]
+                # 匹配的排在前面，未匹配的排在后面
+                attractions = matched + unmatched
+                logger.info(f"偏好匹配: {len(matched)} 个，其他: {len(unmatched)} 个")
+            
+            # 按价格过滤
+            attractions = [
+                a for a in attractions 
+                if budget_min <= a.ticket_price <= budget_max
+            ]
+            logger.info(f"价格过滤后: {len(attractions)} 个")
+            
+            # 按评分排序
+            attractions = sorted(attractions, key=lambda x: x.rating, reverse=True)
+            
+            # 返回前k个
+            result = attractions[:top_k]
+            logger.info(f"检索到 {len(result)} 个景点 (城市: {city})")
+            
+            return result
         
-        # 按评分排序
-        filtered.sort(key=lambda x: x.rating, reverse=True)
-        
-        return [asdict(attr) for attr in filtered[:top_k]]
+        except Exception as e:
+            logger.error(f"检索景点时出错: {e}")
+            return []
     
-    def _get_mock_hangzhou_attractions(self) -> List[Attraction]:
-        """返回杭州的Mock景点数据"""
-        return [
-            Attraction(
-                name="西湖",
-                city="杭州",
-                category=["自然风光", "历史文化"],
-                rating=4.8,
-                ticket_price=0,
-                duration_hours=3.0,
-                location={"lat": 30.2591, "lng": 120.1353, "address": "浙江省杭州市西湖区西湖风景名胜区"},
-                description="西湖是杭州的标志性景点，以秀丽的湖光山色和众多的名胜古迹闻名。春季赏樱花，夏季赏荷花，秋季赏桂花，冬季赏雪景。",
-                tags=["必游", "免费", "适合拍照", "世界文化遗产"],
-                opening_hours="全天开放",
-                best_season=["春季", "秋季"]
-            ),
-            Attraction(
-                name="灵隐寺",
-                city="杭州",
-                category=["历史文化", "宗教文化"],
-                rating=4.7,
-                ticket_price=75,
-                duration_hours=2.5,
-                location={"lat": 30.2419, "lng": 120.0973, "address": "浙江省杭州市西湖区灵隐路法云弄1号"},
-                description="灵隐寺是江南著名古刹之一，始建于东晋，已有约1700年历史。寺内古木参天，环境清幽。",
-                tags=["必游", "历史古迹", "适合祈福"],
-                opening_hours="07:00-18:00",
-                best_season=["春季", "秋季"]
-            ),
-            Attraction(
-                name="雷峰塔",
-                city="杭州",
-                category=["历史文化"],
-                rating=4.5,
-                ticket_price=40,
-                duration_hours=1.5,
-                location={"lat": 30.2314, "lng": 120.1489, "address": "浙江省杭州市西湖区南山路15号"},
-                description="雷峰塔是西湖十景之一，因白娘子传说而闻名。登塔可俯瞰西湖美景。",
-                tags=["热门景点", "适合拍照", "传说故事"],
-                opening_hours="08:00-17:30",
-                best_season=["全年"]
-            ),
-            Attraction(
-                name="西溪湿地",
-                city="杭州",
-                category=["自然风光"],
-                rating=4.6,
-                ticket_price=80,
-                duration_hours=4.0,
-                location={"lat": 30.2710, "lng": 120.0519, "address": "浙江省杭州市西湖区天目山路518号"},
-                description="西溪湿地是中国第一个国家湿地公园，生态环境优美，可乘船游览。",
-                tags=["自然景观", "适合休闲", "生态旅游"],
-                opening_hours="08:30-17:30",
-                best_season=["春季", "秋季"]
-            ),
-            Attraction(
-                name="千岛湖",
-                city="杭州",
-                category=["自然风光"],
-                rating=4.7,
-                ticket_price=150,
-                duration_hours=6.0,
-                location={"lat": 29.6047, "lng": 119.0357, "address": "浙江省杭州市淳安县千岛湖镇"},
-                description="千岛湖湖水清澈，岛屿众多，是度假休闲的好去处。可乘船游湖，欣赏美景。",
-                tags=["自然景观", "度假胜地", "水上活动"],
-                opening_hours="08:00-17:00",
-                best_season=["夏季", "秋季"]
-            ),
-            Attraction(
-                name="宋城",
-                city="杭州",
-                category=["文化体验", "休闲娱乐"],
-                rating=4.5,
-                ticket_price=310,
-                duration_hours=4.0,
-                location={"lat": 30.2087, "lng": 120.1147, "address": "浙江省杭州市西湖区之江路148号"},
-                description="宋城是大型文化主题公园，再现宋代都市风貌。《宋城千古情》演出非常精彩。",
-                tags=["文化体验", "演出", "适合家庭"],
-                opening_hours="10:00-21:00",
-                best_season=["全年"]
-            ),
-            Attraction(
-                name="河坊街",
-                city="杭州",
-                category=["美食", "历史文化"],
-                rating=4.4,
-                ticket_price=0,
-                duration_hours=2.0,
-                location={"lat": 30.2446, "lng": 120.1648, "address": "浙江省杭州市上城区河坊街"},
-                description="河坊街是杭州历史文化街区，保留了清末民初的建筑风格，有众多特色小吃和手工艺品店。",
-                tags=["免费", "美食街", "购物", "夜景"],
-                opening_hours="全天开放",
-                best_season=["全年"]
-            ),
-            Attraction(
-                name="飞来峰",
-                city="杭州",
-                category=["自然风光", "历史文化"],
-                rating=4.6,
-                ticket_price=45,
-                duration_hours=2.0,
-                location={"lat": 30.2428, "lng": 120.0953, "address": "浙江省杭州市西湖区灵隐路"},
-                description="飞来峰是灵隐景区的一部分，山上有众多石窟造像，是中国南方石窟艺术的重要遗存。",
-                tags=["历史古迹", "石窟艺术", "自然景观"],
-                opening_hours="07:00-18:00",
-                best_season=["春季", "秋季"]
-            ),
-            Attraction(
-                name="龙井村",
-                city="杭州",
-                category=["美食", "自然风光"],
-                rating=4.5,
-                ticket_price=0,
-                duration_hours=2.5,
-                location={"lat": 30.2172, "lng": 120.1189, "address": "浙江省杭州市西湖区龙井路"},
-                description="龙井村是西湖龙井茶的原产地，可以品茶、欣赏茶园风光，感受茶文化。",
-                tags=["免费", "茶文化", "自然风光", "品茶"],
-                opening_hours="全天开放",
-                best_season=["春季", "秋季"]
-            ),
-            Attraction(
-                name="杭州博物馆",
-                city="杭州",
-                category=["历史文化"],
-                rating=4.6,
-                ticket_price=0,
-                duration_hours=2.0,
-                location={"lat": 30.2533, "lng": 120.1619, "address": "浙江省杭州市上城区粮道山18号"},
-                description="杭州博物馆展示了杭州的历史文化，收藏有大量文物和艺术品。",
-                tags=["免费", "博物馆", "历史文化", "雨天备选"],
-                opening_hours="09:00-16:30（周一闭馆）",
-                best_season=["全年"]
-            )
-        ]
+    def get_route_suggestions(
+        self,
+        city: str,
+        days: int,
+        preferences: List[str] = None
+    ) -> Dict:
+        """
+        获取推荐路线
+        
+        Args:
+            city: 城市名称
+            days: 天数
+            preferences: 偏好类别
+        
+        Returns:
+            路线建议字典
+        """
+        attractions = self.retrieve_attractions(city, preferences, top_k=min(5 * days, 15))
+        
+        return {
+            "city": city,
+            "days": days,
+            "recommended_attractions": [
+                {
+                    "name": a.name,
+                    "category": a.category,
+                    "rating": a.rating,
+                    "ticket_price": a.ticket_price,
+                    "duration_hours": a.duration_hours
+                }
+                for a in attractions
+            ],
+            "estimated_cost": sum(a.ticket_price for a in attractions)
+        }
 
 
-# 全局单例
-_attraction_tool = None
+# 全局RAG检索器实例
+_attraction_service = None
 
-def get_attraction_tool() -> AttractionTool:
-    """获取景点工具实例"""
-    global _attraction_tool
-    if _attraction_tool is None:
-        _attraction_tool = AttractionTool()
-    return _attraction_tool
+def get_attraction_service() -> AttractionService:
+    """获取全局RAG检索器实例"""
+    global _attraction_service
+    if _attraction_service is None:
+        _attraction_service = AttractionService()
+    return _attraction_service
 
