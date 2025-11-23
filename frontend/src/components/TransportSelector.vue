@@ -15,9 +15,25 @@
       :show-breakdown="true"
     />
     
+    <!-- 超支警告 -->
+    <el-alert
+      v-if="selectedOption && isOverBudget"
+      type="error"
+      :closable="false"
+      show-icon
+      class="budget-warning"
+    >
+      <template #title>
+        ⚠️ 预算超支警告
+      </template>
+      <template #default>
+        当前选择将超支 <strong>¥{{ overBudgetAmount }}</strong>，建议选择更经济的方案或调整总预算。
+      </template>
+    </el-alert>
+    
     <div class="transport-options">
       <div 
-        v-for="option in options" 
+        v-for="(option, index) in options" 
         :key="option.id || option.method"
         class="transport-card"
         :class="{ 
@@ -26,113 +42,109 @@
         }"
         @click="selectTransport(option)"
       >
-        <div class="card-header">
-          <span class="transport-icon">{{ getTransportIcon(option.method) }}</span>
-          <span class="transport-method">{{ option.method }}</span>
-          <el-tag 
-            :type="getScoreTagType(option.recommendation_score)" 
-            size="small"
-          >
-            推荐度 {{ (option.recommendation_score * 100).toFixed(0) }}%
-          </el-tag>
-        </div>
+        <div class="card-number">{{ index + 1 }}</div>
         
-        <div class="card-body">
-          <!-- 费用信息 -->
-          <div class="info-section">
-            <div class="section-title">💰 费用信息</div>
-            <div class="info-row">
-              <span class="label">单人费用：</span>
-              <span class="value">¥{{ option.cost_per_person }}</span>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="header-left">
+              <span class="transport-icon">{{ getTransportIcon(option.method) }}</span>
+              <span class="transport-method">{{ option.method }}</span>
+              <el-tag 
+                :type="getScoreTagType(option.recommendation_score)" 
+                size="small"
+              >
+                推荐度 {{ (option.recommendation_score * 100).toFixed(0) }}%
+              </el-tag>
             </div>
-            <div class="info-row">
-              <span class="label">总费用：</span>
-              <span class="value cost">¥{{ option.total_cost }}</span>
+            <div class="header-right">
+              <span class="cost-label">往返费用</span>
+              <span class="cost-value">¥{{ option.total_cost }}</span>
             </div>
           </div>
-
-          <!-- 时间信息 -->
-          <div class="info-section">
-            <div class="section-title">⏱️ 时间信息</div>
-            <div class="info-row">
+          
+          <div class="card-info">
+            <div class="info-item">
+              <el-icon><Clock /></el-icon>
               <span class="label">行程时长：</span>
               <span class="value">{{ option.duration_hours }}小时</span>
             </div>
-            <div class="info-row">
+            <div class="info-item">
+              <el-icon><Position /></el-icon>
               <span class="label">建议出发：</span>
               <span class="value">{{ option.departure_time }}</span>
             </div>
-            <div class="info-row">
+            <div class="info-item">
+              <el-icon><Location /></el-icon>
               <span class="label">预计到达：</span>
               <span class="value">{{ option.arrival_time }}</span>
             </div>
           </div>
 
-          <!-- 详细信息 -->
-          <div v-if="option.details" class="info-section">
-            <div class="section-title">📋 详细信息</div>
-            <div v-if="option.details.train_type" class="info-row">
-              <span class="label">车次类型：</span>
-              <span class="value">{{ option.details.train_type }}</span>
-            </div>
-            <div v-if="option.details.seat_type" class="info-row">
-              <span class="label">座位类型：</span>
-              <span class="value">{{ option.details.seat_type }}</span>
-            </div>
-            <div v-if="option.details.station" class="info-row">
-              <span class="label">站点：</span>
-              <span class="value">{{ option.details.station }}</span>
-            </div>
-            <div v-if="option.details.airline" class="info-row">
-              <span class="label">航空公司：</span>
-              <span class="value">{{ option.details.airline }}</span>
-            </div>
-            <div v-if="option.details.airport" class="info-row">
-              <span class="label">机场：</span>
-              <span class="value">{{ option.details.airport }}</span>
-            </div>
-            <div v-if="option.details.distance_km" class="info-row">
-              <span class="label">距离：</span>
-              <span class="value">{{ option.details.distance_km }}公里</span>
-            </div>
-            <div v-if="option.details.fuel_cost" class="info-row">
-              <span class="label">油费：</span>
-              <span class="value">¥{{ option.details.fuel_cost }}</span>
-            </div>
-            <div v-if="option.details.toll_fee" class="info-row">
-              <span class="label">过路费：</span>
-              <span class="value">¥{{ option.details.toll_fee }}</span>
-            </div>
-            <div v-if="option.details.booking_tip" class="info-row tip">
+          <div class="card-details">
+            <div class="description" v-if="option.description">
               <el-icon><InfoFilled /></el-icon>
-              <span>{{ option.details.booking_tip }}</span>
+              <span>{{ option.description }}</span>
             </div>
-            <div v-if="option.details.route_tip" class="info-row tip">
-              <el-icon><InfoFilled /></el-icon>
-              <span>{{ option.details.route_tip }}</span>
+            
+            <div v-if="option.details" class="details-grid">
+              <div class="detail-item" v-if="option.details.train_type">
+                <span class="detail-label">车次类型</span>
+                <span class="detail-value">{{ option.details.train_type }}</span>
+              </div>
+              <div class="detail-item" v-if="option.details.seat_type">
+                <span class="detail-label">座位类型</span>
+                <span class="detail-value">{{ option.details.seat_type }}</span>
+              </div>
+              <div class="detail-item" v-if="option.details.station">
+                <span class="detail-label">站点</span>
+                <span class="detail-value">{{ option.details.station }}</span>
+              </div>
+              <div class="detail-item" v-if="option.details.airline">
+                <span class="detail-label">航空公司</span>
+                <span class="detail-value">{{ option.details.airline }}</span>
+              </div>
+              <div class="detail-item" v-if="option.details.airport">
+                <span class="detail-label">机场</span>
+                <span class="detail-value">{{ option.details.airport }}</span>
+              </div>
+              <div class="detail-item" v-if="option.details.distance_km">
+                <span class="detail-label">距离</span>
+                <span class="detail-value">{{ option.details.distance_km }}公里</span>
+              </div>
+              <div class="detail-item" v-if="option.details.fuel_cost">
+                <span class="detail-label">油费</span>
+                <span class="detail-value">¥{{ option.details.fuel_cost }}</span>
+              </div>
+              <div class="detail-item" v-if="option.details.toll_fee">
+                <span class="detail-label">过路费</span>
+                <span class="detail-value">¥{{ option.details.toll_fee }}</span>
+              </div>
+              <div class="detail-item full-width" v-if="option.details.booking_tip">
+                <span class="detail-label">预订提示</span>
+                <span class="detail-value">{{ option.details.booking_tip }}</span>
+              </div>
+              <div class="detail-item full-width" v-if="option.details.route_tip">
+                <span class="detail-label">路线提示</span>
+                <span class="detail-value">{{ option.details.route_tip }}</span>
+              </div>
             </div>
-          </div>
-
-          <!-- 推荐理由 -->
-          <div class="info-section reason-section">
-            <div class="section-title">📝 推荐理由</div>
-            <div class="reason-text">{{ option.description }}</div>
           </div>
         </div>
         
-        <div class="card-footer">
+        <div class="card-action">
           <el-button 
             v-if="selectedOption?.method === option.method"
             type="primary" 
-            size="small"
+            size="large"
             disabled
           >
-            ✓ 已选择
+            <el-icon><Select /></el-icon>
+            已选择
           </el-button>
           <el-button 
             v-else
             type="default" 
-            size="small"
+            size="large"
           >
             选择此方案
           </el-button>
@@ -150,7 +162,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { InfoFilled } from '@element-plus/icons-vue'
+import { InfoFilled, Clock, Position, Location, Select } from '@element-plus/icons-vue'
 import { useChatStore } from '@/stores/chat'
 import BudgetProgress from './BudgetProgress.vue'
 
@@ -188,6 +200,17 @@ const previewTransportCost = computed(() => {
 // 计算总使用（包括预览）
 const budgetUsed = computed(() => {
   return previewTransportCost.value + budgetAttractions.value + budgetFood.value + budgetAccommodation.value
+})
+
+// 检查是否超支
+const isOverBudget = computed(() => {
+  return budgetUsed.value > budgetTotal.value
+})
+
+// 超支金额
+const overBudgetAmount = computed(() => {
+  if (!isOverBudget.value) return 0
+  return budgetUsed.value - budgetTotal.value
 })
 
 const getTransportIcon = (method) => {
@@ -251,7 +274,7 @@ const confirmSelection = () => {
   padding: 20px;
   background: #f9fafc;
   border-radius: 12px;
-  margin: 15px 0;
+  margin: 15px -16px;
   
   .selector-title {
     font-size: 18px;
@@ -266,10 +289,25 @@ const confirmSelection = () => {
     margin-bottom: 20px;
   }
   
+  .budget-warning {
+    margin: 15px 0;
+    :deep(.el-alert__title) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    :deep(.el-alert__description) {
+      font-size: 14px;
+      line-height: 1.6;
+      strong {
+        color: #f56c6c;
+        font-size: 16px;
+      }
+    }
+  }
+  
   .transport-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 20px;
     
     .transport-card {
@@ -277,18 +315,19 @@ const confirmSelection = () => {
       border: 2px solid #e4e7ed;
       border-radius: 12px;
       padding: 20px;
+      display: flex;
+      gap: 15px;
       cursor: pointer;
       transition: all 0.3s ease;
       
       &:hover {
         border-color: #409eff;
-        box-shadow: 0 4px 12px rgba(64, 158, 255, 0.2);
-        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(64, 158, 255, 0.15);
+        transform: translateX(5px);
       }
       
       &.recommended {
         border-color: #67c23a;
-        background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
       }
       
       &.selected {
@@ -297,97 +336,167 @@ const confirmSelection = () => {
         box-shadow: 0 4px 12px rgba(64, 158, 255, 0.3);
       }
       
-      .card-header {
+      .card-number {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #f0f2f5;
-        
-        .transport-icon {
-          font-size: 32px;
-        }
-        
-        .transport-method {
-          font-size: 22px;
-          font-weight: 600;
-          color: #303133;
-          flex: 1;
-        }
+        justify-content: center;
+        font-weight: 600;
+        font-size: 20px;
+        flex-shrink: 0;
       }
       
-      .card-body {
-        margin-bottom: 15px;
+      .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         
-        .info-section {
-          margin-bottom: 15px;
+        .card-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          padding-bottom: 12px;
+          border-bottom: 2px solid #f0f2f5;
           
-          .section-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #606266;
-            margin-bottom: 10px;
-            padding-left: 8px;
-            border-left: 3px solid #409eff;
+          .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
           }
           
-          .info-row {
+          .header-right {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 6px;
+            flex-direction: column;
+            align-items: flex-end;
+            
+            .cost-label {
+              font-size: 12px;
+              color: #909399;
+            }
+            
+            .cost-value {
+              font-size: 24px;
+              font-weight: 700;
+              color: #f56c6c;
+            }
+          }
+          
+          .transport-icon {
+            font-size: 32px;
+          }
+          
+          .transport-method {
+            font-size: 20px;
+            font-weight: 600;
+            color: #303133;
+          }
+        }
+        
+        .card-info {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          
+          .info-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
             font-size: 13px;
-            padding-left: 11px;
+            color: #606266;
+            
+            .el-icon {
+              color: #409eff;
+            }
             
             .label {
               color: #909399;
-              min-width: 85px;
-              flex-shrink: 0;
             }
             
             .value {
               color: #303133;
               font-weight: 500;
-              flex: 1;
-              
-              &.cost {
-                color: #f56c6c;
-                font-size: 18px;
-                font-weight: 700;
-              }
             }
+          }
+        }
+        
+        .card-details {
+          background: #f5f7fa;
+          border-radius: 8px;
+          padding: 12px;
+          
+          .description {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: rgba(103, 194, 58, 0.1);
+            border-radius: 6px;
+            color: #67c23a;
+            font-size: 13px;
+            line-height: 1.6;
+            border-left: 3px solid #67c23a;
             
-            &.tip {
-              margin-top: 5px;
-              padding: 8px 10px;
-              background: rgba(64, 158, 255, 0.08);
-              border-radius: 6px;
-              color: #409eff;
-              font-size: 12px;
-              gap: 6px;
-              border-left: 3px solid #409eff;
+            .el-icon {
+              flex-shrink: 0;
+              margin-top: 2px;
             }
           }
           
-          &.reason-section {
-            .reason-text {
-              padding: 12px;
-              background: rgba(103, 194, 58, 0.08);
-              border-radius: 8px;
-              color: #67c23a;
-              font-size: 13px;
-              line-height: 1.6;
-              border-left: 3px solid #67c23a;
+          .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 8px;
+            
+            .detail-item {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              
+              &.full-width {
+                grid-column: 1 / -1;
+                flex-direction: row;
+                align-items: center;
+                padding: 8px;
+                background: rgba(64, 158, 255, 0.08);
+                border-radius: 4px;
+                
+                .detail-label {
+                  min-width: 80px;
+                }
+              }
+              
+              .detail-label {
+                font-size: 11px;
+                color: #909399;
+                font-weight: 500;
+              }
+              
+              .detail-value {
+                font-size: 13px;
+                color: #303133;
+                font-weight: 600;
+              }
             }
           }
         }
       }
       
-      .card-footer {
+      .card-action {
         display: flex;
-        justify-content: center;
-        padding-top: 10px;
-        border-top: 1px solid #f0f2f5;
+        align-items: center;
+        padding-left: 15px;
+        border-left: 2px solid #f0f2f5;
+        
+        .el-button {
+          min-width: 120px;
+        }
       }
     }
   }

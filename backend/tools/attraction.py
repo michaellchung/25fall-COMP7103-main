@@ -1,10 +1,16 @@
-"""
-成员B：RAG检索服务
-负责从知识库中检索相关景点、路线和旅游信息
-"""
-from typing import List, Dict
+import json
+import os
+import re
+import shutil
+from typing import List, Dict, Union
 from loguru import logger
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
+
+# 延迟导入langchain相关库（避免启动时的依赖冲突）
+# from langchain_community.vectorstores import Chroma
+# from langchain_core.documents import Document
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+
 
 
 @dataclass
@@ -14,264 +20,224 @@ class Attraction:
     name: str
     city: str
     province: str
-    category: str  # 自然景观/历史文化/现代建筑/美食/购物等
+    category: str
     description: str
     address: str
     opening_hours: str
-    ticket_price: float
-    duration_hours: float
-    rating: float  # 1-5分
+    ticket_price: str
+    duration_hours: str
+    rating: str
     best_season: str
     tips: str
-    location: Dict = None  # 位置信息 {"lat": 纬度, "lng": 经度, "address": "详细地址"}
-    tags: List[str] = None  # 标签列表
+    location: Dict = None
+    tags: List[str] = None
     
-    def __post_init__(self):
-        """初始化后处理"""
-        if self.tags is None:
-            # 根据category自动生成tags
-            self.tags = [self.category]
-        
-        if self.location is None:
-            # 如果没有提供location，根据address生成默认位置
-            # 这里使用Mock数据，实际应该调用地图API
-            self.location = {
-                "lat": 30.25,  # 杭州大致纬度
-                "lng": 120.15,  # 杭州大致经度
-                "address": self.address
-            }
-
+    def to_searchable_text(self) -> str:
+        """将对象转换为用于Embedding的长文本"""
+        return f"景点：{self.name}。类型：{self.category}。城市：{self.city}。描述：{self.description}。标签：{' '.join(self.tags if self.tags else [])}。建议：{self.tips}"
 
 class AttractionService:
-    """RAG检索器 - 模拟向量数据库检索"""
-    
-    # 模拟知识库数据
-    ATTRACTIONS_DB = {
-        "杭州": [
-            Attraction(
-                id="hz001",
-                name="西湖",
-                city="杭州",
-                province="浙江",
-                category="自然景观",
-                description="中国最美的湖泊，有'人间天堂'之称，拥有十景各具特色",
-                address="浙江省杭州市西湖区",
-                opening_hours="全天",
-                ticket_price=0,
-                duration_hours=3,
-                rating=4.8,
-                best_season="春秋两季",
-                tips="建议清晨或傍晚游览，避开人流高峰",
-                location={"lat": 30.2547, "lng": 120.1487, "address": "浙江省杭州市西湖区"}
-            ),
-            Attraction(
-                id="hz002",
-                name="灵隐寺",
-                city="杭州",
-                province="浙江",
-                category="历史文化",
-                description="中国最古老的佛刹，距今已有1700多年历史，雕刻精美",
-                address="浙江省杭州市西湖区灵隐路1号",
-                opening_hours="08:00-17:00",
-                ticket_price=30,
-                duration_hours=2,
-                rating=4.5,
-                best_season="全年",
-                tips="穿着得体，尊重宗教信仰",
-                location={"lat": 30.2415, "lng": 120.0985, "address": "浙江省杭州市西湖区灵隐路1号"}
-            ),
-            Attraction(
-                id="hz003",
-                name="茅家埠",
-                city="杭州",
-                province="浙江",
-                category="美食",
-                description="杭州特色美食街，汇集了龙井虾仁、东坡肉等名菜",
-                address="浙江省杭州市西湖区南山路48号",
-                opening_hours="10:00-22:00",
-                ticket_price=0,
-                duration_hours=1.5,
-                rating=4.3,
-                best_season="全年",
-                tips="周末人多，建议工作日前往",
-                location={"lat": 30.2358, "lng": 120.1298, "address": "浙江省杭州市西湖区南山路48号"}
-            ),
-        ],
-        "南京": [
-            Attraction(
-                id="nj001",
-                name="中山陵",
-                city="南京",
-                province="江苏",
-                category="历史文化",
-                description="孙中山先生的陵墓，宏伟壮观，是南京最著名景点",
-                address="江苏省南京市玄武区石象路7号",
-                opening_hours="08:00-17:00",
-                ticket_price=0,
-                duration_hours=2,
-                rating=4.6,
-                best_season="春秋",
-                tips="需爬390级台阶，穿着舒适的鞋子",
-                location={"lat": 32.0589, "lng": 118.8486, "address": "江苏省南京市玄武区石象路7号"}
-            ),
-            Attraction(
-                id="nj002",
-                name="夫子庙",
-                city="南京",
-                province="江苏",
-                category="历史文化",
-                description="中国最大的孔庙，拥有2500年历史，夜景特别美",
-                address="江苏省南京市秦淮区平江府路1号",
-                opening_hours="09:30-22:00",
-                ticket_price=25,
-                duration_hours=1.5,
-                rating=4.4,
-                best_season="全年",
-                tips="晚上夜景迷人，建议7点后前往",
-                location={"lat": 32.0186, "lng": 118.7938, "address": "江苏省南京市秦淮区平江府路1号"}
-            ),
-        ],
-        "广州": [
-            Attraction(
-                id="gz001",
-                name="广州塔",
-                city="广州",
-                province="广东",
-                category="现代建筑",
-                description="广州地标，高600米，可俯瞰整个珠江",
-                address="广东省广州市海珠区阅江中路222号",
-                opening_hours="09:00-23:00",
-                ticket_price=150,
-                duration_hours=2,
-                rating=4.5,
-                best_season="全年",
-                tips="预订可享受优惠，高空旋转餐厅体验绝佳",
-                location={"lat": 23.1088, "lng": 113.3191, "address": "广东省广州市海珠区阅江中路222号"}
-            ),
-            Attraction(
-                id="gz002",
-                name="陈家祠",
-                city="广州",
-                province="广东",
-                category="历史文化",
-                description="清代建筑艺术的典范，木雕石雕精美绝伦",
-                address="广东省广州市荔湾区中山七路恩宁路34号",
-                opening_hours="10:00-17:30",
-                ticket_price=10,
-                duration_hours=1.5,
-                rating=4.3,
-                best_season="全年",
-                tips="免费讲解服务，建议跟随讲解员",
-                location={"lat": 23.1258, "lng": 113.2438, "address": "广东省广州市荔湾区中山七路恩宁路34号"}
-            ),
-        ]
-    }
-    
-    def __init__(self):
-        logger.info("RAG检索器初始化完成")
-    
+    def __init__(self, json_path: str = None):
+        logger.info("正在初始化 RAG 向量服务...")
+        
+        # 延迟导入，避免启动时的依赖冲突
+        try:
+            from langchain_community.vectorstores import Chroma
+            from langchain_core.documents import Document
+            from langchain_community.embeddings import HuggingFaceEmbeddings
+            
+            # 保存到实例变量
+            self.Chroma = Chroma
+            self.Document = Document
+            self.HuggingFaceEmbeddings = HuggingFaceEmbeddings
+        except ImportError as e:
+            logger.error(f"无法导入langchain库: {e}")
+            logger.warning("RAG功能将不可用，请安装: pip install langchain-community langchain-core chromadb sentence-transformers")
+            self.Chroma = None
+            return
+        
+        # 使用项目根目录的相对路径
+        if json_path is None:
+            # 从backend/tools出发，需要回到项目根目录
+            # backend/tools -> backend -> project_root
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+            self.json_path = os.path.join(project_root, "data", "attractions", "zhejiang.json")
+        else:
+            self.json_path = json_path
+        
+        logger.info(f"数据文件路径: {self.json_path}")
+
+        self.embedding_model = self.HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+        
+        # 数据库路径放在backend目录下
+        backend_dir = os.path.dirname(os.path.dirname(__file__))
+        self.db_path = os.path.join(backend_dir, "chroma_db_data")
+        logger.info(f"向量数据库路径: {self.db_path}")
+        
+        self.vector_db = self.Chroma(
+            collection_name="attractions_db",
+            embedding_function=self.embedding_model,
+            persist_directory=self.db_path
+        )
+        
+        db_count = self.vector_db._collection.count()
+        logger.info(f"当前数据库中有 {db_count} 条数据")
+
+        if db_count == 0:
+            logger.info(f"数据库为空，准备从 {self.json_path} 加载数据...")
+            self._load_json_data(self.json_path)
+        else:
+            logger.info("使用现有数据库数据")
+
+    def _parse_price(self, price_input) -> float:
+        """辅助函数：处理非标准的门票价格格式"""
+        if isinstance(price_input, (int, float)):
+            return float(price_input)
+        try:
+            nums = re.findall(r'\d+\.?\d*', str(price_input))
+            if nums:
+                return float(nums[0])
+            return 0.0
+        except:
+            return 0.0
+
+    def _load_json_data(self, json_path: str):
+        """读取 JSON 文件并存入向量库"""
+        if not os.path.exists(json_path):
+            logger.error(f"❌ 错误：找不到文件 {json_path}")
+            return
+
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                raw_list = json.load(f)
+            
+            documents = []
+            logger.info(f"找到 {len(raw_list)} 条原始数据，正在处理...")
+
+            for item in raw_list:
+                cat_val = item.get("category", [])
+                cat_str = ",".join(cat_val) if isinstance(cat_val, list) else str(cat_val)
+                
+                season_val = item.get("best_season", [])
+                season_str = ",".join(season_val) if isinstance(season_val, list) else str(season_val)
+                
+                clean_price = self._parse_price(item.get("ticket_price", 0))
+
+                att_obj = Attraction(
+                    id=item.get("id", ""),
+                    name=item.get("name", ""),
+                    city=item.get("city", ""),
+                    province=item.get("province", ""),
+                    category=cat_str,
+                    description=item.get("description", ""),
+                    address=item.get("location", {}).get("address", ""),
+                    opening_hours=item.get("opening_hours", ""),
+                    ticket_price=clean_price,
+                    duration_hours=float(item.get("visit_duration", 1.0)),
+                    rating=float(item.get("rating", 0.0)),
+                    best_season=season_str,
+                    tips=item.get("tips", ""),
+                    location=item.get("location", {}),
+                    tags=item.get("tags", [])
+                )
+
+                meta = asdict(att_obj)
+                meta['location'] = json.dumps(meta['location'], ensure_ascii=False)
+                meta['tags'] = ",".join(meta['tags']) if meta['tags'] else ""
+                
+                doc = self.Document(
+                    page_content=att_obj.to_searchable_text(),
+                    metadata=meta
+                )
+                documents.append(doc)
+
+            if documents:
+                self.vector_db.add_documents(documents)
+                logger.success(f"✅ 成功写入 {len(documents)} 条数据到向量库！")
+            
+        except Exception as e:
+            logger.error(f"数据加载失败详情: {e}")
+            import traceback
+            traceback.print_exc()
+
     def retrieve_attractions(
         self,
         city: str,
         preferences: List[str] = None,
-        top_k: int = 10,
+        top_k: int = 5,
         budget_min: float = 0,
-        budget_max: float = 1000
+        budget_max: float = 10000
     ) -> List[Attraction]:
-        """
-        检索景点信息
-        
-        Args:
-            city: 城市名称
-            preferences: 偏好类别列表
-            top_k: 返回前k个结果
-            budget_min: 预算最小值
-            budget_max: 预算最大值
-        
-        Returns:
-            景点列表
-        """
-        try:
-            attractions = self.ATTRACTIONS_DB.get(city, [])
-            logger.info(f"城市 {city} 共有 {len(attractions)} 个景点")
-            
-            # 按偏好过滤（如果有偏好，优先推荐匹配的，但不完全排除其他）
-            if preferences:
-                matched = [
-                    a for a in attractions 
-                    if any(pref in a.category or pref in str(a.tags) for pref in preferences)
-                ]
-                unmatched = [
-                    a for a in attractions 
-                    if not any(pref in a.category or pref in str(a.tags) for pref in preferences)
-                ]
-                # 匹配的排在前面，未匹配的排在后面
-                attractions = matched + unmatched
-                logger.info(f"偏好匹配: {len(matched)} 个，其他: {len(unmatched)} 个")
-            
-            # 按价格过滤
-            attractions = [
-                a for a in attractions 
-                if budget_min <= a.ticket_price <= budget_max
-            ]
-            logger.info(f"价格过滤后: {len(attractions)} 个")
-            
-            # 按评分排序
-            attractions = sorted(attractions, key=lambda x: x.rating, reverse=True)
-            
-            # 返回前k个
-            result = attractions[:top_k]
-            logger.info(f"检索到 {len(result)} 个景点 (城市: {city})")
-            
-            return result
-        
-        except Exception as e:
-            logger.error(f"检索景点时出错: {e}")
+        """检索景点"""
+        # 检查RAG是否可用
+        if self.Chroma is None:
+            logger.error("RAG功能未初始化，无法检索")
             return []
-    
-    def get_route_suggestions(
-        self,
-        city: str,
-        days: int,
-        preferences: List[str] = None
-    ) -> Dict:
-        """
-        获取推荐路线
         
-        Args:
-            city: 城市名称
-            days: 天数
-            preferences: 偏好类别
-        
-        Returns:
-            路线建议字典
-        """
-        attractions = self.retrieve_attractions(city, preferences, top_k=min(5 * days, 15))
-        
-        return {
-            "city": city,
-            "days": days,
-            "recommended_attractions": [
-                {
-                    "name": a.name,
-                    "category": a.category,
-                    "rating": a.rating,
-                    "ticket_price": a.ticket_price,
-                    "duration_hours": a.duration_hours
-                }
-                for a in attractions
-            ],
-            "estimated_cost": sum(a.ticket_price for a in attractions)
-        }
+        try:
+            query_text = f"{city} 旅游景点" 
+            if preferences:
+                query_text += f" 适合 {' '.join(preferences)} 风格"
+            
+            where_clause = {
+                "$and": [
+                    {"city": {"$eq": city}},
+                    {"ticket_price": {"$gte": budget_min}},
+                    {"ticket_price": {"$lte": budget_max}}
+                ]
+            }
 
+            results = self.vector_db.similarity_search(
+                query=query_text,
+                k=top_k,
+                filter=where_clause
+            )
+            
+            attractions = []
+            for doc in results:
+                data = doc.metadata
+                if isinstance(data.get('location'), str):
+                    data['location'] = json.loads(data['location'])
+                if isinstance(data.get('tags'), str):
+                    data['tags'] = data['tags'].split(',') if data['tags'] else []
+                
+                attractions.append(Attraction(**data))
+            
+            return attractions
 
-# 全局RAG检索器实例
+        except Exception as e:
+            logger.error(f"RAG检索出错: {e}")
+            return []
+
+# 全局单例
 _attraction_service = None
 
 def get_attraction_service() -> AttractionService:
-    """获取全局RAG检索器实例"""
     global _attraction_service
     if _attraction_service is None:
         _attraction_service = AttractionService()
     return _attraction_service
 
+if __name__ == "__main__":
+    if os.path.exists("./chroma_db_data"):
+        try:
+            shutil.rmtree("./chroma_db_data")
+            print("已自动删除旧数据库，准备重新加载...")
+        except:
+            pass
+
+    service = get_attraction_service()
+    
+    print("\n--- 测试: 获取 10 个杭州景点 ---")
+    res = service.retrieve_attractions(
+        city="杭州", 
+        preferences=["自然", "文化", "历史"], 
+        top_k=10,
+        budget_max=1000
+    )
+    
+    print(f"实际检索到: {len(res)} 条")
+    for i, a in enumerate(res, 1):
+        print(f"{i}. [{a.name}] ({a.category}) - {a.ticket_price}元")

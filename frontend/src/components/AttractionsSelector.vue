@@ -15,6 +15,22 @@
       :show-breakdown="true"
     />
     
+    <!-- 超支警告 -->
+    <el-alert
+      v-if="isOverBudget"
+      type="error"
+      :closable="false"
+      show-icon
+      class="budget-warning"
+    >
+      <template #title>
+        ⚠️ 预算超支警告
+      </template>
+      <template #default>
+        当前景点安排将超支 <strong>¥{{ overBudgetAmount }}</strong>，建议减少景点数量或调整总预算。
+      </template>
+    </el-alert>
+    
     <div class="daily-attractions">
       <div 
         v-for="(attractions, day) in dailyAttractions" 
@@ -152,6 +168,17 @@ const budgetUsed = computed(() => {
   return budgetTransport.value + previewAttractionsCost.value + budgetFood.value + budgetAccommodation.value
 })
 
+// 检查是否超支
+const isOverBudget = computed(() => {
+  return budgetUsed.value > budgetTotal.value
+})
+
+// 超支金额
+const overBudgetAmount = computed(() => {
+  if (!isOverBudget.value) return 0
+  return budgetUsed.value - budgetTotal.value
+})
+
 const confirmSelection = () => {
   // 更新预算
   chatStore.updateBudget('attractions', previewAttractionsCost.value)
@@ -176,7 +203,7 @@ const requestModification = () => {
   padding: 20px;
   background: #f9fafc;
   border-radius: 12px;
-  margin: 15px 0;
+  margin: 15px -16px;
   
   .selector-title {
     font-size: 18px;
@@ -189,6 +216,22 @@ const requestModification = () => {
     font-size: 14px;
     color: #606266;
     margin-bottom: 20px;
+  }
+  
+  .budget-warning {
+    margin: 15px 0;
+    :deep(.el-alert__title) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    :deep(.el-alert__description) {
+      font-size: 14px;
+      line-height: 1.6;
+      strong {
+        color: #f56c6c;
+        font-size: 16px;
+      }
+    }
   }
   
   .daily-attractions {

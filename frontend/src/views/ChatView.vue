@@ -524,6 +524,7 @@ function scrollToBottom() {
     .message-content {
       background: #409eff;
       color: white;
+      max-width: 60%;
     }
   }
   
@@ -533,12 +534,13 @@ function scrollToBottom() {
     .message-content {
       background: #f0f0f0;
       color: #303133;
-      max-width: 85%;
+      width: 1200px;
+      max-width: 95%; // 在小屏幕上不超过95%
     }
   }
   
   .message-content {
-    max-width: 70%;
+    max-width: 95%;
     padding: 12px 16px;
     border-radius: 8px;
     
@@ -852,15 +854,15 @@ function scrollToBottom() {
             
             .budget-bar {
               flex: 1;
-              height: 20px;
-              background: #e4e7ed;
-              border-radius: 10px;
-              overflow: hidden;
-              margin: 0 10px;
+              height: 8px;
+              background: #f0f0f0;
+              margin: 0 12px;
+              position: relative;
               
               .budget-fill {
                 height: 100%;
                 background: linear-gradient(90deg, #67c23a 0%, #409eff 100%);
+                border-radius: 0 4px 4px 0;
                 transition: width 0.3s ease;
               }
             }

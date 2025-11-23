@@ -15,9 +15,25 @@
       :show-breakdown="true"
     />
     
-    <div class="hotels-grid">
+    <!-- 超支警告 -->
+    <el-alert
+      v-if="selectedOption && isOverBudget"
+      type="error"
+      :closable="false"
+      show-icon
+      class="budget-warning"
+    >
+      <template #title>
+        ⚠️ 预算超支警告
+      </template>
+      <template #default>
+        当前住宿选择将超支 <strong>¥{{ overBudgetAmount }}</strong>，建议选择更经济的酒店或调整总预算。
+      </template>
+    </el-alert>
+    
+    <div class="hotels-list">
       <div 
-        v-for="option in options" 
+        v-for="(option, index) in options" 
         :key="option.id"
         class="hotel-card"
         :class="{ 
@@ -26,92 +42,75 @@
         }"
         @click="selectHotel(option)"
       >
-        <div class="card-header">
-          <div class="hotel-name">{{ option.name }}</div>
-          <div class="hotel-badges">
-            <el-tag 
-              :type="getHotelTypeTag(option.hotel_type)" 
-              size="small"
-            >
-              {{ option.hotel_type }}
-            </el-tag>
-            <el-rate 
-              :model-value="option.star_rating || option.rating" 
-              disabled 
-              show-score 
-              text-color="#ff9900"
-              score-template="{value}分"
-              size="small"
-            />
-          </div>
-        </div>
-
-        <div class="card-body">
-          <!-- 价格信息 -->
-          <div class="price-section">
-            <div class="price-row">
-              <span class="label">💰 每晚价格：</span>
-              <span class="value price">¥{{ option.price_per_night }}</span>
+        <div class="card-number">{{ index + 1 }}</div>
+        
+        <div class="card-content">
+          <div class="card-header">
+            <div class="header-left">
+              <div class="hotel-name">{{ option.name }}</div>
+              <div class="hotel-badges">
+                <el-tag 
+                  :type="getHotelTypeTag(option.hotel_type)" 
+                  size="small"
+                >
+                  {{ option.hotel_type }}
+                </el-tag>
+                <el-rate 
+                  :model-value="option.star_rating || option.rating" 
+                  disabled 
+                  show-score 
+                  text-color="#ff9900"
+                  score-template="{value}分"
+                  size="small"
+                />
+              </div>
             </div>
-            <div class="price-row">
-              <span class="label">🛏️ 住宿天数：</span>
-              <span class="value">{{ option.nights }}晚</span>
-            </div>
-            <div class="price-row total">
-              <span class="label">💵 总费用：</span>
-              <span class="value total-price">¥{{ option.total_cost || (option.price_per_night * option.nights) }}</span>
+            <div class="header-right">
+              <span class="cost-label">总费用</span>
+              <span class="cost-value">¥{{ option.total_cost || (option.price_per_night * option.nights) }}</span>
+              <span class="nights-info">{{ option.nights }}晚 × ¥{{ option.price_per_night }}/晚</span>
             </div>
           </div>
 
-          <!-- 房型信息 -->
-          <div class="room-section" v-if="option.room_type">
-            <div class="section-title">🚪 房型信息</div>
-            <div class="info-text">{{ option.room_type }}</div>
-          </div>
-
-          <!-- 设施信息 -->
-          <div class="facilities-section" v-if="option.facilities && option.facilities.length">
-            <div class="section-title">✨ 酒店设施</div>
-            <div class="facilities-tags">
-              <el-tag 
-                v-for="facility in option.facilities" 
-                :key="facility"
-                type="success"
-                size="small"
-                effect="plain"
-              >
-                {{ getFacilityIcon(facility) }} {{ facility }}
-              </el-tag>
+          <div class="card-info">
+            <div class="info-item" v-if="option.room_type">
+              <el-icon><House /></el-icon>
+              <span class="label">房型：</span>
+              <span class="value">{{ option.room_type }}</span>
+            </div>
+            <div class="info-item" v-if="option.distance_to_center !== undefined">
+              <el-icon><Location /></el-icon>
+              <span class="label">距中心：</span>
+              <span class="value">{{ option.distance_to_center.toFixed(2) }}km</span>
+            </div>
+            <div class="info-item" v-if="option.phone">
+              <el-icon><Phone /></el-icon>
+              <span class="label">电话：</span>
+              <span class="value">{{ option.phone }}</span>
             </div>
           </div>
 
-          <!-- 详细信息 -->
-          <div class="details-section">
-            <div v-if="option.description" class="detail-row">
-              <span class="detail-label">📝 简介：</span>
-              <span class="detail-value">{{ option.description }}</span>
+          <div class="card-details">
+            <!-- 设施信息 -->
+            <div class="facilities-section" v-if="option.facilities && option.facilities.length">
+              <span class="section-label">设施：</span>
+              <div class="facilities-tags">
+                <el-tag 
+                  v-for="facility in option.facilities" 
+                  :key="facility"
+                  type="success"
+                  size="small"
+                  effect="plain"
+                >
+                  {{ getFacilityIcon(facility) }} {{ facility }}
+                </el-tag>
+              </div>
             </div>
-            <div v-if="option.location && option.location.address" class="detail-row">
-              <span class="detail-label">📍 地址：</span>
-              <span class="detail-value">{{ option.location.address }}</span>
-            </div>
-            <div v-if="option.distance_to_center !== undefined" class="detail-row">
-              <span class="detail-label">📏 距中心：</span>
-              <span class="detail-value">{{ option.distance_to_center.toFixed(2) }}km</span>
-            </div>
-            <div v-if="option.location && option.location.lat" class="detail-row">
-              <span class="detail-label">🗺️ 坐标：</span>
-              <span class="detail-value">
-                {{ option.location.lat }}, {{ option.location.lng }}
-              </span>
-            </div>
-            <div v-if="option.phone" class="detail-row">
-              <span class="detail-label">📞 电话：</span>
-              <span class="detail-value">{{ option.phone }}</span>
-            </div>
-            <div v-if="option.tags && option.tags.length" class="detail-row tags">
-              <span class="detail-label">🏷️ 标签：</span>
-              <span class="detail-value">
+
+            <!-- 标签信息 -->
+            <div class="tags-section" v-if="option.tags && option.tags.length">
+              <span class="section-label">标签：</span>
+              <div class="tags-list">
                 <el-tag 
                   v-for="tag in option.tags" 
                   :key="tag"
@@ -121,30 +120,49 @@
                 >
                   {{ tag }}
                 </el-tag>
-              </span>
+              </div>
             </div>
-          </div>
 
-          <!-- 推荐理由 -->
-          <div class="reason-section" v-if="option.reason">
-            <div class="section-title">📝 推荐理由</div>
-            <div class="reason-text">{{ option.reason }}</div>
+            <!-- 详细信息 -->
+            <div class="info-details">
+              <div v-if="option.description" class="detail-item">
+                <span class="detail-label">简介：</span>
+                <span class="detail-value">{{ option.description }}</span>
+              </div>
+              <div v-if="option.location && option.location.address" class="detail-item">
+                <span class="detail-label">地址：</span>
+                <span class="detail-value">{{ option.location.address }}</span>
+              </div>
+              <div v-if="option.location && option.location.lat" class="detail-item">
+                <span class="detail-label">坐标：</span>
+                <span class="detail-value">{{ option.location.lat }}, {{ option.location.lng }}</span>
+              </div>
+            </div>
+
+            <!-- 推荐理由 -->
+            <div class="reason-box" v-if="option.reason">
+              <el-icon><InfoFilled /></el-icon>
+              <span>{{ option.reason }}</span>
+            </div>
           </div>
         </div>
 
-        <div class="card-footer">
+        <div class="card-action">
           <el-button 
             v-if="selectedOption?.id === option.id"
             type="primary" 
-            size="small"
+            size="large"
             disabled
+            style="width: 100%;"
           >
-            ✓ 已选择
+            <el-icon><Select /></el-icon>
+            已选择
           </el-button>
           <el-button 
             v-else
             type="default" 
-            size="small"
+            size="large"
+            style="width: 100%;"
           >
             选择此酒店
           </el-button>
@@ -164,6 +182,7 @@
 import { ref, computed } from 'vue'
 import { useChatStore } from '@/stores/chat'
 import BudgetProgress from './BudgetProgress.vue'
+import { InfoFilled, House, Location, Phone, Select } from '@element-plus/icons-vue'
 
 const chatStore = useChatStore()
 
@@ -199,6 +218,17 @@ const previewAccommodationCost = computed(() => {
 // 计算总使用
 const budgetUsed = computed(() => {
   return budgetTransport.value + budgetAttractions.value + budgetFood.value + previewAccommodationCost.value
+})
+
+// 检查是否超支
+const isOverBudget = computed(() => {
+  return budgetUsed.value > budgetTotal.value
+})
+
+// 超支金额
+const overBudgetAmount = computed(() => {
+  if (!isOverBudget.value) return 0
+  return budgetUsed.value - budgetTotal.value
 })
 
 const getHotelTypeTag = (type) => {
@@ -271,7 +301,7 @@ const confirmSelection = () => {
   padding: 20px;
   background: #f9fafc;
   border-radius: 12px;
-  margin: 15px 0;
+  margin: 15px -16px;
   
   .selector-title {
     font-size: 18px;
@@ -286,10 +316,25 @@ const confirmSelection = () => {
     margin-bottom: 20px;
   }
   
-  .hotels-grid {
+  .budget-warning {
+    margin: 15px 0;
+    :deep(.el-alert__title) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    :deep(.el-alert__description) {
+      font-size: 14px;
+      line-height: 1.6;
+      strong {
+        color: #f56c6c;
+        font-size: 16px;
+      }
+    }
+  }
+  
+  .hotels-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 20px;
     
     .hotel-card {
@@ -297,18 +342,19 @@ const confirmSelection = () => {
       border: 2px solid #e4e7ed;
       border-radius: 12px;
       padding: 20px;
+      display: flex;
+      gap: 15px;
       cursor: pointer;
       transition: all 0.3s ease;
       
       &:hover {
         border-color: #409eff;
-        box-shadow: 0 4px 12px rgba(64, 158, 255, 0.2);
-        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(64, 158, 255, 0.15);
+        transform: translateX(5px);
       }
       
       &.premium {
         border-color: #f56c6c;
-        background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
       }
       
       &.selected {
@@ -317,160 +363,181 @@ const confirmSelection = () => {
         box-shadow: 0 4px 12px rgba(64, 158, 255, 0.3);
       }
       
-      .card-header {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #f0f2f5;
-        
-        .hotel-name {
-          font-size: 20px;
-          font-weight: 600;
-          color: #303133;
-          margin-bottom: 10px;
-        }
-
-        .hotel-badges {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          flex-wrap: wrap;
-        }
+      .card-number {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 20px;
+        flex-shrink: 0;
       }
       
-      .card-body {
-        margin-bottom: 15px;
+      .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         
-        .price-section {
-          background: #fff9f0;
-          border-radius: 8px;
-          padding: 12px;
-          margin-bottom: 15px;
-
-          .price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 14px;
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-
-            .label {
-              color: #909399;
-              font-weight: 500;
-            }
-
-            .value {
-              color: #303133;
+        .card-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 12px;
+          border-bottom: 2px solid #f0f2f5;
+          
+          .header-left {
+            flex: 1;
+            
+            .hotel-name {
+              font-size: 20px;
               font-weight: 600;
-
-              &.price {
-                color: #f56c6c;
-                font-size: 18px;
-              }
-
-              &.total-price {
-                color: #e6a23c;
-                font-size: 20px;
-              }
+              color: #303133;
+              margin-bottom: 8px;
             }
 
-            &.total {
-              margin-top: 8px;
-              padding-top: 8px;
-              border-top: 1px dashed #e4e7ed;
+            .hotel-badges {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+            }
+          }
+          
+          .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-left: 20px;
+            
+            .cost-label {
+              font-size: 12px;
+              color: #909399;
+            }
+            
+            .cost-value {
+              font-size: 24px;
+              font-weight: 700;
+              color: #f56c6c;
+            }
+            
+            .nights-info {
+              font-size: 11px;
+              color: #909399;
+              margin-top: 2px;
             }
           }
         }
-
-        .room-section,
-        .facilities-section,
-        .details-section,
-        .reason-section {
-          margin-bottom: 15px;
-
-          .section-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #606266;
-            margin-bottom: 10px;
-            padding-left: 8px;
-            border-left: 3px solid #409eff;
-          }
-
-          .info-text {
-            padding: 8px 12px;
-            background: #f5f7fa;
-            border-radius: 6px;
-            color: #303133;
-            font-size: 13px;
-          }
-
-          .facilities-tags {
+        
+        .card-info {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          
+          .info-item {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #606266;
+            
+            .el-icon {
+              color: #409eff;
+            }
+            
+            .label {
+              color: #909399;
+            }
+            
+            .value {
+              color: #303133;
+              font-weight: 500;
+            }
           }
-
-          .reason-text {
-            padding: 12px;
-            background: rgba(103, 194, 58, 0.08);
-            border-radius: 8px;
+        }
+        
+        .card-details {
+          background: #f5f7fa;
+          border-radius: 8px;
+          padding: 12px;
+          
+          .facilities-section,
+          .tags-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            
+            .section-label {
+              font-size: 13px;
+              color: #606266;
+              font-weight: 600;
+              min-width: 50px;
+              flex-shrink: 0;
+            }
+            
+            .facilities-tags,
+            .tags-list {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 5px;
+            }
+          }
+          
+          .info-details {
+            .detail-item {
+              display: flex;
+              margin-bottom: 6px;
+              font-size: 13px;
+              line-height: 1.6;
+              
+              .detail-label {
+                color: #909399;
+                min-width: 50px;
+                flex-shrink: 0;
+              }
+              
+              .detail-value {
+                color: #303133;
+                flex: 1;
+              }
+            }
+          }
+          
+          .reason-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(103, 194, 58, 0.1);
+            border-radius: 6px;
             color: #67c23a;
             font-size: 13px;
             line-height: 1.6;
             border-left: 3px solid #67c23a;
-          }
-        }
-
-        .details-section {
-          background: #f5f7fa;
-          border-radius: 8px;
-          padding: 12px;
-
-          .detail-row {
-            display: flex;
-            margin-bottom: 8px;
-            font-size: 13px;
-            line-height: 1.6;
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-
-            .detail-label {
-              color: #909399;
-              min-width: 80px;
+            
+            .el-icon {
               flex-shrink: 0;
-              font-weight: 500;
-            }
-
-            .detail-value {
-              color: #303133;
-              flex: 1;
-            }
-
-            &.tags {
-              flex-wrap: wrap;
-              gap: 5px;
-
-              .detail-value {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 5px;
-              }
+              margin-top: 2px;
             }
           }
         }
       }
       
-      .card-footer {
+      .card-action {
         display: flex;
-        justify-content: center;
-        padding-top: 10px;
-        border-top: 1px solid #f0f2f5;
+        align-items: center;
+        padding-left: 15px;
+        border-left: 2px solid #f0f2f5;
+        
+        .el-button {
+          min-width: 120px;
+        }
       }
     }
   }

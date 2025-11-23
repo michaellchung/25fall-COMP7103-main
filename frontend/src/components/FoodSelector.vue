@@ -15,6 +15,22 @@
       :show-breakdown="true"
     />
     
+    <!-- 超支警告 -->
+    <el-alert
+      v-if="isOverBudget"
+      type="error"
+      :closable="false"
+      show-icon
+      class="budget-warning"
+    >
+      <template #title>
+        ⚠️ 预算超支警告
+      </template>
+      <template #default>
+        当前美食选择将超支 <strong>¥{{ overBudgetAmount }}</strong>，建议选择更实惠的餐厅或调整总预算。
+      </template>
+    </el-alert>
+    
     <div class="daily-food">
       <div 
         v-for="(restaurants, day) in dailyRestaurants" 
@@ -185,6 +201,17 @@ const budgetUsed = computed(() => {
   return budgetTransport.value + budgetAttractions.value + previewFoodCost.value + budgetAccommodation.value
 })
 
+// 检查是否超支
+const isOverBudget = computed(() => {
+  return budgetUsed.value > budgetTotal.value
+})
+
+// 超支金额
+const overBudgetAmount = computed(() => {
+  if (!isOverBudget.value) return 0
+  return budgetUsed.value - budgetTotal.value
+})
+
 const confirmSelection = () => {
   // 更新预算
   chatStore.updateBudget('food', previewFoodCost.value)
@@ -209,7 +236,9 @@ const requestModification = () => {
   padding: 20px;
   background: #f9fafc;
   border-radius: 12px;
-  margin: 15px 0;
+  margin: 15px -16px;
+  width: calc(100% + 32px);
+  max-width: none;
   
   .selector-title {
     font-size: 18px;
@@ -222,6 +251,22 @@ const requestModification = () => {
     font-size: 14px;
     color: #606266;
     margin-bottom: 20px;
+  }
+  
+  .budget-warning {
+    margin: 15px 0;
+    :deep(.el-alert__title) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    :deep(.el-alert__description) {
+      font-size: 14px;
+      line-height: 1.6;
+      strong {
+        color: #f56c6c;
+        font-size: 16px;
+      }
+    }
   }
   
   .daily-food {
@@ -251,26 +296,27 @@ const requestModification = () => {
       
       .restaurants-list {
         display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 15px;
         
         .restaurant-card {
           background: white;
           border: 2px solid #e4e7ed;
           border-radius: 12px;
-          padding: 20px;
+          padding: 15px;
           display: flex;
-          gap: 15px;
+          gap: 12px;
           transition: all 0.3s ease;
           
           &:hover {
             border-color: #f5576c;
             box-shadow: 0 4px 12px rgba(245, 87, 108, 0.15);
-            transform: translateX(5px);
+            transform: translateY(-2px);
           }
           
           .card-number {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             border-radius: 50%;
@@ -278,45 +324,48 @@ const requestModification = () => {
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             flex-shrink: 0;
           }
           
           .card-content {
             flex: 1;
+            min-width: 0;
             
             .restaurant-header {
               display: flex;
-              align-items: center;
+              align-items: flex-start;
               justify-content: space-between;
-              margin-bottom: 12px;
-              flex-wrap: wrap;
+              margin-bottom: 10px;
               gap: 10px;
               
               .restaurant-name {
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: 600;
                 color: #303133;
+                flex: 1;
+                line-height: 1.3;
               }
 
               .restaurant-badges {
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                gap: 8px;
+                flex-shrink: 0;
               }
             }
             
             .restaurant-info {
               display: flex;
-              gap: 20px;
-              margin-bottom: 15px;
+              gap: 15px;
+              margin-bottom: 10px;
               flex-wrap: wrap;
               
               .info-item {
                 display: flex;
                 align-items: center;
                 gap: 5px;
-                font-size: 14px;
+                font-size: 13px;
                 color: #606266;
                 
                 .el-icon {
@@ -326,42 +375,39 @@ const requestModification = () => {
                 &.price {
                   font-weight: 600;
                   color: #f56c6c;
-                  font-size: 16px;
+                  font-size: 14px;
                 }
               }
             }
 
             .restaurant-details {
-              background: #fff7f0;
-              border-radius: 8px;
-              padding: 12px;
-              margin-bottom: 12px;
-
+              background: #f5f7fa;
+              border-radius: 6px;
+              padding: 10px;
+              
               .detail-row {
-                display: flex;
-                margin-bottom: 8px;
-                font-size: 13px;
-                line-height: 1.6;
-
+                margin-bottom: 6px;
+                font-size: 12px;
+                line-height: 1.5;
+                
                 &:last-child {
                   margin-bottom: 0;
                 }
-
+                
                 .detail-label {
                   color: #909399;
-                  min-width: 90px;
-                  flex-shrink: 0;
-                  font-weight: 500;
                 }
-
+                
                 .detail-value {
                   color: #303133;
-                  flex: 1;
                 }
-
+                
                 &.tags {
-                  flex-wrap: wrap;
-                  gap: 5px;
+                  .detail-value {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 4px;
+                  }
                 }
               }
             }

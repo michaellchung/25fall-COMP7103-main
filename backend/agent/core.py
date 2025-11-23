@@ -651,10 +651,14 @@ class AgentCore:
             # 添加餐厅（尝试字符串和整数键）
             restaurants = food_by_day.get(day_str, food_by_day.get(int(day_str) if day_str.isdigit() else 0, []))
             logger.info(f"第{day_str}天餐厅数: {len(restaurants)}")
-            for rest in restaurants:
+            for idx, rest in enumerate(restaurants):
+                # 根据索引判断是午餐还是晚餐（偶数索引=午餐，奇数索引=晚餐）
+                meal_type = "午餐" if idx % 2 == 0 else "晚餐"
+                meal_time = "12:00-13:30" if meal_type == "午餐" else "18:00-19:30"
+                
                 schedule.append({
-                    "time": "12:00-13:30",  # 简化处理
-                    "type": rest.get("meal_type", "午餐"),
+                    "time": meal_time,
+                    "type": meal_type,
                     "name": rest.get("name", "未知"),
                     "cost": rest.get("avg_price", 0),
                     "reason": rest.get("reason", "")
