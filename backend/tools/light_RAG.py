@@ -16,7 +16,7 @@ LLM_SEMAPHORE = asyncio.Semaphore(2)
 API_KEY = "your api key"
 BASE_URL = "your base url"
 MODEL = "MODEL NAME"
-WORKING_DIR = "./rag_storage_transport"
+WORKING_DIR = "../rag_storage_transport"
 
 # 创建工作目录
 if not os.path.exists(WORKING_DIR):

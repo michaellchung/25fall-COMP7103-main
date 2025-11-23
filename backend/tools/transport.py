@@ -7,7 +7,7 @@ import requests
 import json
 from urllib.parse import quote
 from datetime import datetime, timedelta
-from backend.rag.light_RAG import *
+from backend.tools.light_RAG import *
 
 @dataclass
 class TransportOption:
@@ -64,17 +64,17 @@ class TransportTool:
             "_jc_save_toDate": "2025-11-18",
             "_jc_save_toStation": f"{encoded_to_station},{json_data[to_station]}",  # 使用编码后的中文字符
             "_jc_save_wfdc_flag": "dc",
-            "_uab_collina": "",
-            "BIGipServerotn": "",
-            "BIGipServerpassport": "",
-            "BIGipServerportal": "",
+            "_uab_collina": "176346352154205053402305",
+            "BIGipServerotn": "1356398858.24610.0000",
+            "BIGipServerpassport": "887619850.50215.0000",
+            "BIGipServerportal": "3168010506.16671.0000",
             "cursorStatus": "off",
             "guidesStatus": "off",
             "highContrastMode": "defaltMode",
-            "JSESSIONID": "your JSESSIONID",
-            "route": "your route",
-            "tk": "your tk",
-            "uKey": "your ukey"
+            "JSESSIONID": "8142E5C3BA56F7C0B45E57044C7311B2",
+            "route": "9036359bb8a8a461c164a04f8f50b252",
+            "tk": "wNHcke_2RhjWZoS0oXj_M4-vuDhw9vB8NpVx7EN3biImkm1m0",
+            "uKey": "6029b38a3f52e3816798224792faa465ed6dd025e90b93eb39b7883ef4b25309"
         }
         self.train_headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0"
@@ -260,8 +260,10 @@ class TransportTool:
             for train in train_type:
                 for seat_type, leftTicket in train["typelist"].items():
                     # 拆分小时和分钟
-                    if leftTicket=="无" or leftTicket=='':
-                        continue
+                    if leftTicket != "有":
+                        # 没票、为空的垃圾数据、票数少于出行人数的都跳过
+                        if leftTicket=="无" or leftTicket=='' or int(leftTicket) < self.companions_count:
+                            continue
                     duration = train['历时']
                     hours, minutes = map(int, duration.split(':'))
                     duration = round(hours + minutes / 60,2)
@@ -363,7 +365,8 @@ def get_transport_tool() -> TransportTool:
         _transport_tool = TransportTool(
             departure_city="广州",
             destination_city="杭州",
-            date = "2025-11-26"     # 格式为XXXX-xx-xx
+            date = "2025-11-26",     # 格式为XXXX-xx-xx
+            user_preference="去杭州能坐火车吗？我想睡卧铺，推荐一下？"
         )
     return _transport_tool
 
