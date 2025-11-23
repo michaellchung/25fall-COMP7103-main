@@ -1,0 +1,1006 @@
+{
+  "transport-广州-to-杭州": {
+    "relation_pairs": [
+      [
+        "G818",
+        "Guangzhou South Station"
+      ],
+      [
+        "G1302",
+        "Second Class Seat"
+      ],
+      [
+        "Travel Duration",
+        "Z100"
+      ],
+      [
+        "First Class Seat",
+        "Train Option 51"
+      ],
+      [
+        "1291 Yuan",
+        "G3072"
+      ],
+      [
+        "G3068",
+        "Train Option 25"
+      ],
+      [
+        "Hangzhou",
+        "Hangzhou West Station"
+      ],
+      [
+        "Hangzhou Station",
+        "Train Option 18"
+      ],
+      [
+        "T170",
+        "Train Option 17"
+      ],
+      [
+        "D3121",
+        "Train Option 23"
+      ],
+      [
+        "Hangzhou South Station",
+        "Train Option 19"
+      ],
+      [
+        "G1404",
+        "No Seat"
+      ],
+      [
+        "G800",
+        "Ticket Price"
+      ],
+      [
+        "G3068",
+        "Guangzhou East Station"
+      ],
+      [
+        "15 hours 28 minutes",
+        "T170"
+      ],
+      [
+        "681 Yuan Per Person",
+        "Flight From Guangzhou To Hangzhou"
+      ],
+      [
+        "Hard Sleeper",
+        "Z100"
+      ],
+      [
+        "173 Yuan Per Person",
+        "Train"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Train Option 19"
+      ],
+      [
+        "K528",
+        "No Seat"
+      ],
+      [
+        "Hangzhou West Station",
+        "Train Option 24"
+      ],
+      [
+        "G1184",
+        "Train Option 49"
+      ],
+      [
+        "First-Class Seat",
+        "High-Speed Rail"
+      ],
+      [
+        "Hard Seat",
+        "Ticket Price"
+      ],
+      [
+        "G3072",
+        "Guangzhou Xintang Station"
+      ],
+      [
+        "Hangzhou South Station",
+        "Train Service From Guangzhou To Hangzhou"
+      ],
+      [
+        "G3068",
+        "Second Class Seat"
+      ],
+      [
+        "Hangzhou Station",
+        "K210"
+      ],
+      [
+        "Hangzhou South Station",
+        "K210"
+      ],
+      [
+        "Hangzhou South Station",
+        "Z100"
+      ],
+      [
+        "Soft Sleeper",
+        "Ticket Price"
+      ],
+      [
+        "Flight Option 5",
+        "Guangzhou Airport"
+      ],
+      [
+        "Airplane",
+        "Flight From Guangzhou To Hangzhou"
+      ],
+      [
+        "D3121",
+        "Guangzhou East Station"
+      ],
+      [
+        "Business Class Seat",
+        "High-Speed Rail"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "K210"
+      ],
+      [
+        "G820",
+        "Second Class Seat"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Train Option 21"
+      ],
+      [
+        "China Eastern Airlines",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "G820",
+        "No Seat"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Z100"
+      ],
+      [
+        "1444 Yuan Ticket",
+        "G1184"
+      ],
+      [
+        "Flight Option 2",
+        "Guangzhou Airport"
+      ],
+      [
+        "G818",
+        "No Seat"
+      ],
+      [
+        "G1184",
+        "Guangzhou South Station"
+      ],
+      [
+        "3018 Yuan Ticket",
+        "G820"
+      ],
+      [
+        "189 Cny Per Person",
+        "Z100"
+      ],
+      [
+        "Guangzhou",
+        "Hangzhou"
+      ],
+      [
+        "G3072",
+        "Zengcheng Station"
+      ],
+      [
+        "Flight Option 3",
+        "Guangzhou Airport"
+      ],
+      [
+        "K512",
+        "Travel Duration"
+      ],
+      [
+        "G3068",
+        "Train Option 52"
+      ],
+      [
+        "First Class Seat",
+        "High-Speed Rail"
+      ],
+      [
+        "745 Yuan Per Person",
+        "Flight From Guangzhou To Hangzhou"
+      ],
+      [
+        "China Eastern Airlines",
+        "Flight Option 2"
+      ],
+      [
+        "Soft Sleeper",
+        "Train Option 20"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Hangzhou South Station"
+      ],
+      [
+        "Hard Seat",
+        "K512"
+      ],
+      [
+        "Flight",
+        "Transportation Options From Guangzhou To Hangzhou"
+      ],
+      [
+        "Flight Option 5",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "Price Range",
+        "Transportation Options From Guangzhou To Hangzhou"
+      ],
+      [
+        "Hangzhou Xiaoshan International Airport",
+        "Juneyao Airlines"
+      ],
+      [
+        "Departure Time",
+        "K512"
+      ],
+      [
+        "6 Hour 49 Minute Trip",
+        "G3068"
+      ],
+      [
+        "Standing Room Only",
+        "Train Option 25"
+      ],
+      [
+        "Flight Option 2",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "690 Yuan Per Person",
+        "Flight From Guangzhou To Hangzhou"
+      ],
+      [
+        "First-Class Seat",
+        "G1404"
+      ],
+      [
+        "G800",
+        "Guangzhou To Hangzhou High-Speed Rail"
+      ],
+      [
+        "No Seat",
+        "Ticket Price"
+      ],
+      [
+        "Train Option 16",
+        "Z100"
+      ],
+      [
+        "Second Class Seat",
+        "Train Option 48"
+      ],
+      [
+        "1380 Yuan",
+        "G820"
+      ],
+      [
+        "Flight Option 3",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "G3078",
+        "Hangzhou West Station"
+      ],
+      [
+        "Train",
+        "Transportation Options From Guangzhou To Hangzhou"
+      ],
+      [
+        "Flight Option 6",
+        "Juneyao Airlines"
+      ],
+      [
+        "815 Yuan Fare",
+        "G3068"
+      ],
+      [
+        "Second-Class Seat",
+        "Train Option 22"
+      ],
+      [
+        "8 Hour 48 Minute Trip",
+        "G3072"
+      ],
+      [
+        "Guangzhou East Station",
+        "Train Option 25"
+      ],
+      [
+        "3018 Yuan Ticket",
+        "G1302"
+      ],
+      [
+        "G1184",
+        "Train Option 48"
+      ],
+      [
+        "Second-Class Seat",
+        "Train Option 24"
+      ],
+      [
+        "CA1234",
+        "China Eastern Airlines"
+      ],
+      [
+        "G1404",
+        "Second Class Seat"
+      ],
+      [
+        "Hard Sleeper",
+        "K210"
+      ],
+      [
+        "Second Class Seat",
+        "Train Option 47"
+      ],
+      [
+        "K210",
+        "Train Option 14"
+      ],
+      [
+        "Hangzhou East Station",
+        "Train Option 22"
+      ],
+      [
+        "First Class Seat",
+        "Train Option 50"
+      ],
+      [
+        "Flight Option 6",
+        "Guangzhou Airport"
+      ],
+      [
+        "Arrival Time",
+        "K210"
+      ],
+      [
+        "G3068",
+        "Standing Seat"
+      ],
+      [
+        "Hangzhou South Station",
+        "Train Option 21"
+      ],
+      [
+        "Arrival Time",
+        "Z100"
+      ],
+      [
+        "1380 Yuan",
+        "G822"
+      ],
+      [
+        "6 Hour 22 Minute Trip",
+        "G3068"
+      ],
+      [
+        "1380 Yuan",
+        "G1302"
+      ],
+      [
+        "Guangzhou",
+        "Guangzhou East Station"
+      ],
+      [
+        "G1302",
+        "Guangzhou To Hangzhou High-Speed Rail"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Train"
+      ],
+      [
+        "G822",
+        "Hangzhou East Station"
+      ],
+      [
+        "G3072",
+        "Hangzhou West Station"
+      ],
+      [
+        "G818",
+        "Second Class Seat"
+      ],
+      [
+        "K512",
+        "Train Option 15"
+      ],
+      [
+        "Guangzhou",
+        "Guangzhou Baiyun Station"
+      ],
+      [
+        "Airplane",
+        "Travel Recommendation"
+      ],
+      [
+        "173 Yuan Per Person",
+        "T170"
+      ],
+      [
+        "Flight Option 6",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "Guangzhou East Station",
+        "Train Option 22"
+      ],
+      [
+        "Hard Seat",
+        "K528"
+      ],
+      [
+        "G3068",
+        "Train Option 51"
+      ],
+      [
+        "Guangzhou East Station",
+        "Train Option 24"
+      ],
+      [
+        "K210",
+        "Train Option 18"
+      ],
+      [
+        "K210",
+        "Train Option 19"
+      ],
+      [
+        "T170",
+        "Travel Duration"
+      ],
+      [
+        "Flight Option 4",
+        "Guangzhou Airport"
+      ],
+      [
+        "G822",
+        "Train Option 47"
+      ],
+      [
+        "G3068",
+        "Train Option 24"
+      ],
+      [
+        "K210",
+        "Train Option 13"
+      ],
+      [
+        "G3078",
+        "Travel Duration"
+      ],
+      [
+        "High Speed Rail",
+        "Second Class Seat"
+      ],
+      [
+        "Flight Option 4",
+        "Hainan Airlines"
+      ],
+      [
+        "K512",
+        "Train Option 20"
+      ],
+      [
+        "First-Class Seat",
+        "G800"
+      ],
+      [
+        "Guangzhou South Station",
+        "Hangzhou West Station"
+      ],
+      [
+        "G800",
+        "Guangzhou Xintang Station"
+      ],
+      [
+        "D3121",
+        "Train Option 22"
+      ],
+      [
+        "First-Class Seat",
+        "G3072"
+      ],
+      [
+        "G822",
+        "Guangzhou South Station"
+      ],
+      [
+        "Train",
+        "Travel Recommendation"
+      ],
+      [
+        "G3078",
+        "Guangzhou East Station"
+      ],
+      [
+        "Chengdu Airlines",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "CA1234",
+        "Travel Duration"
+      ],
+      [
+        "Hard Seat",
+        "T170"
+      ],
+      [
+        "High Speed Rail",
+        "Standing Room Only"
+      ],
+      [
+        "Guangzhou South Station",
+        "Hangzhou East Station"
+      ],
+      [
+        "1340 Yuan",
+        "G800"
+      ],
+      [
+        "173 Cny Per Person",
+        "T170"
+      ],
+      [
+        "Soft Sleeper",
+        "T170"
+      ],
+      [
+        "China Eastern Airlines",
+        "Flight Option 3"
+      ],
+      [
+        "Departure Time",
+        "T170"
+      ],
+      [
+        "Flight Option 4",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "G822",
+        "Travel Duration"
+      ],
+      [
+        "173 Yuan Ticket",
+        "K528"
+      ],
+      [
+        "G800",
+        "Hangzhou East Station"
+      ],
+      [
+        "Flight Option 1",
+        "Guangzhou Airport"
+      ],
+      [
+        "Hangzhou East Station",
+        "Train Option 23"
+      ],
+      [
+        "Hangzhou",
+        "High-Speed Rail"
+      ],
+      [
+        "Hard Sleeper",
+        "K512"
+      ],
+      [
+        "Hangzhou South Station",
+        "Train"
+      ],
+      [
+        "Soft Sleeper",
+        "Train Option 18"
+      ],
+      [
+        "G3072",
+        "Travel Duration"
+      ],
+      [
+        "173 Yuan Per Person",
+        "K528"
+      ],
+      [
+        "Soft Sleeper",
+        "Train Option 19"
+      ],
+      [
+        "First-Class Seat",
+        "G1302"
+      ],
+      [
+        "Hangzhou South Station",
+        "K512"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Train Option 20"
+      ],
+      [
+        "Hard Seat",
+        "K210"
+      ],
+      [
+        "Hard Seat",
+        "Z100"
+      ],
+      [
+        "Flight Option 7",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "Standing Room Only",
+        "T170"
+      ],
+      [
+        "G3072",
+        "Guangzhou East Station"
+      ],
+      [
+        "Departure Time",
+        "K210"
+      ],
+      [
+        "G1404",
+        "Guangzhou To Hangzhou High-Speed Rail"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "K512"
+      ],
+      [
+        "Guangzhou",
+        "High-Speed Rail"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "K528"
+      ],
+      [
+        "Departure Time",
+        "Z100"
+      ],
+      [
+        "G800",
+        "Guangzhou Xinzhuang Station"
+      ],
+      [
+        "Flight Option 1",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "Budget Priority",
+        "K528"
+      ],
+      [
+        "Train Option 21",
+        "Z100"
+      ],
+      [
+        "1380 Yuan Ticket",
+        "G822"
+      ],
+      [
+        "CA1234",
+        "China International Airlines"
+      ],
+      [
+        "G3072",
+        "Second Class Seat"
+      ],
+      [
+        "Hangzhou",
+        "Hangzhou Station"
+      ],
+      [
+        "189 Cny Per Person",
+        "K512"
+      ],
+      [
+        "First Class Seat",
+        "Train Option 52"
+      ],
+      [
+        "G1302",
+        "Hangzhou East Station"
+      ],
+      [
+        "G3068",
+        "Guangzhou Xintang Station"
+      ],
+      [
+        "G3078",
+        "Ticket Price"
+      ],
+      [
+        "8 Hour 20 Minute Trip",
+        "G3072"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Hangzhou Station"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "T170"
+      ],
+      [
+        "Hard Sleeper",
+        "Ticket Price"
+      ],
+      [
+        "Transportation Options From Guangzhou To Hangzhou",
+        "Travel Duration"
+      ],
+      [
+        "G820",
+        "Guangzhou To Hangzhou High-Speed Rail"
+      ],
+      [
+        "Chengdu Airlines",
+        "Flight Option 5"
+      ],
+      [
+        "First-Class Seat",
+        "G820"
+      ],
+      [
+        "G1404",
+        "Hangzhou East Station"
+      ],
+      [
+        "First Class Seat",
+        "Train Option 53"
+      ],
+      [
+        "CA1234",
+        "Guangzhou Airport"
+      ],
+      [
+        "G818",
+        "Guangzhou To Hangzhou High-Speed Rail"
+      ],
+      [
+        "G800",
+        "Travel Duration"
+      ],
+      [
+        "G3068",
+        "Hangzhou West Station"
+      ],
+      [
+        "Train Option 11",
+        "Z100"
+      ],
+      [
+        "No Seat",
+        "Z100"
+      ],
+      [
+        "CA1234",
+        "China Southern Airlines"
+      ],
+      [
+        "Hangzhou",
+        "Hangzhou East Station"
+      ],
+      [
+        "China Eastern Airlines",
+        "Flight Option 7"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Train Option 18"
+      ],
+      [
+        "Beijing Capital Airlines",
+        "Flight Option 1"
+      ],
+      [
+        "Hangzhou Station",
+        "Train Service From Guangzhou To Hangzhou"
+      ],
+      [
+        "G800",
+        "Guangzhou East Station"
+      ],
+      [
+        "G3072",
+        "Train Option 53"
+      ],
+      [
+        "Flight Option 7",
+        "Guangzhou Airport"
+      ],
+      [
+        "Beijing Capital Airlines",
+        "Guangzhou Airport"
+      ],
+      [
+        "K210",
+        "Standing Room Only"
+      ],
+      [
+        "CA1234",
+        "Time Priority"
+      ],
+      [
+        "G820",
+        "Hangzhou East Station"
+      ],
+      [
+        "D3121",
+        "Train Option 50"
+      ],
+      [
+        "17 hours 31 minutes",
+        "K528"
+      ],
+      [
+        "No Seat",
+        "Train Option 49"
+      ],
+      [
+        "Guangzhou Baiyun Station",
+        "Train Service From Guangzhou To Hangzhou"
+      ],
+      [
+        "Hangzhou",
+        "Hangzhou South Station"
+      ],
+      [
+        "Hangzhou South Station",
+        "Train Option 20"
+      ],
+      [
+        "G818",
+        "Hangzhou East Station"
+      ],
+      [
+        "G1302",
+        "Guangzhou South Station"
+      ],
+      [
+        "G800",
+        "No Seat"
+      ],
+      [
+        "CA1234",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "First-Class Seat",
+        "G822"
+      ],
+      [
+        "D3121",
+        "Hangzhou East Station"
+      ],
+      [
+        "G3072",
+        "Ticket Price"
+      ],
+      [
+        "Hainan Airlines",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "Hangzhou West Station",
+        "Train Option 25"
+      ],
+      [
+        "3018 Yuan Ticket",
+        "G1404"
+      ],
+      [
+        "G1404",
+        "Guangzhou South Station"
+      ],
+      [
+        "Arrival Time",
+        "K512"
+      ],
+      [
+        "Hangzhou South Station",
+        "K528"
+      ],
+      [
+        "G3068",
+        "Guangzhou Xinzhuang Station"
+      ],
+      [
+        "T170",
+        "Train Option 12"
+      ],
+      [
+        "Standing Room Only",
+        "Train Option 23"
+      ],
+      [
+        "Beijing Capital Airlines",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "173 Cny Per Person",
+        "K210"
+      ],
+      [
+        "Soft Sleeper",
+        "Train Option 21"
+      ],
+      [
+        "Hard Sleeper",
+        "T170"
+      ],
+      [
+        "815 Yuan Fare",
+        "G3072"
+      ],
+      [
+        "G3078",
+        "Guangzhou Xintang Station"
+      ],
+      [
+        "K210",
+        "Travel Duration"
+      ],
+      [
+        "G3072",
+        "Standing Seat"
+      ],
+      [
+        "Guangzhou East Station",
+        "Train Option 23"
+      ],
+      [
+        "G1184",
+        "Hangzhou West Station"
+      ],
+      [
+        "Hangzhou South Station",
+        "T170"
+      ],
+      [
+        "Arrival Time",
+        "T170"
+      ],
+      [
+        "Guangzhou Airport",
+        "Hangzhou Xiaoshan International Airport"
+      ],
+      [
+        "1380 Yuan",
+        "G1404"
+      ],
+      [
+        "G820",
+        "Guangzhou South Station"
+      ]
+    ],
+    "count": 249,
+    "create_time": 1763902908,
+    "update_time": 1763902908,
+    "_id": "transport-广州-to-杭州"
+  }
+}

@@ -1,0 +1,3448 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d13" for="edge" attr.name="truncate" attr.type="string" />
+  <key id="d12" for="edge" attr.name="created_at" attr.type="long" />
+  <key id="d11" for="edge" attr.name="file_path" attr.type="string" />
+  <key id="d10" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d9" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d8" for="edge" attr.name="description" attr.type="string" />
+  <key id="d7" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d6" for="node" attr.name="truncate" attr.type="string" />
+  <key id="d5" for="node" attr.name="created_at" attr.type="long" />
+  <key id="d4" for="node" attr.name="file_path" attr.type="string" />
+  <key id="d3" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d2" for="node" attr.name="description" attr.type="string" />
+  <key id="d1" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_id" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="Guangzhou">
+      <data key="d0">Guangzhou</data>
+      <data key="d1">location</data>
+      <data key="d2">Guangzhou is the departure city for various transportation options to Hangzhou.&lt;SEP&gt;Guangzhou is a city in China where several trains depart from to reach destinations in Hangzhou.&lt;SEP&gt;Guangzhou is a city in southern China and a starting point for high-speed rail services to Hangzhou.&lt;SEP&gt;Guangzhou is a city in China and the departure point for高铁services to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="Hangzhou">
+      <data key="d0">Hangzhou</data>
+      <data key="d1">location</data>
+      <data key="d2">Hangzhou is the destination city for transportation originating from Guangzhou.&lt;SEP&gt;Hangzhou is a city in China that is the destination for multiple train services originating in Guangzhou.&lt;SEP&gt;Hangzhou is a city in eastern China and the destination for high-speed rail services from Guangzhou.&lt;SEP&gt;Hangzhou is a city in China and the destination for高铁services from Guangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="Beijing Capital Airlines">
+      <data key="d0">Beijing Capital Airlines</data>
+      <data key="d1">organization</data>
+      <data key="d2">Beijing Capital Airlines operates one of the flights from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="China Eastern Airlines">
+      <data key="d0">China Eastern Airlines</data>
+      <data key="d1">organization</data>
+      <data key="d2">China Eastern Airlines operates multiple flights from Guangzhou to Hangzhou.&lt;SEP&gt;China Eastern Airlines is an airline company operating a flight from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="Hainan Airlines">
+      <data key="d0">Hainan Airlines</data>
+      <data key="d1">organization</data>
+      <data key="d2">Hainan Airlines operates a flight from Guangzhou to Hangzhou with a specific departure and arrival time.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="Chengdu Airlines">
+      <data key="d0">Chengdu Airlines</data>
+      <data key="d1">organization</data>
+      <data key="d2">Chengdu Airlines operates a flight from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="Juneyao Airlines">
+      <data key="d0">Juneyao Airlines</data>
+      <data key="d1">organization</data>
+      <data key="d2">Juneyao Airlines operates a flight from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou Airport">
+      <data key="d0">Guangzhou Airport</data>
+      <data key="d1">location</data>
+      <data key="d2">Guangzhou Airport is the departure airport for flights from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902401</data>
+      <data key="d6" />
+    </node>
+    <node id="Hangzhou Xiaoshan International Airport">
+      <data key="d0">Hangzhou Xiaoshan International Airport</data>
+      <data key="d1">location</data>
+      <data key="d2">Hangzhou Xiaoshan International Airport is the arrival airport for flights from Guangzhou.&lt;SEP&gt;Hangzhou Xiaoshan International Airport is the arrival airport for flights from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902407</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight">
+      <data key="d0">Flight</data>
+      <data key="d1">category</data>
+      <data key="d2">Flight is a mode of transportation between Guangzhou and Hangzhou, with 11 options available.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902407</data>
+      <data key="d6" />
+    </node>
+    <node id="Train">
+      <data key="d0">Train</data>
+      <data key="d1">category</data>
+      <data key="d2">Train or high-speed rail is a transportation option between Guangzhou and Hangzhou, with 65 available services.&lt;SEP&gt;Train refers to the mode of transportation offering affordable and stable travel from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902410</data>
+      <data key="d6" />
+    </node>
+    <node id="Transportation Options From Guangzhou To Hangzhou">
+      <data key="d0">Transportation Options From Guangzhou To Hangzhou</data>
+      <data key="d1">category</data>
+      <data key="d2">The full set of transportation options from Guangzhou to Hangzhou includes 76 total services combining flights and trains.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902410</data>
+      <data key="d6" />
+    </node>
+    <node id="Price Range">
+      <data key="d0">Price Range</data>
+      <data key="d1">data</data>
+      <data key="d2">The price for travel from Guangzhou to Hangzhou ranges from 173 yuan to 3018 yuan.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902413</data>
+      <data key="d6" />
+    </node>
+    <node id="Travel Duration">
+      <data key="d0">Travel Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">The travel time from Guangzhou to Hangzhou varies from 1 hour 45 minutes to 21 hours 16 minutes.&lt;SEP&gt;Travel Duration is the total time taken for a train journey, such as 14 hours 26 minutes or 21 hours 16 minutes.&lt;SEP&gt;Travel Duration refers to the time taken for high-speed train journeys, ranging from 5 hours 58 minutes to 8 hours 7 minutes.&lt;SEP&gt;Travel Duration refers to the time required for a journey from Guangzhou to Hangzhou by different transportation modes.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902413</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight Option 1">
+      <data key="d0">Flight Option 1</data>
+      <data key="d1">content</data>
+      <data key="d2">Flight Option 1 is a specific flight service from Guangzhou to Hangzhou operated by Beijing Capital Airlines, with a departure at 09:00 and arrival at 08:45, flight duration of 1 hour 45 minutes, and a ticket price of 506 yuan per person.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902415</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight Option 2">
+      <data key="d0">Flight Option 2</data>
+      <data key="d1">content</data>
+      <data key="d2">Flight Option 2 is a specific flight service from Guangzhou to Hangzhou operated by China Eastern Airlines, with a departure at 09:00 and arrival at 13:39, flight duration of 1 hour 49 minutes, and a ticket price of 653 yuan per person.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902417</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight Option 3">
+      <data key="d0">Flight Option 3</data>
+      <data key="d1">content</data>
+      <data key="d2">Flight Option 3 is a specific flight service from Guangzhou to Hangzhou operated by China Eastern Airlines, with a departure at 09:00 and arrival at 13:15, flight duration of 2 hours, and a ticket price of 653 yuan per person.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902418</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight Option 4">
+      <data key="d0">Flight Option 4</data>
+      <data key="d1">content</data>
+      <data key="d2">Flight Option 4 is a specific flight service from Guangzhou to Hangzhou operated by Hainan Airlines, with a departure at 09:00 and arrival at 13:05, flight duration of 1 hour 55 minutes, and a ticket price of 653 yuan per person.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902420</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight Option 5">
+      <data key="d0">Flight Option 5</data>
+      <data key="d1">content</data>
+      <data key="d2">Flight Option 5 is a specific flight service from Guangzhou to Hangzhou operated by Chengdu Airlines, with a departure at 09:00 and arrival at 13:39, flight duration of 1 hour 49 minutes, and a ticket price of 653 yuan per person.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902422</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight Option 6">
+      <data key="d0">Flight Option 6</data>
+      <data key="d1">content</data>
+      <data key="d2">Flight Option 6 is a specific flight service from Guangzhou to Hangzhou operated by Juneyao Airlines, with a departure at 09:00 and arrival at 13:39, flight duration of 1 hour 49 minutes, and a ticket price of 653 yuan per person.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902423</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight Option 7">
+      <data key="d0">Flight Option 7</data>
+      <data key="d1">content</data>
+      <data key="d2">Flight Option 7 is a specific flight service from Guangzhou to Hangzhou operated by China Eastern Airlines, with a departure at 09:00 and arrival at 13:35, flight duration of 2 hours, and a ticket price of 681 yuan per person.</data>
+      <data key="d3">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902425</data>
+      <data key="d6" />
+    </node>
+    <node id="Hard Seat">
+      <data key="d0">Hard Seat</data>
+      <data key="d1">category</data>
+      <data key="d2">Hard seat is a seating class available on trains such as K528 and T170 from Guangzhou to Hangzhou.&lt;SEP&gt;Hard Seat is a seating class available on multiple train services between Guangzhou and Hangzhou, offering basic seating accommodation.&lt;SEP&gt;Hard Seat is a seating class available on trains, offering basic seating accommodation.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902426</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou Baiyun Station">
+      <data key="d0">Guangzhou Baiyun Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Guangzhou Baiyun Station is the departure railway station for train K528 and T170 heading to Hangzhou.&lt;SEP&gt;Guangzhou Baiyun Station is the departure station for multiple train services to Hangzhou.&lt;SEP&gt;Guangzhou Baiyun Station is a railway station serving as the departure point for multiple train routes to Hangzhou.&lt;SEP&gt;Guangzhou Baiyun Station is a railway station in Guangzhou serving as a departure point for several conventional train services to Hangzhou.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902428</data>
+      <data key="d6" />
+    </node>
+    <node id="Hangzhou South Station">
+      <data key="d0">Hangzhou South Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Hangzhou South Station is the arrival railway station for train K528 and T170 coming from Guangzhou.&lt;SEP&gt;Hangzhou South Station is a destination station for train services T170, K210, K512, and Z100 from Guangzhou Baiyun Station.&lt;SEP&gt;Hangzhou South Station is a railway station serving as the arrival point for several train services from Guangzhou.&lt;SEP&gt;Hangzhou South Station is a railway station serving as a destination for multiple train routes from Guangzhou.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902431</data>
+      <data key="d6" />
+    </node>
+    <node id="Hangzhou Station">
+      <data key="d0">Hangzhou Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Hangzhou Station is a destination station for train service K210 from Guangzhou Baiyun Station.&lt;SEP&gt;Hangzhou Station is a major railway station in Hangzhou, serving as an arrival destination for some trains from Guangzhou.&lt;SEP&gt;Hangzhou Station is a railway station in Hangzhou that receives train services from Guangzhou Baiyun Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902431</data>
+      <data key="d6" />
+    </node>
+    <node id="Z100">
+      <data key="d0">Z100</data>
+      <data key="d1">artifact</data>
+      <data key="d2">Z100 is a train service operating from Guangzhou Baiyun Station to Hangzhou South Station with departure at 18:14 and arrival at 08:41, having a journey duration of 14 hours and 26 minutes.&lt;SEP&gt;Z100 is a train service operating from Guangzhou Baiyun Station to Hangzhou South Station with multiple seating options.&lt;SEP&gt;Z100 is a train number used for a conventional train service from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902434</data>
+      <data key="d6" />
+    </node>
+    <node id="T170">
+      <data key="d0">T170</data>
+      <data key="d1">artifact</data>
+      <data key="d2">T170 is a train number running from Guangzhou Baiyun Station to Hangzhou South Station with a journey time of 15 hours and 28 minutes.&lt;SEP&gt;T170 is a train service operating from Guangzhou Baiyun Station to Hangzhou South Station with departure at 15:08 and arrival at 06:37, having a journey duration of 15 hours and 28 minutes.&lt;SEP&gt;T170 is a train service operating from Guangzhou Baiyun Station to Hangzhou South Station, offering both hard and soft sleeper options.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902436</data>
+      <data key="d6" />
+    </node>
+    <node id="K210">
+      <data key="d0">K210</data>
+      <data key="d1">artifact</data>
+      <data key="d2">K210 is a train service operating from Guangzhou Baiyun Station to Hangzhou Station and Hangzhou South Station with departure at 16:21, having journey durations of 20 hours 25 minutes and 21 hours 16 minutes respectively.&lt;SEP&gt;K210 is a train service operating from Guangzhou Baiyun Station to both Hangzhou Station and Hangzhou South Station.&lt;SEP&gt;K210 is a train number used for a conventional train service from Guangzhou Baiyun Station to Hangzhou Station and Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902436</data>
+      <data key="d6" />
+    </node>
+    <node id="K512">
+      <data key="d0">K512</data>
+      <data key="d1">artifact</data>
+      <data key="d2">K512 is a train service operating from Guangzhou Baiyun Station to Hangzhou South Station with departure at 07:52 and arrival at 04:24, having a journey duration of 20 hours and 31 minutes.&lt;SEP&gt;K512 is a train service operating from Guangzhou Baiyun Station to Hangzhou South Station.&lt;SEP&gt;K512 is a train number used for a conventional train service from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902440</data>
+      <data key="d6" />
+    </node>
+    <node id="No Seat">
+      <data key="d0">No Seat</data>
+      <data key="d1">artifact</data>
+      <data key="d2">No seat indicates tickets sold without assigned seating, available on train K528 from Guangzhou to Hangzhou.&lt;SEP&gt;No Seat indicates a ticket type where no assigned seating is provided, and passengers may stand or find available seating.&lt;SEP&gt;No Seat refers to unassigned seating accommodation on high-speed trains such as G800, G818, G820, and G1404, available for purchase where passengers may need to stand if all seats are occupied.&lt;SEP&gt;No Seat refers to a ticket class where passengers do not have an assigned seat on the train.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902440</data>
+      <data key="d6" />
+    </node>
+    <node id="Hard Sleeper">
+      <data key="d0">Hard Sleeper</data>
+      <data key="d1">category</data>
+      <data key="d2">Hard Sleeper is a sleeping accommodation on trains, offering basic bunk beds in shared compartments.&lt;SEP&gt;Hard Sleeper is a type of train seating that provides basic sleeper accommodations, less comfortable than soft sleeper.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902443</data>
+      <data key="d6" />
+    </node>
+    <node id="Soft Sleeper">
+      <data key="d0">Soft Sleeper</data>
+      <data key="d1">category</data>
+      <data key="d2">Soft Sleeper is a higher-tier sleeping accommodation on trains, offering more comfortable and private berths.&lt;SEP&gt;Soft Sleeper is a seating type on conventional trains offering sleeper accommodations.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902443</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 11">
+      <data key="d0">Train Option 11</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 11 refers to a specific train service (Z100) with no seat availability, departing from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902445</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 12">
+      <data key="d0">Train Option 12</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 12 refers to a specific train service (T170) with hard sleeper accommodation, departing from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902448</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 13">
+      <data key="d0">Train Option 13</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 13 refers to a specific train service (K210) with hard sleeper accommodation, departing from Guangzhou Baiyun Station to Hangzhou Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902448</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 14">
+      <data key="d0">Train Option 14</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 14 refers to a specific train service (K210) with hard sleeper accommodation, departing from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902452</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 15">
+      <data key="d0">Train Option 15</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 15 refers to a specific train service (K512) with hard sleeper accommodation, departing from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902452</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 16">
+      <data key="d0">Train Option 16</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 16 refers to a specific train service (Z100) with hard sleeper accommodation, departing from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902455</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 17">
+      <data key="d0">Train Option 17</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 17 refers to a specific train service (T170) with soft sleeper accommodation, departing from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902455</data>
+      <data key="d6" />
+    </node>
+    <node id="Departure Time">
+      <data key="d0">Departure Time</data>
+      <data key="d1">data</data>
+      <data key="d2">Departure Time refers to the scheduled time at which a train departs from its origin station, such as 18:14 or 15:08.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902458</data>
+      <data key="d6" />
+    </node>
+    <node id="Arrival Time">
+      <data key="d0">Arrival Time</data>
+      <data key="d1">data</data>
+      <data key="d2">Arrival Time refers to the scheduled time at which a train reaches its destination station, such as 08:41 or 06:37.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902458</data>
+      <data key="d6" />
+    </node>
+    <node id="Ticket Price">
+      <data key="d0">Ticket Price</data>
+      <data key="d1">data</data>
+      <data key="d2">Ticket Price is the cost per person for a train ticket, varying by seat type, such as 189 yuan or 529 yuan.&lt;SEP&gt;Ticket Price refers to the cost per person for train travel, varying from 529 yuan to 815 yuan depending on train type and seating.&lt;SEP&gt;Ticket Price refers to the cost of high-speed rail tickets, varying between 815 and 845 yuan per person depending on the train and route.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902462</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 18">
+      <data key="d0">Train Option 18</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 18 refers to a train service with incomplete details provided, only specifying the vehicle type as a train.&lt;SEP&gt;Train Option 18 refers to a specific train service using the K210 train number with soft sleeper seating from Guangzhou Baiyun Station to Hangzhou Station.</data>
+      <data key="d3">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902462</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 19">
+      <data key="d0">Train Option 19</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Option 19 refers to a specific train service using the K210 train number with soft sleeper seating from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902465</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 20">
+      <data key="d0">Train Option 20</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Option 20 refers to a specific train service using the K512 train number with soft sleeper seating from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902465</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 21">
+      <data key="d0">Train Option 21</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Option 21 refers to a specific train service using the Z100 train number with soft sleeper seating from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902469</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 22">
+      <data key="d0">Train Option 22</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Option 22 refers to a specific high-speed train service using the D3121 train number with second-class seating from Guangzhou East Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902469</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 23">
+      <data key="d0">Train Option 23</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Option 23 refers to a specific high-speed train service using the D3121 train number with standing-room-only seating from Guangzhou East Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902472</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 24">
+      <data key="d0">Train Option 24</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Option 24 refers to a specific high-speed train service using the G3068 train number with second-class seating from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902472</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 25">
+      <data key="d0">Train Option 25</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Option 25 refers to a specific high-speed train service using the G3068 train number with standing-room-only seating from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902475</data>
+      <data key="d6" />
+    </node>
+    <node id="D3121">
+      <data key="d0">D3121</data>
+      <data key="d1">artifact</data>
+      <data key="d2">D3121 is a train number used for a high-speed train service from Guangzhou East Station to Hangzhou East Station.&lt;SEP&gt;D3121 is a high-speed train service traveling from Guangzhou East Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902479</data>
+      <data key="d6" />
+    </node>
+    <node id="G3068">
+      <data key="d0">G3068</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G3068 is a high-speed train service operating from Guangzhou to Hangzhou West Station with multiple departure points and varying journey durations.&lt;SEP&gt;G3068 is a train number used for a high-speed train service from Guangzhou East Station to Hangzhou West Station.&lt;SEP&gt;G3068 is a high-speed train service operating from Guangzhou East Station and Guangzhou Xinzhuang Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902479</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou East Station">
+      <data key="d0">Guangzhou East Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Guangzhou East Station is a railway station serving as a departure point for high-speed trains to Hangzhou West Station.&lt;SEP&gt;Guangzhou East Station is a railway station in Guangzhou serving as a departure point for high-speed train services to Hangzhou.&lt;SEP&gt;Guangzhou East Station is a railway station serving as a departure point for high-speed trains to Hangzhou West Station and Hangzhou East Station.&lt;SEP&gt;Guangzhou East Station is a railway station serving as a departure point for multiple high-speed trains to Hangzhou.&lt;SEP&gt;Guangzhou East Station is a railway station from which G800 high-speed trains depart for Hangzhou East Station.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902481</data>
+      <data key="d6" />
+    </node>
+    <node id="Hangzhou East Station">
+      <data key="d0">Hangzhou East Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Hangzhou East Station is a railway station in Hangzhou that receives high-speed train services from Guangzhou East Station.&lt;SEP&gt;Hangzhou East Station is a railway station serving as an arrival point for high-speed trains from Guangzhou East Station and Guangzhou Xintang Station.&lt;SEP&gt;Hangzhou East Station is a railway station serving as the arrival destination for multiple high-speed trains from Guangzhou, including G800, G818, G1302, G820, and G1404.&lt;SEP&gt;Hangzhou East Station is a railway station serving as an arrival point for high-speed trains from Guangzhou.&lt;SEP&gt;Hangzhou East Station is a railway station serving as the destination for multiple high-speed trains from various Guangzhou stations.&lt;SEP&gt;Hangzhou East Station is a railway station in Hangzhou that receives高铁services from Guangzhou.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902483</data>
+      <data key="d6" />
+    </node>
+    <node id="Hangzhou West Station">
+      <data key="d0">Hangzhou West Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Hangzhou West Station is a railway station in Hangzhou that receives high-speed train services from Guangzhou East Station.&lt;SEP&gt;Hangzhou West Station is a railway station serving as an arrival point for high-speed trains from Zengcheng Station and Guangzhou stations.&lt;SEP&gt;Hangzhou West Station is a railway station serving as an arrival point for high-speed trains from Guangzhou.&lt;SEP&gt;Hangzhou West Station is a railway station serving as the destination for G3072 high-speed trains.&lt;SEP&gt;Hangzhou West Station is a railway station in Hangzhou that receives高铁services from Guangzhou.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902488</data>
+      <data key="d6" />
+    </node>
+    <node id="Second-Class Seat">
+      <data key="d0">Second-Class Seat</data>
+      <data key="d1">category</data>
+      <data key="d2">Second-Class Seat is a seating class on high-speed trains providing standard seating.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902488</data>
+      <data key="d6" />
+    </node>
+    <node id="Standing Room Only">
+      <data key="d0">Standing Room Only</data>
+      <data key="d1">category</data>
+      <data key="d2">Standing Room Only is a ticket type indicating no reserved seat, available on train services T170 and K210 from Guangzhou to Hangzhou.&lt;SEP&gt;Standing Room Only refers to unreserved seating where passengers may stand during the train journey.&lt;SEP&gt;Standing Room Only is a ticket type with no assigned seat, available on certain high-speed trains and priced at 815 or 845 yuan per person.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902492</data>
+      <data key="d6" />
+    </node>
+    <node id="Travel Time Duration">
+      <data key="d0">Travel Time Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">Travel Time Duration refers to the length of time taken for a train journey, ranging from 6 hours 49 minutes to 21 hours 16 minutes across options.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902492</data>
+      <data key="d6" />
+    </node>
+    <node id="First">
+      <data key="d0">First</data>
+      <data key="d1">category</data>
+      <data key="d2">First refers to the type of sleeper seating on trains, typically a higher-class accommodation than soft sleeper.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902495</data>
+      <data key="d6" />
+    </node>
+    <node id="Business Class">
+      <data key="d0">Business Class</data>
+      <data key="d1">category</data>
+      <data key="d2">Business Class is a premium seating option on high-speed trains offering enhanced comfort and services.</data>
+      <data key="d3">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902495</data>
+      <data key="d6" />
+    </node>
+    <node id="G800">
+      <data key="d0">G800</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G800 is a high-speed train service operating from Guangzhou East Station and Guangzhou Xintang Station to Hangzhou East Station, with travel durations of 6 hours 24 minutes or 5 hours 58 minutes.&lt;SEP&gt;G800 is a high-speed train service operating from Guangzhou Xinzhuang Station to Hangzhou East Station, departing at 12:37 with a journey duration of 5 hours and 58 minutes, priced at 845 yuan per person.&lt;SEP&gt;G800 is a high-speed train service operating from Guangzhou to Hangzhou with varying departure and arrival times and a journey duration of 6 hours 24 minutes or 5 hours 58 minutes.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902499</data>
+      <data key="d6" />
+    </node>
+    <node id="G818">
+      <data key="d0">G818</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G818 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station, departing at 08:27 and arriving at 14:16 with a journey duration of 5 hours and 49 minutes, priced at 862 yuan per person.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902499</data>
+      <data key="d6" />
+    </node>
+    <node id="G1302">
+      <data key="d0">G1302</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G1302 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station, departing at 13:19 and arriving at 20:47 with a journey duration of 7 hours and 28 minutes, priced at 862 yuan per person.&lt;SEP&gt;G1302 is a high-speed train service departing from Guangzhou South Station to Hangzhou East Station with a journey time of 7 hours 28 minutes.&lt;SEP&gt;G1302 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station with a travel duration of 7 hours and 28 minutes.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902502</data>
+      <data key="d6" />
+    </node>
+    <node id="G820">
+      <data key="d0">G820</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G820 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station, departing at 15:10 and arriving at 21:05 with a journey duration of 5 hours and 55 minutes, priced at 862 yuan per person.&lt;SEP&gt;G820 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station with a journey duration of 5 hours 55 minutes.&lt;SEP&gt;G820 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station with a travel duration of 5 hours and 55 minutes.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902502</data>
+      <data key="d6" />
+    </node>
+    <node id="G1404">
+      <data key="d0">G1404</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G1404 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station, departing at 15:48 and arriving at 23:09 with a journey duration of 7 hours and 20 minutes, priced at 862 yuan per person.&lt;SEP&gt;G1404 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station with a journey time of 7 hours 20 minutes.&lt;SEP&gt;G1404 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station with a travel duration of 7 hours and 20 minutes.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902505</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou Xinzhuang Station">
+      <data key="d0">Guangzhou Xinzhuang Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Guangzhou Xinzhuang Station is a railway station serving as the departure point for train G800 heading to Hangzhou East Station.&lt;SEP&gt;Guangzhou Xinzhuang Station is a railway station serving as a departure point for high-speed trains to Hangzhou.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902507</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou South Station">
+      <data key="d0">Guangzhou South Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Guangzhou South Station is a major railway hub and the departure point for multiple high-speed trains including G818, G1302, G820, and G1404 bound for Hangzhou East Station.&lt;SEP&gt;Guangzhou South Station is a railway station serving as a departure point for multiple high-speed trains to Hangzhou.&lt;SEP&gt;Guangzhou South Station is a major railway station from which several high-speed trains including G1302, G820, and G1404 depart for Hangzhou East Station.&lt;SEP&gt;Guangzhou South Station is the departure railway station for multiple high-speed train services to Hangzhou.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902510</data>
+      <data key="d6" />
+    </node>
+    <node id="Second Class Seat">
+      <data key="d0">Second Class Seat</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A type of reserved seating available on G3068 and G3072 high-speed trains, considered a standard passenger class.&lt;SEP&gt;Second Class Seat is a seating option available on high-speed trains, priced at 815 or 845 yuan per person.&lt;SEP&gt;Second Class Seat is a standard seating class available on high-speed trains including G818, G1302, G820, and G1404, offering comfortable seating at a fixed fare of 862 yuan per person.&lt;SEP&gt;Second Class Seat is a standard seating option on high-speed trains, available on multiple services between Guangzhou and Hangzhou.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902510</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou To Hangzhou High-Speed Rail">
+      <data key="d0">Guangzhou To Hangzhou High-Speed Rail</data>
+      <data key="d1">concept</data>
+      <data key="d2">Guangzhou To Hangzhou High-Speed Rail refers to the high-speed rail service connecting Guangzhou and Hangzhou, characterized by comfort and convenience for intercity travel.</data>
+      <data key="d3">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902514</data>
+      <data key="d6" />
+    </node>
+    <node id="173 Cny Per Person">
+      <data key="d0">173 Cny Per Person</data>
+      <data key="d1">data</data>
+      <data key="d2">173 Cny Per Person is the ticket price for Hard Seat and Standing Room Only classes on train services T170 and K210.</data>
+      <data key="d3">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902514</data>
+      <data key="d6" />
+    </node>
+    <node id="189 Cny Per Person">
+      <data key="d0">189 Cny Per Person</data>
+      <data key="d1">data</data>
+      <data key="d2">189 Cny Per Person is the ticket price for Hard Seat class on train services K512 and Z100.</data>
+      <data key="d3">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902518</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Service From Guangzhou To Hangzhou">
+      <data key="d0">Train Service From Guangzhou To Hangzhou</data>
+      <data key="d1">event</data>
+      <data key="d2">Train Service From Guangzhou To Hangzhou refers to multiple rail connections operating between Guangzhou Baiyun Station and various stations in Hangzhou.</data>
+      <data key="d3">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902518</data>
+      <data key="d6" />
+    </node>
+    <node id="High-Speed Rail">
+      <data key="d0">High-Speed Rail</data>
+      <data key="d1">method</data>
+      <data key="d2">A mode of transportation described as comfortable and convenient for travel between Guangzhou and Hangzhou.&lt;SEP&gt;High-speed rail is a mode of transportation described as comfortable and convenient for travel between Guangzhou and Hangzhou.&lt;SEP&gt;High-speed rail is the transportation method used for travel between Guangzhou and Hangzhou, offering first-class seating and varying journey durations.&lt;SEP&gt;High-Speed Rail is a transportation method offering fast, comfortable, and convenient service between major cities in China.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902520</data>
+      <data key="d6" />
+    </node>
+    <node id="First Class Seat">
+      <data key="d0">First Class Seat</data>
+      <data key="d1">artifact</data>
+      <data key="d2">First Class Seat is a premium seating option on high-speed trains, offering enhanced comfort and available on select services.&lt;SEP&gt;First Class Seat is a seating class on high-speed trains, offering enhanced comfort and space compared to standard classes.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902522</data>
+      <data key="d6" />
+    </node>
+    <node id="G822">
+      <data key="d0">G822</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G822 is a high-speed train service departing from Guangzhou South Station to Hangzhou East Station.&lt;SEP&gt;G822 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station with two first-class seats available.&lt;SEP&gt;G822 is a high-speed train service operating from Guangzhou South Station to Hangzhou East Station with a travel duration of 5 hours and 31 minutes.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902524</data>
+      <data key="d6" />
+    </node>
+    <node id="G1184">
+      <data key="d0">G1184</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G1184 is a high-speed train service operating from Guangzhou South Station to Hangzhou West Station.&lt;SEP&gt;G1184 is a high-speed train service operating from Guangzhou South Station to Hangzhou West Station with a travel duration of 8 hours and 45 minutes.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902527</data>
+      <data key="d6" />
+    </node>
+    <node id="G3072">
+      <data key="d0">G3072</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G3072 is a high-speed train service operating from Zengcheng Station to Hangzhou West Station, departing at 12:17 with a travel duration of 8 hours and 7 minutes.&lt;SEP&gt;G3072 is a high-speed train service operating from Zengcheng Station, Guangzhou Xintang Station, and Guangzhou East Station to Hangzhou West Station with journey durations up to 8 hours and 20 minutes.&lt;SEP&gt;G3072 is a high-speed train service traveling from Guangzhou East Station to Hangzhou West Station.&lt;SEP&gt;G3072 is a high-speed train service operating from Guangzhou to Hangzhou with one first-class seat remaining.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902527</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 47">
+      <data key="d0">Train Option 47</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 47 refers to the travel option featuring train G822 with a second class seat from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902529</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 48">
+      <data key="d0">Train Option 48</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 48 refers to the travel option featuring train G1184 with a second class seat from Guangzhou South Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902531</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 49">
+      <data key="d0">Train Option 49</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 49 refers to the travel option featuring train G1184 with a no seat ticket from Guangzhou South Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902535</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 50">
+      <data key="d0">Train Option 50</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 50 refers to the travel option featuring train D3121 with a first class seat from Guangzhou East Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902535</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 51">
+      <data key="d0">Train Option 51</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 51 refers to the travel option featuring train G3068 with a first class seat from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902539</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 52">
+      <data key="d0">Train Option 52</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 52 refers to the travel option featuring train G3068 with a first class seat from Guangzhou Xinzhuang Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902539</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 53">
+      <data key="d0">Train Option 53</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 53 refers to the travel option featuring train G3072 with a first class seat from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902543</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou New塘Station">
+      <data key="d0">Guangzhou New塘Station</data>
+      <data key="d1">artifact</data>
+      <data key="d2">Guangzhou Xintang Station is a railway station from which G3072 and G800 high-speed trains depart for Hangzhou.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902543</data>
+      <data key="d6" />
+    </node>
+    <node id="Zengcheng Station">
+      <data key="d0">Zengcheng Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Zengcheng Station is a railway station serving as a departure point for high-speed trains to Hangzhou West Station.&lt;SEP&gt;Zengcheng Station is a railway station from which train G3072 departs en route to Hangzhou West Station.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902546</data>
+      <data key="d6" />
+    </node>
+    <node id="First-Class Seat">
+      <data key="d0">First-Class Seat</data>
+      <data key="d1">artifact</data>
+      <data key="d2">First-class seat is a seating category available on high-speed trains from Guangzhou to Hangzhou, offering enhanced comfort.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902546</data>
+      <data key="d6" />
+    </node>
+    <node id="8 Hour 48 Minute Duration">
+      <data key="d0">8 Hour 48 Minute Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">The journey time of 8 hours 48 minutes is the duration for a high-speed rail trip from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902550</data>
+      <data key="d6" />
+    </node>
+    <node id="1291 Yuan">
+      <data key="d0">1291 Yuan</data>
+      <data key="d1">data</data>
+      <data key="d2">1291 Yuan is the ticket price per person for certain high-speed train options from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902550</data>
+      <data key="d6" />
+    </node>
+    <node id="6 Hour 24 Minute Duration">
+      <data key="d0">6 Hour 24 Minute Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">The journey time of 6 hours 24 minutes is the duration for the G800 train from Guangzhou East Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902552</data>
+      <data key="d6" />
+    </node>
+    <node id="5 Hour 58 Minute Duration">
+      <data key="d0">5 Hour 58 Minute Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">The journey time of 5 hours 58 minutes is the duration for the G800 train from Guangzhou Xintang Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902555</data>
+      <data key="d6" />
+    </node>
+    <node id="7 Hour 28 Minute Duration">
+      <data key="d0">7 Hour 28 Minute Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">The journey time of 7 hours 28 minutes is the duration for the G1302 train from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902555</data>
+      <data key="d6" />
+    </node>
+    <node id="5 Hour 55 Minute Duration">
+      <data key="d0">5 Hour 55 Minute Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">The journey time of 5 hours 55 minutes is the duration for the G820 train from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902559</data>
+      <data key="d6" />
+    </node>
+    <node id="7 Hour 20 Minute Duration">
+      <data key="d0">7 Hour 20 Minute Duration</data>
+      <data key="d1">data</data>
+      <data key="d2">The journey time of 7 hours 20 minutes is the duration for the G1404 train from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902559</data>
+      <data key="d6" />
+    </node>
+    <node id="1340 Yuan">
+      <data key="d0">1340 Yuan</data>
+      <data key="d1">data</data>
+      <data key="d2">1340 Yuan is the ticket price per person for G800 train services from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902561</data>
+      <data key="d6" />
+    </node>
+    <node id="1380 Yuan">
+      <data key="d0">1380 Yuan</data>
+      <data key="d1">data</data>
+      <data key="d2">1380 Yuan is the ticket price per person for G1302, G820, and G1404 train services from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d3">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902565</data>
+      <data key="d6" />
+    </node>
+    <node id="Guangzhou Xintang Station">
+      <data key="d0">Guangzhou Xintang Station</data>
+      <data key="d1">location</data>
+      <data key="d2">Guangzhou Xintang Station is a railway station serving as a departure point for high-speed trains to Hangzhou West Station.&lt;SEP&gt;Guangzhou Xintang Station is a railway station serving as a departure point for high-speed trains to Hangzhou West Station and Hangzhou East Station.</data>
+      <data key="d3">chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902565</data>
+      <data key="d6" />
+    </node>
+    <node id="6 Hour 49 Minute Trip">
+      <data key="d0">6 Hour 49 Minute Trip</data>
+      <data key="d1">event</data>
+      <data key="d2">A 6 hour 49 minute journey on the G3068 train from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902567</data>
+      <data key="d6" />
+    </node>
+    <node id="6 Hour 22 Minute Trip">
+      <data key="d0">6 Hour 22 Minute Trip</data>
+      <data key="d1">event</data>
+      <data key="d2">A 6 hour 22 minute journey on the G3068 train from Guangzhou Xintang Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902569</data>
+      <data key="d6" />
+    </node>
+    <node id="8 Hour 48 Minute Trip">
+      <data key="d0">8 Hour 48 Minute Trip</data>
+      <data key="d1">event</data>
+      <data key="d2">An 8 hour 48 minute journey on the G3072 train from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902571</data>
+      <data key="d6" />
+    </node>
+    <node id="8 Hour 20 Minute Trip">
+      <data key="d0">8 Hour 20 Minute Trip</data>
+      <data key="d1">event</data>
+      <data key="d2">An 8 hour 20 minute journey on the G3072 train from Guangzhou Xintang Station to Hangzhou West Station.</data>
+      <data key="d3">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902575</data>
+      <data key="d6" />
+    </node>
+    <node id="Standing Seat">
+      <data key="d0">Standing Seat</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A type of ticket available on certain train services where no reserved seat is provided, available on multiple G3068 and G3072 services.</data>
+      <data key="d3">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902575</data>
+      <data key="d6" />
+    </node>
+    <node id="815 Yuan Fare">
+      <data key="d0">815 Yuan Fare</data>
+      <data key="d1">data</data>
+      <data key="d2">The price of 815 yuan per person for high-speed rail tickets from Guangzhou to Hangzhou across various train services.</data>
+      <data key="d3">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902579</data>
+      <data key="d6" />
+    </node>
+    <node id="Business Class Seat">
+      <data key="d0">Business Class Seat</data>
+      <data key="d1">category</data>
+      <data key="d2">Business Class Seat is the premium seating class on high-speed trains, providing maximum comfort, privacy, and service.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902579</data>
+      <data key="d6" />
+    </node>
+    <node id="CA1234">
+      <data key="d0">CA1234</data>
+      <data key="d1">artifact</data>
+      <data key="d2">CA1234 is the flight number associated with multiple flights from Guangzhou to Hangzhou operated by different airlines.&lt;SEP&gt;CA1234 is a flight service offering the fastest travel option from Guangzhou to Hangzhou with a duration of 1 hour and 45 minutes.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902583</data>
+      <data key="d6" />
+    </node>
+    <node id="K528">
+      <data key="d0">K528</data>
+      <data key="d1">artifact</data>
+      <data key="d2">K528 is a train number running from Guangzhou Baiyun Station to Hangzhou South Station.&lt;SEP&gt;K528 is a train service offering the cheapest rail option from Guangzhou to Hangzhou at 173 yuan per person.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902583</data>
+      <data key="d6" />
+    </node>
+    <node id="1380 Yuan Ticket">
+      <data key="d0">1380 Yuan Ticket</data>
+      <data key="d1">category</data>
+      <data key="d2">1380 Yuan Ticket refers to the price for a first-class seat on certain high-speed trains from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902586</data>
+      <data key="d6" />
+    </node>
+    <node id="1444 Yuan Ticket">
+      <data key="d0">1444 Yuan Ticket</data>
+      <data key="d1">category</data>
+      <data key="d2">1444 Yuan Ticket refers to the price for a first-class seat on the G1184 high-speed train from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902586</data>
+      <data key="d6" />
+    </node>
+    <node id="3018 Yuan Ticket">
+      <data key="d0">3018 Yuan Ticket</data>
+      <data key="d1">category</data>
+      <data key="d2">3018 Yuan Ticket refers to the price for a business class seat on several high-speed trains from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902588</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 61">
+      <data key="d0">Train Option 61</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 61 refers to the G822 high-speed train with first-class seating, departing at 16:22 and arriving at 21:53.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902590</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 62">
+      <data key="d0">Train Option 62</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 62 refers to the G1184 high-speed train with first-class seating, departing at 08:43 and arriving at 17:28.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902592</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 63">
+      <data key="d0">Train Option 63</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 63 refers to the G1302 high-speed train with business-class seating, departing at 13:19 and arriving at 20:47.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902596</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 64">
+      <data key="d0">Train Option 64</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 64 refers to the G820 high-speed train with business-class seating, departing at 15:10 and arriving at 21:05.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902596</data>
+      <data key="d6" />
+    </node>
+    <node id="Train Option 65">
+      <data key="d0">Train Option 65</data>
+      <data key="d1">content</data>
+      <data key="d2">Train Option 65 refers to the G1404 high-speed train with business-class seating, departing at 15:48 and arriving at 23:09.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902599</data>
+      <data key="d6" />
+    </node>
+    <node id="Budget Priority">
+      <data key="d0">Budget Priority</data>
+      <data key="d1">concept</data>
+      <data key="d2">Budget Priority is a travel consideration favoring the lowest-cost transportation option, such as train K528.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902599</data>
+      <data key="d6" />
+    </node>
+    <node id="Time Priority">
+      <data key="d0">Time Priority</data>
+      <data key="d1">concept</data>
+      <data key="d2">Time Priority is a travel consideration favoring the fastest transportation option, such as flight CA1234.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902603</data>
+      <data key="d6" />
+    </node>
+    <node id="Cost Comparison">
+      <data key="d0">Cost Comparison</data>
+      <data key="d1">method</data>
+      <data key="d2">Cost Comparison is an analysis method used to evaluate the affordability of different travel options between Guangzhou and Hangzhou.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902603</data>
+      <data key="d6" />
+    </node>
+    <node id="Time Comparison">
+      <data key="d0">Time Comparison</data>
+      <data key="d1">method</data>
+      <data key="d2">Time Comparison is an analysis method used to determine the most time-efficient travel option between two cities.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902605</data>
+      <data key="d6" />
+    </node>
+    <node id="Travel Recommendation">
+      <data key="d0">Travel Recommendation</data>
+      <data key="d1">method</data>
+      <data key="d2">Travel Recommendation provides guidance on optimal transportation choices based on criteria such as budget and time efficiency.</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902609</data>
+      <data key="d6" />
+    </node>
+    <node id="Flight From Guangzhou To Hangzhou">
+      <data key="d0">Flight From Guangzhou To Hangzhou</data>
+      <data key="d1">event</data>
+      <data key="d2">A series of flight options from Guangzhou to Hangzhou, described as the fastest travel choice.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902609</data>
+      <data key="d6" />
+    </node>
+    <node id="Airplane">
+      <data key="d0">Airplane</data>
+      <data key="d1">method</data>
+      <data key="d2">Airplane refers to the mode of transportation used for fast travel between Guangzhou and Hangzhou.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902612</data>
+      <data key="d6" />
+    </node>
+    <node id="681 Yuan Per Person">
+      <data key="d0">681 Yuan Per Person</data>
+      <data key="d1">data</data>
+      <data key="d2">681 Yuan per person is the ticket price for a flight from Guangzhou to Hangzhou operated by China Eastern Airlines with departure at 09:00 and arrival at 13:35.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902612</data>
+      <data key="d6" />
+    </node>
+    <node id="China International Airlines">
+      <data key="d0">China International Airlines</data>
+      <data key="d1">organization</data>
+      <data key="d2">China International Airlines is an airline operating flight CA1234 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902616</data>
+      <data key="d6" />
+    </node>
+    <node id="690 Yuan Per Person">
+      <data key="d0">690 Yuan Per Person</data>
+      <data key="d1">data</data>
+      <data key="d2">690 Yuan per person is the ticket price for flights operated by China International Airlines and China Southern Airlines on route CA1234.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902616</data>
+      <data key="d6" />
+    </node>
+    <node id="China Southern Airlines">
+      <data key="d0">China Southern Airlines</data>
+      <data key="d1">organization</data>
+      <data key="d2">China Southern Airlines is an airline operating flight CA1234 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902619</data>
+      <data key="d6" />
+    </node>
+    <node id="745 Yuan Per Person">
+      <data key="d0">745 Yuan Per Person</data>
+      <data key="d1">data</data>
+      <data key="d2">745 Yuan per person is the ticket price for flights operated by China Southern Airlines from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902619</data>
+      <data key="d6" />
+    </node>
+    <node id="173 Yuan Per Person">
+      <data key="d0">173 Yuan Per Person</data>
+      <data key="d1">data</data>
+      <data key="d2">173 Yuan per person is the ticket price for hard seat and no seat classes on trains K528 and T170 from Guangzhou to Hangzhou.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902622</data>
+      <data key="d6" />
+    </node>
+    <node id="15 hours 28 minutes">
+      <data key="d0">15 hours 28 minutes</data>
+      <data key="d1">data</data>
+      <data key="d2">15 hours 28 minutes is the travel duration for train T170 from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902622</data>
+      <data key="d6" />
+    </node>
+    <node id="17 hours 31 minutes">
+      <data key="d0">17 hours 31 minutes</data>
+      <data key="d1">data</data>
+      <data key="d2">17 hours 31 minutes is the travel duration for train K528 from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d3">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902626</data>
+      <data key="d6" />
+    </node>
+    <node id="High Speed Rail">
+      <data key="d0">High Speed Rail</data>
+      <data key="d1">method</data>
+      <data key="d2">High Speed Rail is a transportation method used for traveling between cities, noted for comfort and convenience.</data>
+      <data key="d3">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902626</data>
+      <data key="d6" />
+    </node>
+    <node id="G3078">
+      <data key="d0">G3078</data>
+      <data key="d1">artifact</data>
+      <data key="d2">G3078 is a high-speed train service operating from Guangzhou East Station and Guangzhou Xintang Station to Hangzhou West Station, with varying departure times and a travel duration of 6 hours 55 minutes or 6 hours 31 minutes.</data>
+      <data key="d3">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902628</data>
+      <data key="d6" />
+    </node>
+    <node id="173 Yuan Ticket">
+      <data key="d0">173 Yuan Ticket</data>
+      <data key="d3">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d2">K528 is the cheapest train option, priced at 173 yuan per person.</data>
+      <data key="d1">UNKNOWN</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1763902829</data>
+      <data key="d6" />
+    </node>
+    <edge source="Guangzhou" target="Hangzhou">
+      <data key="d7">3.0</data>
+      <data key="d8">Guangzhou and Hangzhou are connected by multiple transportation services, including flights and trains.&lt;SEP&gt;Multiple train services connect Guangzhou and Hangzhou, facilitating intercity travel.&lt;SEP&gt;Guangzhou and Hangzhou are connected by multiple transportation options including high-speed rail and flights.</data>
+      <data key="d9">geographic connection,intercity travel,route,transportation,transportation route</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7&lt;SEP&gt;chunk-5690eec79340894ed0fb467bc52ae9ef&lt;SEP&gt;chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902640</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou" target="Guangzhou Baiyun Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Guangzhou Baiyun Station is located in Guangzhou and serves as a key departure point for train routes.</data>
+      <data key="d9">geographical origin,railway infrastructure</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902752</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou" target="Guangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Guangzhou East Station is located in Guangzhou and serves as a key departure point for high-speed train routes.</data>
+      <data key="d9">geographical origin,railway infrastructure</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902760</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou" target="High-Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">High-speed rail connects Guangzhou to Hangzhou as part of an intercity travel route.</data>
+      <data key="d9">origin,transportation route</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902810</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou" target="Hangzhou Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Hangzhou Station is located in Hangzhou and serves as an arrival point for train services from Guangzhou.</data>
+      <data key="d9">geographical destination,railway infrastructure</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902754</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou" target="Hangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Hangzhou East Station is located in Hangzhou and serves as an arrival point for high-speed train services from Guangzhou.</data>
+      <data key="d9">geographical destination,railway infrastructure</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902757</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou" target="Hangzhou West Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Hangzhou West Station is located in Hangzhou and serves as an arrival point for high-speed train services from Guangzhou.</data>
+      <data key="d9">geographical destination,railway infrastructure</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902758</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou" target="Hangzhou South Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Hangzhou South Station is located in Hangzhou and serves as a destination for several train routes from Guangzhou.</data>
+      <data key="d9">geographical destination,railway infrastructure</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902760</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou" target="High-Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">High-speed rail services from Guangzhou terminate in Hangzhou, connecting the two cities.</data>
+      <data key="d9">destination,transportation route</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902812</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Beijing Capital Airlines" target="Guangzhou Airport">
+      <data key="d7">1.0</data>
+      <data key="d8">Beijing Capital Airlines operates a flight departing from Guangzhou Airport to Hangzhou.</data>
+      <data key="d9">airline operation,departure point</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902640</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Beijing Capital Airlines" target="Hangzhou Xiaoshan International Airport">
+      <data key="d7">1.0</data>
+      <data key="d8">Beijing Capital Airlines operates a flight arriving at Hangzhou Xiaoshan International Airport from Guangzhou.</data>
+      <data key="d9">airline operation,arrival point</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902660</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Beijing Capital Airlines" target="Flight Option 1">
+      <data key="d7">1.0</data>
+      <data key="d8">Beijing Capital Airlines operates Flight Option 1 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902674</data>
+      <data key="d13" />
+    </edge>
+    <edge source="China Eastern Airlines" target="Hangzhou Xiaoshan International Airport">
+      <data key="d7">1.0</data>
+      <data key="d8">China Eastern Airlines operates multiple flights from Guangzhou to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline operation,arrival point</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902640</data>
+      <data key="d13" />
+    </edge>
+    <edge source="China Eastern Airlines" target="Flight Option 2">
+      <data key="d7">1.0</data>
+      <data key="d8">China Eastern Airlines operates Flight Option 2 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902657</data>
+      <data key="d13" />
+    </edge>
+    <edge source="China Eastern Airlines" target="Flight Option 3">
+      <data key="d7">1.0</data>
+      <data key="d8">China Eastern Airlines operates Flight Option 3 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902662</data>
+      <data key="d13" />
+    </edge>
+    <edge source="China Eastern Airlines" target="Flight Option 7">
+      <data key="d7">1.0</data>
+      <data key="d8">China Eastern Airlines operates Flight Option 7 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902686</data>
+      <data key="d13" />
+    </edge>
+    <edge source="China Eastern Airlines" target="CA1234">
+      <data key="d7">1.0</data>
+      <data key="d8">China Eastern Airlines operates flight CA1234 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902841</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hainan Airlines" target="Hangzhou Xiaoshan International Airport">
+      <data key="d7">1.0</data>
+      <data key="d8">Hainan Airlines operates a flight from Guangzhou to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline operation,arrival point</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902648</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hainan Airlines" target="Flight Option 4">
+      <data key="d7">1.0</data>
+      <data key="d8">Hainan Airlines operates Flight Option 4 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902666</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Chengdu Airlines" target="Hangzhou Xiaoshan International Airport">
+      <data key="d7">1.0</data>
+      <data key="d8">Chengdu Airlines operates a flight from Guangzhou to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline operation,arrival point</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902652</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Chengdu Airlines" target="Flight Option 5">
+      <data key="d7">1.0</data>
+      <data key="d8">Chengdu Airlines operates Flight Option 5 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902674</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Juneyao Airlines" target="Hangzhou Xiaoshan International Airport">
+      <data key="d7">1.0</data>
+      <data key="d8">Juneyao Airlines operates a flight from Guangzhou to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline operation,arrival point</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902657</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Juneyao Airlines" target="Flight Option 6">
+      <data key="d7">1.0</data>
+      <data key="d8">Juneyao Airlines operates Flight Option 6 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902681</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Hangzhou Xiaoshan International Airport">
+      <data key="d7">1.0</data>
+      <data key="d8">There is a flight route connecting Guangzhou Airport and Hangzhou Xiaoshan International Airport offered by multiple airlines.</data>
+      <data key="d9">air connectivity,flight route</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902664</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Flight Option 1">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 1 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902666</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Flight Option 2">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 2 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902670</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Flight Option 3">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 3 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902678</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Flight Option 4">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 4 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902681</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Flight Option 5">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 5 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902688</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Flight Option 6">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 6 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902692</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="Flight Option 7">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 7 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902699</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Airport" target="CA1234">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight CA1234 departs from Guangzhou Airport.</data>
+      <data key="d9">flight departure,origin point</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902844</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="Flight Option 1">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 1 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">flight arrival</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902670</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="Flight Option 2">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 2 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">flight arrival</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902678</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="Flight Option 3">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 3 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">flight arrival</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902685</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="Flight Option 4">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 4 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">flight arrival</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902688</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="Flight Option 5">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 5 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">flight arrival</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902696</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="Flight Option 6">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 6 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">flight arrival</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902701</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="Flight Option 7">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight Option 7 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">flight arrival</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902710</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Xiaoshan International Airport" target="CA1234">
+      <data key="d7">1.0</data>
+      <data key="d8">Flight CA1234 arrives at Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">destination,flight arrival</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902846</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Flight" target="Transportation Options From Guangzhou To Hangzhou">
+      <data key="d7">1.0</data>
+      <data key="d8">There are 11 flight options among the total transportation services from Guangzhou to Hangzhou.</data>
+      <data key="d9">service count,transportation mode</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902640</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train" target="Transportation Options From Guangzhou To Hangzhou">
+      <data key="d7">1.0</data>
+      <data key="d8">There are 65 train or high-speed rail options among the total transportation services from Guangzhou to Hangzhou.</data>
+      <data key="d9">service count,transportation mode</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902646</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train" target="Travel Recommendation">
+      <data key="d7">1.0</data>
+      <data key="d8">The travel recommendation suggests choosing train travel for budget-conscious travelers due to significantly lower prices.</data>
+      <data key="d9">affordability,cost advantage</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902843</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train" target="Guangzhou Baiyun Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Trains from Guangzhou to Hangzhou depart from Guangzhou Baiyun Station.</data>
+      <data key="d9">origin point,transport departure</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902904</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train" target="Hangzhou South Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Trains traveling from Guangzhou to Hangzhou arrive at Hangzhou South Station.</data>
+      <data key="d9">destination,transport arrival</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902905</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train" target="173 Yuan Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">Train travel from Guangzhou to Hangzhou is priced at 173 Yuan per person for certain seating classes.</data>
+      <data key="d9">cost information,ticket pricing</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902907</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Transportation Options From Guangzhou To Hangzhou" target="Price Range">
+      <data key="d7">1.0</data>
+      <data key="d8">The cost of transportation options from Guangzhou to Hangzhou ranges from 173 yuan to 3018 yuan.</data>
+      <data key="d9">cost range,ticket pricing</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902651</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Transportation Options From Guangzhou To Hangzhou" target="Travel Duration">
+      <data key="d7">1.0</data>
+      <data key="d8">The duration of travel from Guangzhou to Hangzhou ranges from 1 hour 45 minutes to 21 hours 16 minutes.</data>
+      <data key="d9">duration range,travel time</data>
+      <data key="d10">chunk-b20c6614ed12dc6730628e448e0630c7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902655</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="Z100">
+      <data key="d7">1.0</data>
+      <data key="d8">The Z100 train journey lasts 14 hours 26 minutes.</data>
+      <data key="d9">time duration,trip length</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902724</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="K210">
+      <data key="d7">1.0</data>
+      <data key="d8">The K210 train journey lasts 20 hours 25 minutes or 21 hours 16 minutes depending on the destination.</data>
+      <data key="d9">time duration,trip length</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902725</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="K512">
+      <data key="d7">1.0</data>
+      <data key="d8">The K512 train journey lasts 20 hours 31 minutes.</data>
+      <data key="d9">time duration,trip length</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902726</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="T170">
+      <data key="d7">1.0</data>
+      <data key="d8">The T170 train journey lasts 15 hours 28 minutes.</data>
+      <data key="d9">time duration,trip length</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902729</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="G822">
+      <data key="d7">1.0</data>
+      <data key="d8">G822 has a travel duration of 5 hours and 31 minutes, making it the fastest train option between Guangzhou and Hangzhou.</data>
+      <data key="d9">fastest train,travel time</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902828</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="CA1234">
+      <data key="d7">1.0</data>
+      <data key="d8">CA1234 has a flight duration of 1 hour and 45 minutes, making it the fastest overall travel option.</data>
+      <data key="d9">fastest option,flight duration</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902832</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="G3072">
+      <data key="d7">1.0</data>
+      <data key="d8">The journey time for G3072 is 8 hours and 7 minutes from Zengcheng Station to Hangzhou West Station.</data>
+      <data key="d9">journey time,trip length</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902868</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="G3078">
+      <data key="d7">1.0</data>
+      <data key="d8">The journey time for G3078 is 6 hours 55 minutes or 6 hours 31 minutes depending on the departure station.</data>
+      <data key="d9">journey time,trip length</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902871</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Duration" target="G800">
+      <data key="d7">1.0</data>
+      <data key="d8">The journey time for G800 is 6 hours 24 minutes or 5 hours 58 minutes depending on the departure station.</data>
+      <data key="d9">journey time,trip length</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902872</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hard Seat" target="Z100">
+      <data key="d7">2.0</data>
+      <data key="d8">Z100 offers Hard Seat as a seating class for passengers traveling to Hangzhou South Station.&lt;SEP&gt;The Z100 train service offers Hard Seat as a seating option.</data>
+      <data key="d9">seating option,ticket class,train service</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82&lt;SEP&gt;chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902696</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hard Seat" target="Ticket Price">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for a Hard Seat is 189 yuan per person.</data>
+      <data key="d9">fare,pricing</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902726</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hard Seat" target="T170">
+      <data key="d7">2.0</data>
+      <data key="d8">Hard seat is a seating class available on train T170.&lt;SEP&gt;T170 offers Hard Seat as a seating class for passengers traveling between Guangzhou and Hangzhou.</data>
+      <data key="d9">seating option,ticket class</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902779</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hard Seat" target="K210">
+      <data key="d7">1.0</data>
+      <data key="d8">K210 offers Hard Seat as a seating class for passengers on routes to Hangzhou Station and Hangzhou South Station.</data>
+      <data key="d9">seating option,ticket class</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902786</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hard Seat" target="K512">
+      <data key="d7">1.0</data>
+      <data key="d8">K512 offers Hard Seat as a seating class for passengers traveling to Hangzhou South Station.</data>
+      <data key="d9">seating option,ticket class</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902788</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hard Seat" target="K528">
+      <data key="d7">1.0</data>
+      <data key="d8">Hard seat is a seating class available on train K528.</data>
+      <data key="d9">seating option,ticket class</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902855</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Hangzhou South Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Multiple trains operate from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d9">origin to destination,rail route</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902692</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Hangzhou Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Some trains operate from Guangzhou Baiyun Station to Hangzhou Station.</data>
+      <data key="d9">origin to destination,rail route</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902697</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Train Option 18">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 18 departs from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902732</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Train Option 19">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 19 departs from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902735</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Train Option 20">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 20 departs from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902740</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Train Option 21">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 21 departs from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902742</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="T170">
+      <data key="d7">2.0</data>
+      <data key="d8">Train T170 departs from Guangzhou Baiyun Station.&lt;SEP&gt;T170 departs from Guangzhou Baiyun Station heading towards Hangzhou South Station.</data>
+      <data key="d9">departure point,origin,origin point,train departure</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902773</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="K210">
+      <data key="d7">1.0</data>
+      <data key="d8">K210 departs from Guangzhou Baiyun Station en route to Hangzhou Station and Hangzhou South Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902775</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="K512">
+      <data key="d7">1.0</data>
+      <data key="d8">K512 departs from Guangzhou Baiyun Station heading to Hangzhou South Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902777</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Z100">
+      <data key="d7">1.0</data>
+      <data key="d8">Z100 departs from Guangzhou Baiyun Station heading to Hangzhou South Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902779</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="Train Service From Guangzhou To Hangzhou">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Service From Guangzhou To Hangzhou originates at Guangzhou Baiyun Station.</data>
+      <data key="d9">route origin,service start</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902785</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Baiyun Station" target="K528">
+      <data key="d7">1.0</data>
+      <data key="d8">Train K528 departs from Guangzhou Baiyun Station.</data>
+      <data key="d9">origin point,train departure</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902848</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="Train Option 19">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 19 arrives at Hangzhou South Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902739</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="Train Option 20">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 20 arrives at Hangzhou South Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902742</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="Train Option 21">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 21 arrives at Hangzhou South Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902744</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="T170">
+      <data key="d7">2.0</data>
+      <data key="d8">Train T170 arrives at Hangzhou South Station.&lt;SEP&gt;T170 arrives at Hangzhou South Station after departing from Guangzhou Baiyun Station.</data>
+      <data key="d9">arrival point,destination,train arrival</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f&lt;SEP&gt;chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902775</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="K210">
+      <data key="d7">1.0</data>
+      <data key="d8">K210 arrives at Hangzhou South Station on one of its routes from Guangzhou Baiyun Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902779</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="K512">
+      <data key="d7">1.0</data>
+      <data key="d8">K512 arrives at Hangzhou South Station after departing from Guangzhou Baiyun Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902782</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="Z100">
+      <data key="d7">1.0</data>
+      <data key="d8">Z100 arrives at Hangzhou South Station after departing from Guangzhou Baiyun Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902782</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="Train Service From Guangzhou To Hangzhou">
+      <data key="d7">1.0</data>
+      <data key="d8">Hangzhou South Station is one of the terminal points for train services from Guangzhou.</data>
+      <data key="d9">route destination,service end</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902787</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou South Station" target="K528">
+      <data key="d7">1.0</data>
+      <data key="d8">Train K528 arrives at Hangzhou South Station.</data>
+      <data key="d9">destination,train arrival</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902851</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Station" target="Train Option 18">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 18 arrives at Hangzhou Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902737</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Station" target="K210">
+      <data key="d7">1.0</data>
+      <data key="d8">K210 arrives at Hangzhou Station after departing from Guangzhou Baiyun Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902777</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou Station" target="Train Service From Guangzhou To Hangzhou">
+      <data key="d7">1.0</data>
+      <data key="d8">Hangzhou Station serves as a destination for certain train services from Guangzhou.</data>
+      <data key="d9">route destination,service end</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902790</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="No Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">The Z100 train service includes a no seat ticket option.</data>
+      <data key="d9">ticket type,train service</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902703</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="Hard Sleeper">
+      <data key="d7">1.0</data>
+      <data key="d8">The Z100 train service offers Hard Sleeper accommodation for passengers.</data>
+      <data key="d9">sleeping option,train service</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902708</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="Train Option 11">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 11 corresponds to the Z100 train service with no seat availability.</data>
+      <data key="d9">service assignment,train identification</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902714</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="Train Option 16">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 16 corresponds to the Z100 train service with hard sleeper accommodation.</data>
+      <data key="d9">service assignment,train identification</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902717</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="Departure Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The Z100 train departs at 18:14 from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902720</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="Arrival Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The Z100 train arrives at Hangzhou South Station at 08:41.</data>
+      <data key="d9">arrival,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902721</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="Train Option 21">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 21 uses the Z100 train number for its route from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902740</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Z100" target="189 Cny Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">The fare for Hard Seat tickets on Z100 is 189 Cny per person.</data>
+      <data key="d9">fare,ticket price</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902785</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="Soft Sleeper">
+      <data key="d7">1.0</data>
+      <data key="d8">The T170 train service offers Soft Sleeper berths for higher comfort.</data>
+      <data key="d9">premium accommodation,train service</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902703</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="Train Option 12">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 12 corresponds to the T170 train service with hard sleeper accommodation.</data>
+      <data key="d9">service assignment,train identification</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902713</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="Hard Sleeper">
+      <data key="d7">1.0</data>
+      <data key="d8">The T170 train service includes Hard Sleeper as a seating option.</data>
+      <data key="d9">sleeping option,train service</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902718</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="Train Option 17">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 17 corresponds to the T170 train service with soft sleeper accommodation.</data>
+      <data key="d9">service assignment,train identification</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902720</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="Departure Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The T170 train departs at 15:08 from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902723</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="Arrival Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The T170 train arrives at Hangzhou South Station at 06:37.</data>
+      <data key="d9">arrival,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902725</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="Standing Room Only">
+      <data key="d7">1.0</data>
+      <data key="d8">T170 offers Standing Room Only tickets, indicating availability without assigned seating.</data>
+      <data key="d9">seating availability,ticket type</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902781</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="173 Cny Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">The fare for Hard Seat and Standing Room Only tickets on T170 is 173 Cny per person.</data>
+      <data key="d9">fare,ticket price</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902783</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="173 Yuan Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">Tickets for train T170 in hard seat class cost 173 Yuan per person.</data>
+      <data key="d9">cost information,ticket pricing</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902859</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T170" target="15 hours 28 minutes">
+      <data key="d7">1.0</data>
+      <data key="d8">Train T170 has a travel duration of 15 hours and 28 minutes from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d9">journey time,travel duration</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902861</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Train Option 13">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 13 corresponds to the K210 train service bound for Hangzhou Station.</data>
+      <data key="d9">service assignment,train identification</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902713</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Train Option 14">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 14 corresponds to the K210 train service bound for Hangzhou South Station.</data>
+      <data key="d9">service assignment,train identification</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902716</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Hard Sleeper">
+      <data key="d7">1.0</data>
+      <data key="d8">The K210 train service provides Hard Sleeper accommodation for long-distance travel.</data>
+      <data key="d9">sleeping option,train service</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902720</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Departure Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The K210 train departs at 16:21 from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902726</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Arrival Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The K210 train arrives at Hangzhou Station at 12:46 and at Hangzhou South Station at 13:38.</data>
+      <data key="d9">arrival,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902730</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Train Option 18">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 18 uses the K210 train number for its route from Guangzhou Baiyun Station to Hangzhou Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902735</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Train Option 19">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 19 uses the K210 train number for its route from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902741</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="Standing Room Only">
+      <data key="d7">1.0</data>
+      <data key="d8">K210 offers Standing Room Only tickets, indicating availability without assigned seating.</data>
+      <data key="d9">seating availability,ticket type</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902783</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K210" target="173 Cny Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">The fare for Hard Seat and Standing Room Only tickets on K210 is 173 Cny per person.</data>
+      <data key="d9">fare,ticket price</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902788</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K512" target="Train Option 15">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 15 corresponds to the K512 train service with hard sleeper accommodation.</data>
+      <data key="d9">service assignment,train identification</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902715</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K512" target="Hard Sleeper">
+      <data key="d7">1.0</data>
+      <data key="d8">The K512 train service includes Hard Sleeper as the available sleeping option.</data>
+      <data key="d9">sleeping option,train service</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902722</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K512" target="Departure Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The K512 train departs at 07:52 from Guangzhou Baiyun Station.</data>
+      <data key="d9">departure,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902730</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K512" target="Arrival Time">
+      <data key="d7">1.0</data>
+      <data key="d8">The K512 train arrives at Hangzhou South Station at 04:24.</data>
+      <data key="d9">arrival,schedule</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902733</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K512" target="Train Option 20">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 20 uses the K512 train number for its route from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902737</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K512" target="189 Cny Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">The fare for Hard Seat tickets on K512 is 189 Cny per person.</data>
+      <data key="d9">fare,ticket price</data>
+      <data key="d10">chunk-45d25e46b967fe35461651a49a70186f</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902782</data>
+      <data key="d13" />
+    </edge>
+    <edge source="No Seat" target="Ticket Price">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for a No Seat option is 189 yuan per person.</data>
+      <data key="d9">fare,pricing</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902730</data>
+      <data key="d13" />
+    </edge>
+    <edge source="No Seat" target="G800">
+      <data key="d7">1.0</data>
+      <data key="d8">G800 offers No Seat as an available ticket type with seats not assigned.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902764</data>
+      <data key="d13" />
+    </edge>
+    <edge source="No Seat" target="G818">
+      <data key="d7">1.0</data>
+      <data key="d8">G818 offers No Seat as an available ticket type for passengers without assigned seating.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902766</data>
+      <data key="d13" />
+    </edge>
+    <edge source="No Seat" target="G820">
+      <data key="d7">1.0</data>
+      <data key="d8">G820 offers No Seat as an available ticket type allowing unassigned travel.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902769</data>
+      <data key="d13" />
+    </edge>
+    <edge source="No Seat" target="G1404">
+      <data key="d7">1.0</data>
+      <data key="d8">G1404 offers No Seat as an available option for passengers without assigned seating.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902771</data>
+      <data key="d13" />
+    </edge>
+    <edge source="No Seat" target="Train Option 49">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 49 offers no seat, meaning passengers do not have a reserved or assigned seat.</data>
+      <data key="d9">seat assignment,ticket type</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902799</data>
+      <data key="d13" />
+    </edge>
+    <edge source="No Seat" target="K528">
+      <data key="d7">1.0</data>
+      <data key="d8">No seat tickets are available for train K528.</data>
+      <data key="d9">seating option,ticket class</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902856</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hard Sleeper" target="Ticket Price">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for a Hard Sleeper is 317 yuan or 343 yuan per person depending on the train service.</data>
+      <data key="d9">fare,pricing</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902732</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Soft Sleeper" target="Ticket Price">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for a Soft Sleeper is 529 yuan per person.</data>
+      <data key="d9">fare,premium pricing</data>
+      <data key="d10">chunk-7f46abe8eb143d3000590ac507dd9e82</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902734</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Soft Sleeper" target="Train Option 18">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 18 offers Soft Sleeper seating for passengers.</data>
+      <data key="d9">passenger comfort,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902738</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Soft Sleeper" target="Train Option 19">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 19 offers Soft Sleeper seating for passengers.</data>
+      <data key="d9">passenger comfort,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902742</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Soft Sleeper" target="Train Option 20">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 20 offers Soft Sleeper seating for passengers.</data>
+      <data key="d9">passenger comfort,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902745</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Soft Sleeper" target="Train Option 21">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 21 offers Soft Sleeper seating for passengers.</data>
+      <data key="d9">passenger comfort,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902748</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Ticket Price" target="G3072">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for G3072 is 815 yuan per person for both second class and standing room tickets.</data>
+      <data key="d9">cost,fare</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902872</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Ticket Price" target="G3078">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for G3078 is 815 yuan per person for second class seats.</data>
+      <data key="d9">cost,fare</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902874</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Ticket Price" target="G800">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for G800 is 845 yuan per person for both second class and standing room tickets.</data>
+      <data key="d9">cost,fare</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902875</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 22" target="D3121">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 22 uses the D3121 train number for its route from Guangzhou East Station to Hangzhou East Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902742</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 22" target="Second-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 22 offers Second-Class Seat seating for passengers.</data>
+      <data key="d9">passenger comfort,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902745</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 22" target="Guangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 22 departs from Guangzhou East Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902747</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 22" target="Hangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 22 arrives at Hangzhou East Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902749</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 23" target="D3121">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 23 uses the D3121 train number for its route from Guangzhou East Station to Hangzhou East Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902745</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 23" target="Standing Room Only">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 23 offers Standing Room Only seating for passengers.</data>
+      <data key="d9">availability,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902748</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 23" target="Guangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 23 departs from Guangzhou East Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902749</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 23" target="Hangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 23 arrives at Hangzhou East Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902752</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 24" target="G3068">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 24 uses the G3068 train number for its route from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902748</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 24" target="Second-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 24 offers Second-Class Seat seating for passengers.</data>
+      <data key="d9">passenger comfort,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902750</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 24" target="Hangzhou West Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 24 arrives at Hangzhou West Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902752</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 24" target="Guangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 24 departs from Guangzhou East Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902754</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 25" target="G3068">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 25 uses the G3068 train number for its route from Guangzhou East Station to Hangzhou West Station.</data>
+      <data key="d9">route assignment,train service</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902750</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 25" target="Standing Room Only">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 25 offers Standing Room Only seating for passengers.</data>
+      <data key="d9">availability,seating type</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902754</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 25" target="Hangzhou West Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 25 arrives at Hangzhou West Station.</data>
+      <data key="d9">arrival point,destination station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902756</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Train Option 25" target="Guangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 25 departs from Guangzhou East Station.</data>
+      <data key="d9">departure point,origin station</data>
+      <data key="d10">chunk-5690eec79340894ed0fb467bc52ae9ef</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902757</data>
+      <data key="d13" />
+    </edge>
+    <edge source="D3121" target="Guangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train D3121 departs from Guangzhou East Station.</data>
+      <data key="d9">route,train departure</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902789</data>
+      <data key="d13" />
+    </edge>
+    <edge source="D3121" target="Hangzhou East Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train D3121 arrives at Hangzhou East Station.</data>
+      <data key="d9">route,train arrival</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902793</data>
+      <data key="d13" />
+    </edge>
+    <edge source="D3121" target="Train Option 50">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 50 is associated with train D3121 for travel from Guangzhou to Hangzhou.</data>
+      <data key="d9">service option,train assignment</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902795</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Guangzhou East Station">
+      <data key="d7">2.0</data>
+      <data key="d8">G3068 departs from Guangzhou East Station to Hangzhou West Station.&lt;SEP&gt;Train G3068 departs from Guangzhou East Station.</data>
+      <data key="d9">departure point,route,train departure,train route</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902793</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Guangzhou Xinzhuang Station">
+      <data key="d7">1.0</data>
+      <data key="d8">Train G3068 departs from Guangzhou Xinzhuang Station.</data>
+      <data key="d9">route,train departure</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902795</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Hangzhou West Station">
+      <data key="d7">3.0</data>
+      <data key="d8">G3068 arrives at Hangzhou West Station from Guangzhou.&lt;SEP&gt;Train G3068 serves Hangzhou West Station from two different departure stations: Guangzhou East and Guangzhou Xinzhuang.&lt;SEP&gt;Train G3068 arrives at Hangzhou West Station.</data>
+      <data key="d9">arrival point,different departure,route,shared route,train arrival,train route</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902802</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Train Option 51">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 51 is associated with train G3068 departing from Guangzhou East Station.</data>
+      <data key="d9">service option,train assignment</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902804</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Train Option 52">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 52 is associated with train G3068 departing from Guangzhou Xinzhuang Station.</data>
+      <data key="d9">service option,train assignment</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902807</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Guangzhou Xintang Station">
+      <data key="d7">1.0</data>
+      <data key="d8">G3068 departs from Guangzhou Xintang Station to Hangzhou West Station.</data>
+      <data key="d9">departure point,train route</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902817</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="6 Hour 49 Minute Trip">
+      <data key="d7">1.0</data>
+      <data key="d8">G3068 operates a trip from Guangzhou East Station that lasts 6 hours and 49 minutes.</data>
+      <data key="d9">journey duration,scheduled trip</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902819</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="6 Hour 22 Minute Trip">
+      <data key="d7">1.0</data>
+      <data key="d8">G3068 operates a trip from Guangzhou Xintang Station that lasts 6 hours and 22 minutes.</data>
+      <data key="d9">journey duration,scheduled trip</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902822</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="815 Yuan Fare">
+      <data key="d7">1.0</data>
+      <data key="d8">The fare for G3068 tickets from Guangzhou to Hangzhou is 815 yuan per person.</data>
+      <data key="d9">cost structure,ticket pricing</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902824</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Standing Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">Standing seat tickets are available on certain G3068 services.</data>
+      <data key="d9">seat availability,ticket class</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902827</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3068" target="Second Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">Second class seat tickets are available on certain G3068 services.</data>
+      <data key="d9">seat availability,ticket class</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902831</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou East Station" target="G3072">
+      <data key="d7">2.0</data>
+      <data key="d8">G3072 departs from Guangzhou East Station to Hangzhou West Station.&lt;SEP&gt;Train G3072 departs from Guangzhou East Station.</data>
+      <data key="d9">departure point,route,train departure,train route</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902795</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou East Station" target="G800">
+      <data key="d7">2.0</data>
+      <data key="d8">G800 departs from Guangzhou East Station on its route to Hangzhou East Station.&lt;SEP&gt;G800 departs from Guangzhou East Station en route to Hangzhou East Station.</data>
+      <data key="d9">departure point,origin,route origin</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902804</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou East Station" target="G3078">
+      <data key="d7">1.0</data>
+      <data key="d8">G3078 departs from Guangzhou East Station on its route to Hangzhou West Station.</data>
+      <data key="d9">departure point,route origin</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902863</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou East Station" target="G800">
+      <data key="d7">3.0</data>
+      <data key="d8">G800 arrives at Hangzhou East Station from both Guangzhou East and Guangzhou Xintang Stations.&lt;SEP&gt;G800 arrives at Hangzhou East Station after departing from Guangzhou Xinzhuang Station.&lt;SEP&gt;G800 arrives at Hangzhou East Station after departing from Guangzhou East or Guangzhou Xintang Station.</data>
+      <data key="d9">arrival point,destination,route destination</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902759</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou East Station" target="G818">
+      <data key="d7">1.0</data>
+      <data key="d8">G818 arrives at Hangzhou East Station after departing from Guangzhou South Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902762</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou East Station" target="G1302">
+      <data key="d7">2.0</data>
+      <data key="d8">G1302 arrives at Hangzhou East Station after departing from Guangzhou South Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902765</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou East Station" target="G820">
+      <data key="d7">2.0</data>
+      <data key="d8">G820 arrives at Hangzhou East Station after departing from Guangzhou South Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902767</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou East Station" target="G1404">
+      <data key="d7">2.0</data>
+      <data key="d8">G1404 arrives at Hangzhou East Station after departing from Guangzhou South Station.</data>
+      <data key="d9">arrival point,destination</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902769</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou East Station" target="G822">
+      <data key="d7">2.0</data>
+      <data key="d8">Train G822 arrives at Hangzhou East Station.&lt;SEP&gt;G822 arrives at Hangzhou East Station after departing from Guangzhou South Station.</data>
+      <data key="d9">arrival point,destination,route,train arrival</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902789</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou East Station" target="Guangzhou South Station">
+      <data key="d7">1.0</data>
+      <data key="d8">High-speed trains such as G822, G1302, G820, and G1404 operate between Guangzhou South Station and Hangzhou East Station.</data>
+      <data key="d9">departure and arrival,rail connection</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902826</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou West Station" target="G1184">
+      <data key="d7">1.0</data>
+      <data key="d8">Train G1184 arrives at Hangzhou West Station.</data>
+      <data key="d9">route,train arrival</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902791</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou West Station" target="G3072">
+      <data key="d7">4.0</data>
+      <data key="d8">G3072 arrives at Hangzhou West Station from various Guangzhou-area stations.&lt;SEP&gt;G3072 arrives at Hangzhou West Station after departing from Zengcheng Station.&lt;SEP&gt;Train G3072 arrives at Hangzhou West Station.&lt;SEP&gt;G3072 arrives at Hangzhou West Station after departing from Zengcheng or Guangzhou Xintang Station.</data>
+      <data key="d9">arrival point,destination,route,route destination,train arrival,train route</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902797</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou West Station" target="Guangzhou South Station">
+      <data key="d7">1.0</data>
+      <data key="d8">The G1184 high-speed train operates between Guangzhou South Station and Hangzhou West Station.</data>
+      <data key="d9">departure and arrival,rail connection</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902829</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Hangzhou West Station" target="G3078">
+      <data key="d7">1.0</data>
+      <data key="d8">G3078 arrives at Hangzhou West Station from both Guangzhou East and Guangzhou Xintang Stations.</data>
+      <data key="d9">arrival point,route destination</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902866</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Standing Room Only" target="High Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">High Speed Rail provides Standing Room Only tickets for passengers without assigned seats.</data>
+      <data key="d9">ticket type,travel option</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902868</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G800" target="Guangzhou Xinzhuang Station">
+      <data key="d7">1.0</data>
+      <data key="d8">G800 departs from Guangzhou Xinzhuang Station on its route to Hangzhou East Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902756</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G800" target="Guangzhou To Hangzhou High-Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">G800 is one of the train services operating on the Guangzhou to Hangzhou high-speed rail route.</data>
+      <data key="d9">high-speed rail network,route service</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902769</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G800" target="Guangzhou Xintang Station">
+      <data key="d7">2.0</data>
+      <data key="d8">G800 departs from Guangzhou Xintang Station on its route to Hangzhou East Station.&lt;SEP&gt;G800 also departs from Guangzhou Xintang Station for Hangzhou East Station.</data>
+      <data key="d9">departure point,origin,route origin</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902811</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G800" target="1340 Yuan">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for train G800 from Guangzhou to Hangzhou is 1340 Yuan per person.</data>
+      <data key="d9">cost,ticket pricing</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902813</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G800" target="First-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G800 offers first-class seats with availability marked as "有" (available).</data>
+      <data key="d9">seating availability,service class</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902819</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G818" target="Guangzhou South Station">
+      <data key="d7">1.0</data>
+      <data key="d8">G818 departs from Guangzhou South Station on its route to Hangzhou East Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902757</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G818" target="Second Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G818 offers Second Class Seat as a standard seating option for passengers.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902770</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G818" target="Guangzhou To Hangzhou High-Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">G818 is part of the Guangzhou to Hangzhou high-speed rail service offering regular connections between the two cities.</data>
+      <data key="d9">high-speed rail network,route service</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902775</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1302" target="Guangzhou South Station">
+      <data key="d7">2.0</data>
+      <data key="d8">G1302 departs from Guangzhou South Station on its route to Hangzhou East Station.&lt;SEP&gt;G1302 departs from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902762</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1302" target="Second Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G1302 offers Second Class Seat as a seating option available for purchase.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902767</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1302" target="Guangzhou To Hangzhou High-Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">G1302 operates as a segment of the Guangzhou to Hangzhou high-speed rail connection.</data>
+      <data key="d9">high-speed rail network,route service</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902773</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1302" target="1380 Yuan">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for train G1302 from Guangzhou South Station to Hangzhou East Station is 1380 Yuan per person.</data>
+      <data key="d9">cost,ticket pricing</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902811</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1302" target="First-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G1302 offers first-class seats with availability marked as "有" (available).</data>
+      <data key="d9">seating availability,service class</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902821</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1302" target="3018 Yuan Ticket">
+      <data key="d7">1.0</data>
+      <data key="d8">G1302 offers business-class seats priced at 3018 yuan per person.</data>
+      <data key="d9">business-class fare,ticket pricing</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902832</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G820" target="Guangzhou South Station">
+      <data key="d7">2.0</data>
+      <data key="d8">G820 departs from Guangzhou South Station on its route to Hangzhou East Station.&lt;SEP&gt;G820 departs from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902765</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G820" target="Second Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G820 offers Second Class Seat as a seating option for passengers traveling from Guangzhou to Hangzhou.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902772</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G820" target="Guangzhou To Hangzhou High-Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">G820 is a train service contributing to the connectivity of the Guangzhou to Hangzhou high-speed rail route.</data>
+      <data key="d9">high-speed rail network,route service</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902778</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G820" target="1380 Yuan">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for train G820 from Guangzhou South Station to Hangzhou East Station is 1380 Yuan per person.</data>
+      <data key="d9">cost,ticket pricing</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902813</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G820" target="First-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G820 offers first-class seats with 12 remaining tickets available.</data>
+      <data key="d9">seating availability,service class</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902825</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G820" target="3018 Yuan Ticket">
+      <data key="d7">1.0</data>
+      <data key="d8">G820 offers business-class seats priced at 3018 yuan per person.</data>
+      <data key="d9">business-class fare,ticket pricing</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902839</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1404" target="Guangzhou South Station">
+      <data key="d7">2.0</data>
+      <data key="d8">G1404 departs from Guangzhou South Station on its route to Hangzhou East Station.&lt;SEP&gt;G1404 departs from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d9">departure point,origin</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902766</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1404" target="Second Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G1404 offers Second Class Seat as a standard seating option on its journey.</data>
+      <data key="d9">available class,ticket type</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902774</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1404" target="Guangzhou To Hangzhou High-Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">G1404 is one of the train services operating on the Guangzhou to Hangzhou high-speed rail corridor.</data>
+      <data key="d9">high-speed rail network,route service</data>
+      <data key="d10">chunk-c283055db297545eff9739b9aef30ae7</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902779</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1404" target="1380 Yuan">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for train G1404 from Guangzhou South Station to Hangzhou East Station is 1380 Yuan per person.</data>
+      <data key="d9">cost,ticket pricing</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902816</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1404" target="First-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G1404 offers first-class seats with availability marked as "有" (available).</data>
+      <data key="d9">seating availability,service class</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902828</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1404" target="3018 Yuan Ticket">
+      <data key="d7">1.0</data>
+      <data key="d8">G1404 offers business-class seats priced at 3018 yuan per person.</data>
+      <data key="d9">business-class fare,ticket pricing</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902842</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou South Station" target="G822">
+      <data key="d7">2.0</data>
+      <data key="d8">Train G822 departs from Guangzhou South Station.&lt;SEP&gt;G822 departs from Guangzhou South Station to Hangzhou East Station.</data>
+      <data key="d9">departure point,origin,route,train departure</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2&lt;SEP&gt;chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902786</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou South Station" target="G1184">
+      <data key="d7">1.0</data>
+      <data key="d8">Train G1184 departs from Guangzhou South Station.</data>
+      <data key="d9">route,train departure</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902789</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Second Class Seat" target="Train Option 47">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 47 offers a second class seat for passengers.</data>
+      <data key="d9">seat assignment,ticket type</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902798</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Second Class Seat" target="Train Option 48">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 48 offers a second class seat for passengers.</data>
+      <data key="d9">seat assignment,ticket type</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902800</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Second Class Seat" target="G3072">
+      <data key="d7">1.0</data>
+      <data key="d8">Second class seat tickets are available on certain G3072 services.</data>
+      <data key="d9">seat availability,ticket class</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902827</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Second Class Seat" target="High Speed Rail">
+      <data key="d7">1.0</data>
+      <data key="d8">High Speed Rail offers Second Class Seat as a standard seating option for passengers.</data>
+      <data key="d9">seating option,ticket type</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902866</data>
+      <data key="d13" />
+    </edge>
+    <edge source="High-Speed Rail" target="First-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">High-speed rail services between Guangzhou and Hangzhou offer first-class seats as a premium seating option.</data>
+      <data key="d9">seating option,service class</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902807</data>
+      <data key="d13" />
+    </edge>
+    <edge source="High-Speed Rail" target="First Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">High-Speed Rail offers First Class Seat as an upgraded seating option with more comfort and space.</data>
+      <data key="d9">seating class,service level</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902836</data>
+      <data key="d13" />
+    </edge>
+    <edge source="High-Speed Rail" target="Business Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">High-Speed Rail offers Business Class Seat as the highest-tier seating option with premium comfort and service.</data>
+      <data key="d9">premium service,seating class</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902840</data>
+      <data key="d13" />
+    </edge>
+    <edge source="First Class Seat" target="Train Option 50">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 50 offers a first class seat for enhanced comfort.</data>
+      <data key="d9">seat assignment,ticket type</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902800</data>
+      <data key="d13" />
+    </edge>
+    <edge source="First Class Seat" target="Train Option 51">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 51 offers a first class seat for enhanced comfort.</data>
+      <data key="d9">seat assignment,ticket type</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902803</data>
+      <data key="d13" />
+    </edge>
+    <edge source="First Class Seat" target="Train Option 52">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 52 offers a first class seat for enhanced comfort.</data>
+      <data key="d9">seat assignment,ticket type</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902804</data>
+      <data key="d13" />
+    </edge>
+    <edge source="First Class Seat" target="Train Option 53">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 53 offers a first class seat for enhanced comfort.</data>
+      <data key="d9">seat assignment,ticket type</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902807</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G822" target="Train Option 47">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 47 is associated with train G822 for travel from Guangzhou to Hangzhou.</data>
+      <data key="d9">service option,train assignment</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902794</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G822" target="First-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G822 offers first-class seats with two remaining tickets available.</data>
+      <data key="d9">seating availability,service class</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902813</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G822" target="1380 Yuan">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for train G822 from Guangzhou South Station to Hangzhou East Station is 1380 Yuan per person.</data>
+      <data key="d9">cost,ticket pricing</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902818</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G822" target="1380 Yuan Ticket">
+      <data key="d7">1.0</data>
+      <data key="d8">G822 offers first-class seats priced at 1380 yuan per person.</data>
+      <data key="d9">first-class fare,ticket pricing</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902832</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1184" target="Train Option 48">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 48 is associated with train G1184 for travel from Guangzhou to Hangzhou.</data>
+      <data key="d9">service option,train assignment</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902794</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1184" target="Train Option 49">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 49 is associated with train G1184 but offers a no seat option.</data>
+      <data key="d9">service option,train assignment</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902797</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G1184" target="1444 Yuan Ticket">
+      <data key="d7">1.0</data>
+      <data key="d8">G1184 offers first-class seats priced at 1444 yuan per person.</data>
+      <data key="d9">first-class fare,ticket pricing</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902831</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="Train Option 53">
+      <data key="d7">1.0</data>
+      <data key="d8">Train Option 53 is associated with train G3072 for travel from Guangzhou to Hangzhou.</data>
+      <data key="d9">service option,train assignment</data>
+      <data key="d10">chunk-5ced83dbfaa3269de41de74d5c5fa1f2</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902802</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="Guangzhou Xintang Station">
+      <data key="d7">2.0</data>
+      <data key="d8">G3072 departs from Guangzhou Xintang Station to Hangzhou West Station.&lt;SEP&gt;G3072 departs from Guangzhou Xintang Station as part of its route to Hangzhou West Station.</data>
+      <data key="d9">departure point,origin,train route</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902808</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="Zengcheng Station">
+      <data key="d7">3.0</data>
+      <data key="d8">G3072 departs from Zengcheng Station to Hangzhou West Station.&lt;SEP&gt;G3072 departs from Zengcheng Station on its route to Hangzhou West Station.&lt;SEP&gt;G3072 departs from Zengcheng Station for Hangzhou West Station as per one of the listed options.</data>
+      <data key="d9">departure point,origin,route origin,train route</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670&lt;SEP&gt;chunk-453b8f51dbb849545c841e2551ad0fe6&lt;SEP&gt;chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902811</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="1291 Yuan">
+      <data key="d7">1.0</data>
+      <data key="d8">The ticket price for train G3072 from Guangzhou to Hangzhou is 1291 Yuan per person.</data>
+      <data key="d9">cost,ticket pricing</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902815</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="First-Class Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">G3072 offers first-class seats with one remaining ticket available.</data>
+      <data key="d9">seating availability,service class</data>
+      <data key="d10">chunk-67d8c1e369d756185a96987e2d347670</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902817</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="8 Hour 48 Minute Trip">
+      <data key="d7">1.0</data>
+      <data key="d8">G3072 operates a trip from Guangzhou East Station that lasts 8 hours and 48 minutes.</data>
+      <data key="d9">journey duration,scheduled trip</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902819</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="8 Hour 20 Minute Trip">
+      <data key="d7">1.0</data>
+      <data key="d8">G3072 operates a trip from Guangzhou Xintang Station that lasts 8 hours and 20 minutes.</data>
+      <data key="d9">journey duration,scheduled trip</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902823</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="Standing Seat">
+      <data key="d7">1.0</data>
+      <data key="d8">Standing seat tickets are available on certain G3072 services.</data>
+      <data key="d9">seat availability,ticket class</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902826</data>
+      <data key="d13" />
+    </edge>
+    <edge source="G3072" target="815 Yuan Fare">
+      <data key="d7">1.0</data>
+      <data key="d8">The fare for G3072 tickets from Guangzhou to Hangzhou is 815 yuan per person.</data>
+      <data key="d9">cost structure,ticket pricing</data>
+      <data key="d10">chunk-453b8f51dbb849545c841e2551ad0fe6</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902831</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Guangzhou Xintang Station" target="G3078">
+      <data key="d7">1.0</data>
+      <data key="d8">G3078 departs from Guangzhou Xintang Station on its route to Hangzhou West Station.</data>
+      <data key="d9">departure point,route origin</data>
+      <data key="d10">chunk-66d33ad779caa7da8fdf26915dc3ab09</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902864</data>
+      <data key="d13" />
+    </edge>
+    <edge source="CA1234" target="Time Priority">
+      <data key="d7">1.0</data>
+      <data key="d8">For travelers with time priority, CA1234 is recommended as the fastest available option.</data>
+      <data key="d9">quick travel,speed efficiency</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902837</data>
+      <data key="d13" />
+    </edge>
+    <edge source="CA1234" target="China International Airlines">
+      <data key="d7">1.0</data>
+      <data key="d8">China International Airlines operates flight CA1234 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902848</data>
+      <data key="d13" />
+    </edge>
+    <edge source="CA1234" target="China Southern Airlines">
+      <data key="d7">1.0</data>
+      <data key="d8">China Southern Airlines operates flight CA1234 from Guangzhou Airport to Hangzhou Xiaoshan International Airport.</data>
+      <data key="d9">airline service,flight operation</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902851</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K528" target="173 Yuan Ticket">
+      <data key="d7">1.0</data>
+      <data key="d8">K528 is the cheapest train option, priced at 173 yuan per person.</data>
+      <data key="d9">lowest price,rail affordability</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902834</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K528" target="Budget Priority">
+      <data key="d7">1.0</data>
+      <data key="d8">For travelers with budget priority, K528 is recommended as the lowest-priced rail option.</data>
+      <data key="d9">cost efficiency,low-cost travel</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902838</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K528" target="173 Yuan Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">Tickets for train K528, including hard seat and no seat, cost 173 Yuan per person.</data>
+      <data key="d9">cost information,ticket pricing</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902857</data>
+      <data key="d13" />
+    </edge>
+    <edge source="K528" target="17 hours 31 minutes">
+      <data key="d7">1.0</data>
+      <data key="d8">Train K528 has a travel duration of 17 hours and 31 minutes from Guangzhou Baiyun Station to Hangzhou South Station.</data>
+      <data key="d9">journey time,travel duration</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902861</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Travel Recommendation" target="Airplane">
+      <data key="d7">1.0</data>
+      <data key="d8">The travel recommendation suggests airplane travel for those valuing time, as it provides higher time value despite higher cost.</data>
+      <data key="d9">speed advantage,time efficiency</data>
+      <data key="d10">chunk-43f40ce7eb1a9ee507d81313371e298b</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902905</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Flight From Guangzhou To Hangzhou" target="681 Yuan Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">The flight from Guangzhou to Hangzhou operated by China Eastern Airlines costs 681 Yuan per person.</data>
+      <data key="d9">cost information,ticket pricing</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902844</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Flight From Guangzhou To Hangzhou" target="690 Yuan Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">Flights operated by China International Airlines and China Southern Airlines on route CA1234 cost 690 Yuan per person.</data>
+      <data key="d9">cost information,ticket pricing</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902847</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Flight From Guangzhou To Hangzhou" target="745 Yuan Per Person">
+      <data key="d7">1.0</data>
+      <data key="d8">The flight options operated by China Southern Airlines from Guangzhou to Hangzhou cost 745 Yuan per person.</data>
+      <data key="d9">cost information,ticket pricing</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902849</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Flight From Guangzhou To Hangzhou" target="Airplane">
+      <data key="d7">1.0</data>
+      <data key="d8">The flight from Guangzhou to Hangzhou uses airplane as the primary mode of transport.</data>
+      <data key="d9">transport mode,travel method</data>
+      <data key="d10">chunk-0e967061b94ebe75331ff48542adf6cb</data>
+      <data key="d11">unknown_source</data>
+      <data key="d12">1763902906</data>
+      <data key="d13" />
+    </edge>
+  </graph>
+</graphml>

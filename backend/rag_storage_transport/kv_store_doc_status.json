@@ -1,0 +1,29 @@
+{
+  "transport-广州-to-杭州": {
+    "status": "processed",
+    "chunks_count": 11,
+    "chunks_list": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-0e967061b94ebe75331ff48542adf6cb",
+      "chunk-45d25e46b967fe35461651a49a70186f",
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09",
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "content_summary": "# 从广州到杭州的交通方式\n\n本文档包含从广州前往杭州的所有可用交通方式信息。\n\n## 交通方式概览\n- 出发城市: 广州\n- 到达城市: 杭州\n- 可用交通方式总数: 76个\n- 航班数量: 11班\n- 火车/高铁数量: 65班\n\n- 价格区间: 173元 - 3018元\n- 时长区间: 1小时45分钟 - 21小时16分钟\n\n\n## 航班信息 (共11班)\n\n航班是最快捷的交通方式，适合时间紧迫的旅客。\n\n### 航班选项 1\n- 交通方式: 飞机\n- 航空公司: 北京首都航空\n- 航班号:...",
+    "content_length": 12899,
+    "created_at": "2025-11-23T12:49:48.886120+00:00",
+    "updated_at": "2025-11-23T13:01:48.900619+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251123_204948_bce379ff",
+    "metadata": {
+      "processing_start_time": 1763902189,
+      "processing_end_time": 1763902908
+    }
+  }
+}

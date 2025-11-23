@@ -1,0 +1,240 @@
+{
+  "广州":
+  [
+    {
+      "price": 653,
+      "duration": 1.83,
+      "departure_time": "11:50",
+      "airline": "中国东方航空",
+      "flight_number": ""
+    },
+    {
+      "price": 653,
+      "duration": 2.0,
+      "departure_time": "11:15",
+      "airline": "中国东方航空",
+      "flight_number": ""
+    },
+    {
+      "price": 653,
+      "duration": 1.92,
+      "departure_time": "11:10",
+      "airline": "海南航空",
+      "flight_number": ""
+    },
+    {
+      "price": 681,
+      "duration": 2.0,
+      "departure_time": "11:35",
+      "airline": "中国东方航空",
+      "flight_number": ""
+    },
+    {
+      "price": 690,
+      "duration": 1.83,
+      "departure_time": "16:20",
+      "airline": "中国东方航空",
+      "flight_number": ""
+    },
+    {
+      "price": 745,
+      "duration": 2.0,
+      "departure_time": "11:15",
+      "airline": "中国南方航空",
+      "flight_number": ""
+    },
+    {
+      "price": 690,
+      "duration": 2.0,
+      "departure_time": "18:05",
+      "airline": "中国国际航空",
+      "flight_number": ""
+    },
+    {
+      "price": 745,
+      "duration": 1.83,
+      "departure_time": "16:20",
+      "airline": "中国南方航空",
+      "flight_number": ""
+    },
+    {
+      "price": 653,
+      "duration": 1.83,
+      "departure_time": "11:50",
+      "airline": "成都航空",
+      "flight_number": ""
+    },
+    {
+      "price": 653,
+      "duration": 1.83,
+      "departure_time": "11:50",
+      "airline": "吉祥航空",
+      "flight_number": ""
+    },
+    {
+      "price": 506,
+      "duration": 1.75,
+      "departure_time": "07:00",
+      "airline": "北京首都航空",
+      "flight_number": ""
+    }
+  ],
+  "北京":[
+  {
+    "price": 708,
+    "duration": 2.33,
+    "departure_time": "17:25",
+    "airline": "中国国际航空",
+    "flight_number": ""
+  },
+  {
+    "price": 966,
+    "duration": 2.25,
+    "departure_time": "12:30",
+    "airline": "中国国际航空",
+    "flight_number": ""
+  },
+  {
+    "price": 506,
+    "duration": 2.58,
+    "departure_time": "21:30",
+    "airline": "中国国际航空",
+    "flight_number": ""
+  },
+  {
+    "price": 902,
+    "duration": 2.08,
+    "departure_time": "12:10",
+    "airline": "海南航空",
+    "flight_number": ""
+  },
+  {
+    "price": 672,
+    "duration": 2.25,
+    "departure_time": "07:30",
+    "airline": "中国国际航空",
+    "flight_number": ""
+  },
+  {
+    "price": 856,
+    "duration": 2.17,
+    "departure_time": "10:25",
+    "airline": "长龙航空",
+    "flight_number": ""
+  },
+  {
+    "price": 570,
+    "duration": 2.08,
+    "departure_time": "19:45",
+    "airline": "长龙航空",
+    "flight_number": ""
+  },
+  {
+    "price": 957,
+    "duration": 2.33,
+    "departure_time": "11:10",
+    "airline": "海南航空",
+    "flight_number": ""
+  },
+  {
+    "price": 810,
+    "duration": 2.25,
+    "departure_time": "08:00",
+    "airline": "海南航空",
+    "flight_number": ""
+  },
+  {
+    "price": 708,
+    "duration": 2.17,
+    "departure_time": "17:45",
+    "airline": "海南航空",
+    "flight_number": ""
+  },
+  {
+    "price": 543,
+    "duration": 2.33,
+    "departure_time": "21:15",
+    "airline": "海南航空",
+    "flight_number": ""
+  }
+  ],
+  "深圳":[
+  {
+    "price": 692,
+    "duration": 1.83,
+    "departure_time": "10:35",
+    "airline": "中国东方航空",
+    "flight_number": ""
+  },
+  {
+    "price": 503,
+    "duration": 2.25,
+    "departure_time": "19:55",
+    "airline": "中国东方航空",
+    "flight_number": ""
+  },
+  {
+    "price": 692,
+    "duration": 2.08,
+    "departure_time": "14:20",
+    "airline": "中国南方航空",
+    "flight_number": ""
+  },
+  {
+    "price": 638,
+    "duration": 2.17,
+    "departure_time": "13:00",
+    "airline": "北京首都航空",
+    "flight_number": ""
+  },
+  {
+    "price": 593,
+    "duration": 2.25,
+    "departure_time": "17:35",
+    "airline": "中国东方航空",
+    "flight_number": ""
+  },
+  {
+    "price": 638,
+    "duration": 2.25,
+    "departure_time": "17:35",
+    "airline": "中国南方航空",
+    "flight_number": ""
+  },
+  {
+    "price": 548,
+    "duration": 2.08,
+    "departure_time": "08:15",
+    "airline": "北京首都航空",
+    "flight_number": ""
+  },
+  {
+    "price": 692,
+    "duration": 2.00,
+    "departure_time": "11:20",
+    "airline": "深圳航空",
+    "flight_number": ""
+  },
+  {
+    "price": 692,
+    "duration": 2.17,
+    "departure_time": "16:00",
+    "airline": "中国南方航空",
+    "flight_number": ""
+  },
+  {
+    "price": 692,
+    "duration": 2.00,
+    "departure_time": "18:25",
+    "airline": "中国南方航空",
+    "flight_number": ""
+  },
+  {
+    "price": 548,
+    "duration": 2.08,
+    "departure_time": "08:15",
+    "airline": "金鹏航空",
+    "flight_number": ""
+  }
+]
+}

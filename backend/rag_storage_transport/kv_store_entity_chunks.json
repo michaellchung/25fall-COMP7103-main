@@ -1,0 +1,1278 @@
+{
+  "Guangzhou": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 4,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "Guangzhou"
+  },
+  "Hangzhou": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 4,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "Hangzhou"
+  },
+  "Beijing Capital Airlines": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "Beijing Capital Airlines"
+  },
+  "China Eastern Airlines": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 2,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "China Eastern Airlines"
+  },
+  "Hainan Airlines": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "Hainan Airlines"
+  },
+  "Chengdu Airlines": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "Chengdu Airlines"
+  },
+  "Juneyao Airlines": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "Juneyao Airlines"
+  },
+  "Guangzhou Airport": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 2,
+    "create_time": 1763902401,
+    "update_time": 1763902401,
+    "_id": "Guangzhou Airport"
+  },
+  "Hangzhou Xiaoshan International Airport": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 2,
+    "create_time": 1763902407,
+    "update_time": 1763902407,
+    "_id": "Hangzhou Xiaoshan International Airport"
+  },
+  "Flight": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902407,
+    "update_time": 1763902407,
+    "_id": "Flight"
+  },
+  "Train": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-0e967061b94ebe75331ff48542adf6cb",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 3,
+    "update_time": 1763902838,
+    "_id": "Train"
+  },
+  "Transportation Options From Guangzhou To Hangzhou": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902410,
+    "update_time": 1763902410,
+    "_id": "Transportation Options From Guangzhou To Hangzhou"
+  },
+  "Price Range": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902413,
+    "update_time": 1763902413,
+    "_id": "Price Range"
+  },
+  "Travel Duration": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7",
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 4,
+    "create_time": 1763902413,
+    "update_time": 1763902413,
+    "_id": "Travel Duration"
+  },
+  "Flight Option 1": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902415,
+    "update_time": 1763902415,
+    "_id": "Flight Option 1"
+  },
+  "Flight Option 2": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902417,
+    "update_time": 1763902417,
+    "_id": "Flight Option 2"
+  },
+  "Flight Option 3": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902418,
+    "update_time": 1763902418,
+    "_id": "Flight Option 3"
+  },
+  "Flight Option 4": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902420,
+    "update_time": 1763902420,
+    "_id": "Flight Option 4"
+  },
+  "Flight Option 5": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902422,
+    "update_time": 1763902422,
+    "_id": "Flight Option 5"
+  },
+  "Flight Option 6": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902423,
+    "update_time": 1763902423,
+    "_id": "Flight Option 6"
+  },
+  "Flight Option 7": {
+    "chunk_ids": [
+      "chunk-b20c6614ed12dc6730628e448e0630c7"
+    ],
+    "count": 1,
+    "create_time": 1763902425,
+    "update_time": 1763902425,
+    "_id": "Flight Option 7"
+  },
+  "Hard Seat": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-45d25e46b967fe35461651a49a70186f",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 3,
+    "create_time": 1763902426,
+    "update_time": 1763902426,
+    "_id": "Hard Seat"
+  },
+  "Guangzhou Baiyun Station": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-45d25e46b967fe35461651a49a70186f",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 4,
+    "create_time": 1763902428,
+    "update_time": 1763902428,
+    "_id": "Guangzhou Baiyun Station"
+  },
+  "Hangzhou South Station": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-45d25e46b967fe35461651a49a70186f",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 4,
+    "create_time": 1763902431,
+    "update_time": 1763902431,
+    "_id": "Hangzhou South Station"
+  },
+  "Hangzhou Station": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-45d25e46b967fe35461651a49a70186f"
+    ],
+    "count": 3,
+    "create_time": 1763902431,
+    "update_time": 1763902431,
+    "_id": "Hangzhou Station"
+  },
+  "Z100": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-45d25e46b967fe35461651a49a70186f"
+    ],
+    "count": 3,
+    "create_time": 1763902434,
+    "update_time": 1763902434,
+    "_id": "Z100"
+  },
+  "T170": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-45d25e46b967fe35461651a49a70186f",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 3,
+    "create_time": 1763902436,
+    "update_time": 1763902436,
+    "_id": "T170"
+  },
+  "K210": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-45d25e46b967fe35461651a49a70186f"
+    ],
+    "count": 3,
+    "create_time": 1763902436,
+    "update_time": 1763902436,
+    "_id": "K210"
+  },
+  "K512": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-45d25e46b967fe35461651a49a70186f"
+    ],
+    "count": 3,
+    "create_time": 1763902440,
+    "update_time": 1763902440,
+    "_id": "K512"
+  },
+  "No Seat": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 4,
+    "create_time": 1763902440,
+    "update_time": 1763902440,
+    "_id": "No Seat"
+  },
+  "Hard Sleeper": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 2,
+    "create_time": 1763902443,
+    "update_time": 1763902443,
+    "_id": "Hard Sleeper"
+  },
+  "Soft Sleeper": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 2,
+    "create_time": 1763902443,
+    "update_time": 1763902443,
+    "_id": "Soft Sleeper"
+  },
+  "Train Option 11": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902445,
+    "update_time": 1763902445,
+    "_id": "Train Option 11"
+  },
+  "Train Option 12": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902448,
+    "update_time": 1763902448,
+    "_id": "Train Option 12"
+  },
+  "Train Option 13": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902448,
+    "update_time": 1763902448,
+    "_id": "Train Option 13"
+  },
+  "Train Option 14": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902452,
+    "update_time": 1763902452,
+    "_id": "Train Option 14"
+  },
+  "Train Option 15": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902452,
+    "update_time": 1763902452,
+    "_id": "Train Option 15"
+  },
+  "Train Option 16": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902455,
+    "update_time": 1763902455,
+    "_id": "Train Option 16"
+  },
+  "Train Option 17": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902455,
+    "update_time": 1763902455,
+    "_id": "Train Option 17"
+  },
+  "Departure Time": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902458,
+    "update_time": 1763902458,
+    "_id": "Departure Time"
+  },
+  "Arrival Time": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82"
+    ],
+    "count": 1,
+    "create_time": 1763902458,
+    "update_time": 1763902458,
+    "_id": "Arrival Time"
+  },
+  "Ticket Price": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 3,
+    "create_time": 1763902462,
+    "update_time": 1763902462,
+    "_id": "Ticket Price"
+  },
+  "Train Option 18": {
+    "chunk_ids": [
+      "chunk-7f46abe8eb143d3000590ac507dd9e82",
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 2,
+    "create_time": 1763902462,
+    "update_time": 1763902462,
+    "_id": "Train Option 18"
+  },
+  "Train Option 19": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902465,
+    "update_time": 1763902465,
+    "_id": "Train Option 19"
+  },
+  "Train Option 20": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902465,
+    "update_time": 1763902465,
+    "_id": "Train Option 20"
+  },
+  "Train Option 21": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902469,
+    "update_time": 1763902469,
+    "_id": "Train Option 21"
+  },
+  "Train Option 22": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902469,
+    "update_time": 1763902469,
+    "_id": "Train Option 22"
+  },
+  "Train Option 23": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902472,
+    "update_time": 1763902472,
+    "_id": "Train Option 23"
+  },
+  "Train Option 24": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902472,
+    "update_time": 1763902472,
+    "_id": "Train Option 24"
+  },
+  "Train Option 25": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902475,
+    "update_time": 1763902475,
+    "_id": "Train Option 25"
+  },
+  "D3121": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 2,
+    "create_time": 1763902479,
+    "update_time": 1763902479,
+    "_id": "D3121"
+  },
+  "G3068": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6"
+    ],
+    "count": 3,
+    "create_time": 1763902479,
+    "update_time": 1763902479,
+    "_id": "G3068"
+  },
+  "Guangzhou East Station": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 5,
+    "create_time": 1763902481,
+    "update_time": 1763902481,
+    "_id": "Guangzhou East Station"
+  },
+  "Hangzhou East Station": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 6,
+    "create_time": 1763902483,
+    "update_time": 1763902483,
+    "_id": "Hangzhou East Station"
+  },
+  "Hangzhou West Station": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 6,
+    "create_time": 1763902488,
+    "update_time": 1763902488,
+    "_id": "Hangzhou West Station"
+  },
+  "Second-Class Seat": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902488,
+    "update_time": 1763902488,
+    "_id": "Second-Class Seat"
+  },
+  "Standing Room Only": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef",
+      "chunk-45d25e46b967fe35461651a49a70186f",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 3,
+    "create_time": 1763902492,
+    "update_time": 1763902492,
+    "_id": "Standing Room Only"
+  },
+  "Travel Time Duration": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902492,
+    "update_time": 1763902492,
+    "_id": "Travel Time Duration"
+  },
+  "First": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902495,
+    "update_time": 1763902495,
+    "_id": "First"
+  },
+  "Business Class": {
+    "chunk_ids": [
+      "chunk-5690eec79340894ed0fb467bc52ae9ef"
+    ],
+    "count": 1,
+    "create_time": 1763902495,
+    "update_time": 1763902495,
+    "_id": "Business Class"
+  },
+  "G800": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 3,
+    "create_time": 1763902499,
+    "update_time": 1763902499,
+    "_id": "G800"
+  },
+  "G818": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7"
+    ],
+    "count": 1,
+    "create_time": 1763902499,
+    "update_time": 1763902499,
+    "_id": "G818"
+  },
+  "G1302": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 3,
+    "create_time": 1763902502,
+    "update_time": 1763902502,
+    "_id": "G1302"
+  },
+  "G820": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 3,
+    "create_time": 1763902502,
+    "update_time": 1763902502,
+    "_id": "G820"
+  },
+  "G1404": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 3,
+    "create_time": 1763902505,
+    "update_time": 1763902505,
+    "_id": "G1404"
+  },
+  "Guangzhou Xinzhuang Station": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 2,
+    "create_time": 1763902507,
+    "update_time": 1763902507,
+    "_id": "Guangzhou Xinzhuang Station"
+  },
+  "Guangzhou South Station": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 4,
+    "create_time": 1763902510,
+    "update_time": 1763902510,
+    "_id": "Guangzhou South Station"
+  },
+  "Second Class Seat": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7",
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 4,
+    "create_time": 1763902510,
+    "update_time": 1763902510,
+    "_id": "Second Class Seat"
+  },
+  "Guangzhou To Hangzhou High-Speed Rail": {
+    "chunk_ids": [
+      "chunk-c283055db297545eff9739b9aef30ae7"
+    ],
+    "count": 1,
+    "create_time": 1763902514,
+    "update_time": 1763902514,
+    "_id": "Guangzhou To Hangzhou High-Speed Rail"
+  },
+  "173 Cny Per Person": {
+    "chunk_ids": [
+      "chunk-45d25e46b967fe35461651a49a70186f"
+    ],
+    "count": 1,
+    "create_time": 1763902514,
+    "update_time": 1763902514,
+    "_id": "173 Cny Per Person"
+  },
+  "189 Cny Per Person": {
+    "chunk_ids": [
+      "chunk-45d25e46b967fe35461651a49a70186f"
+    ],
+    "count": 1,
+    "create_time": 1763902518,
+    "update_time": 1763902518,
+    "_id": "189 Cny Per Person"
+  },
+  "Train Service From Guangzhou To Hangzhou": {
+    "chunk_ids": [
+      "chunk-45d25e46b967fe35461651a49a70186f"
+    ],
+    "count": 1,
+    "create_time": 1763902518,
+    "update_time": 1763902518,
+    "_id": "Train Service From Guangzhou To Hangzhou"
+  },
+  "High-Speed Rail": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 4,
+    "create_time": 1763902520,
+    "update_time": 1763902520,
+    "_id": "High-Speed Rail"
+  },
+  "First Class Seat": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 2,
+    "create_time": 1763902522,
+    "update_time": 1763902522,
+    "_id": "First Class Seat"
+  },
+  "G822": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 3,
+    "create_time": 1763902524,
+    "update_time": 1763902524,
+    "_id": "G822"
+  },
+  "G1184": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 2,
+    "create_time": 1763902527,
+    "update_time": 1763902527,
+    "_id": "G1184"
+  },
+  "G3072": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2",
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 4,
+    "create_time": 1763902527,
+    "update_time": 1763902527,
+    "_id": "G3072"
+  },
+  "Train Option 47": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 1,
+    "create_time": 1763902529,
+    "update_time": 1763902529,
+    "_id": "Train Option 47"
+  },
+  "Train Option 48": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 1,
+    "create_time": 1763902531,
+    "update_time": 1763902531,
+    "_id": "Train Option 48"
+  },
+  "Train Option 49": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 1,
+    "create_time": 1763902535,
+    "update_time": 1763902535,
+    "_id": "Train Option 49"
+  },
+  "Train Option 50": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 1,
+    "create_time": 1763902535,
+    "update_time": 1763902535,
+    "_id": "Train Option 50"
+  },
+  "Train Option 51": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 1,
+    "create_time": 1763902539,
+    "update_time": 1763902539,
+    "_id": "Train Option 51"
+  },
+  "Train Option 52": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 1,
+    "create_time": 1763902539,
+    "update_time": 1763902539,
+    "_id": "Train Option 52"
+  },
+  "Train Option 53": {
+    "chunk_ids": [
+      "chunk-5ced83dbfaa3269de41de74d5c5fa1f2"
+    ],
+    "count": 1,
+    "create_time": 1763902543,
+    "update_time": 1763902543,
+    "_id": "Train Option 53"
+  },
+  "Guangzhou New塘Station": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902543,
+    "update_time": 1763902543,
+    "_id": "Guangzhou New塘Station"
+  },
+  "Zengcheng Station": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670",
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 3,
+    "create_time": 1763902546,
+    "update_time": 1763902546,
+    "_id": "Zengcheng Station"
+  },
+  "First-Class Seat": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902546,
+    "update_time": 1763902546,
+    "_id": "First-Class Seat"
+  },
+  "8 Hour 48 Minute Duration": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902550,
+    "update_time": 1763902550,
+    "_id": "8 Hour 48 Minute Duration"
+  },
+  "1291 Yuan": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902550,
+    "update_time": 1763902550,
+    "_id": "1291 Yuan"
+  },
+  "6 Hour 24 Minute Duration": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902552,
+    "update_time": 1763902552,
+    "_id": "6 Hour 24 Minute Duration"
+  },
+  "5 Hour 58 Minute Duration": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902555,
+    "update_time": 1763902555,
+    "_id": "5 Hour 58 Minute Duration"
+  },
+  "7 Hour 28 Minute Duration": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902555,
+    "update_time": 1763902555,
+    "_id": "7 Hour 28 Minute Duration"
+  },
+  "5 Hour 55 Minute Duration": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902559,
+    "update_time": 1763902559,
+    "_id": "5 Hour 55 Minute Duration"
+  },
+  "7 Hour 20 Minute Duration": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902559,
+    "update_time": 1763902559,
+    "_id": "7 Hour 20 Minute Duration"
+  },
+  "1340 Yuan": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902561,
+    "update_time": 1763902561,
+    "_id": "1340 Yuan"
+  },
+  "1380 Yuan": {
+    "chunk_ids": [
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 1,
+    "create_time": 1763902565,
+    "update_time": 1763902565,
+    "_id": "1380 Yuan"
+  },
+  "Guangzhou Xintang Station": {
+    "chunk_ids": [
+      "chunk-453b8f51dbb849545c841e2551ad0fe6",
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09",
+      "chunk-67d8c1e369d756185a96987e2d347670"
+    ],
+    "count": 3,
+    "update_time": 1763902806,
+    "_id": "Guangzhou Xintang Station"
+  },
+  "6 Hour 49 Minute Trip": {
+    "chunk_ids": [
+      "chunk-453b8f51dbb849545c841e2551ad0fe6"
+    ],
+    "count": 1,
+    "create_time": 1763902567,
+    "update_time": 1763902567,
+    "_id": "6 Hour 49 Minute Trip"
+  },
+  "6 Hour 22 Minute Trip": {
+    "chunk_ids": [
+      "chunk-453b8f51dbb849545c841e2551ad0fe6"
+    ],
+    "count": 1,
+    "create_time": 1763902569,
+    "update_time": 1763902569,
+    "_id": "6 Hour 22 Minute Trip"
+  },
+  "8 Hour 48 Minute Trip": {
+    "chunk_ids": [
+      "chunk-453b8f51dbb849545c841e2551ad0fe6"
+    ],
+    "count": 1,
+    "create_time": 1763902571,
+    "update_time": 1763902571,
+    "_id": "8 Hour 48 Minute Trip"
+  },
+  "8 Hour 20 Minute Trip": {
+    "chunk_ids": [
+      "chunk-453b8f51dbb849545c841e2551ad0fe6"
+    ],
+    "count": 1,
+    "create_time": 1763902575,
+    "update_time": 1763902575,
+    "_id": "8 Hour 20 Minute Trip"
+  },
+  "Standing Seat": {
+    "chunk_ids": [
+      "chunk-453b8f51dbb849545c841e2551ad0fe6"
+    ],
+    "count": 1,
+    "create_time": 1763902575,
+    "update_time": 1763902575,
+    "_id": "Standing Seat"
+  },
+  "815 Yuan Fare": {
+    "chunk_ids": [
+      "chunk-453b8f51dbb849545c841e2551ad0fe6"
+    ],
+    "count": 1,
+    "create_time": 1763902579,
+    "update_time": 1763902579,
+    "_id": "815 Yuan Fare"
+  },
+  "Business Class Seat": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902579,
+    "update_time": 1763902579,
+    "_id": "Business Class Seat"
+  },
+  "CA1234": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 2,
+    "create_time": 1763902583,
+    "update_time": 1763902583,
+    "_id": "CA1234"
+  },
+  "K528": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b",
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 2,
+    "create_time": 1763902583,
+    "update_time": 1763902583,
+    "_id": "K528"
+  },
+  "1380 Yuan Ticket": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902586,
+    "update_time": 1763902586,
+    "_id": "1380 Yuan Ticket"
+  },
+  "1444 Yuan Ticket": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902586,
+    "update_time": 1763902586,
+    "_id": "1444 Yuan Ticket"
+  },
+  "3018 Yuan Ticket": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902588,
+    "update_time": 1763902588,
+    "_id": "3018 Yuan Ticket"
+  },
+  "Train Option 61": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902590,
+    "update_time": 1763902590,
+    "_id": "Train Option 61"
+  },
+  "Train Option 62": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902592,
+    "update_time": 1763902592,
+    "_id": "Train Option 62"
+  },
+  "Train Option 63": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902596,
+    "update_time": 1763902596,
+    "_id": "Train Option 63"
+  },
+  "Train Option 64": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902596,
+    "update_time": 1763902596,
+    "_id": "Train Option 64"
+  },
+  "Train Option 65": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902599,
+    "update_time": 1763902599,
+    "_id": "Train Option 65"
+  },
+  "Budget Priority": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902599,
+    "update_time": 1763902599,
+    "_id": "Budget Priority"
+  },
+  "Time Priority": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902603,
+    "update_time": 1763902603,
+    "_id": "Time Priority"
+  },
+  "Cost Comparison": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902603,
+    "update_time": 1763902603,
+    "_id": "Cost Comparison"
+  },
+  "Time Comparison": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902605,
+    "update_time": 1763902605,
+    "_id": "Time Comparison"
+  },
+  "Travel Recommendation": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902609,
+    "update_time": 1763902609,
+    "_id": "Travel Recommendation"
+  },
+  "Flight From Guangzhou To Hangzhou": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902609,
+    "update_time": 1763902609,
+    "_id": "Flight From Guangzhou To Hangzhou"
+  },
+  "Airplane": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb",
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 2,
+    "update_time": 1763902904,
+    "_id": "Airplane"
+  },
+  "681 Yuan Per Person": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902612,
+    "update_time": 1763902612,
+    "_id": "681 Yuan Per Person"
+  },
+  "China International Airlines": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902616,
+    "update_time": 1763902616,
+    "_id": "China International Airlines"
+  },
+  "690 Yuan Per Person": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902616,
+    "update_time": 1763902616,
+    "_id": "690 Yuan Per Person"
+  },
+  "China Southern Airlines": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902619,
+    "update_time": 1763902619,
+    "_id": "China Southern Airlines"
+  },
+  "745 Yuan Per Person": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902619,
+    "update_time": 1763902619,
+    "_id": "745 Yuan Per Person"
+  },
+  "173 Yuan Per Person": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902622,
+    "update_time": 1763902622,
+    "_id": "173 Yuan Per Person"
+  },
+  "15 hours 28 minutes": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902622,
+    "update_time": 1763902622,
+    "_id": "15 hours 28 minutes"
+  },
+  "17 hours 31 minutes": {
+    "chunk_ids": [
+      "chunk-0e967061b94ebe75331ff48542adf6cb"
+    ],
+    "count": 1,
+    "create_time": 1763902626,
+    "update_time": 1763902626,
+    "_id": "17 hours 31 minutes"
+  },
+  "High Speed Rail": {
+    "chunk_ids": [
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 1,
+    "create_time": 1763902626,
+    "update_time": 1763902626,
+    "_id": "High Speed Rail"
+  },
+  "G3078": {
+    "chunk_ids": [
+      "chunk-66d33ad779caa7da8fdf26915dc3ab09"
+    ],
+    "count": 1,
+    "create_time": 1763902628,
+    "update_time": 1763902628,
+    "_id": "G3078"
+  },
+  "173 Yuan Ticket": {
+    "chunk_ids": [
+      "chunk-43f40ce7eb1a9ee507d81313371e298b"
+    ],
+    "count": 1,
+    "create_time": 1763902829,
+    "update_time": 1763902829,
+    "_id": "173 Yuan Ticket"
+  }
+}
