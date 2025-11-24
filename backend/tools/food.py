@@ -1,279 +1,416 @@
 """
-美食推荐工具
-根据景点位置查询附近美食店铺
+美食查询工具 - 使用RAG方法实现
+基于向量数据库查询杭州餐厅信息
 """
-from typing import List, Dict
+import json
+import os
+import re
+from typing import List, Dict, Optional
 from dataclasses import dataclass, asdict
 from loguru import logger
 
 
 @dataclass
 class Restaurant:
-    """餐厅信息"""
+    """餐厅数据模型"""
     id: str
     name: str
-    cuisine_type: str  # "杭帮菜" | "小吃" | "火锅" | "西餐"
-    rating: float  # 评分 (0-5)
-    avg_price: float  # 人均消费
-    location: Dict  # {"lat": 30.25, "lng": 120.13, "address": "..."}
-    distance_km: float  # 距离参考点的距离
-    signature_dishes: List[str]  # 招牌菜
-    description: str  # 店铺描述
-    opening_hours: str  # 营业时间
-    tags: List[str]  # ["必吃", "网红店", "老字号"]
-    phone: str  # 联系电话
+    city: str
+    cuisine_type: str
+    rating: float
+    avg_price: float
+    location: Dict
+    signature_dishes: List[str]
+    description: str
+    opening_hours: str
+    tags: List[str]
+    phone: str = ""
+    
+    def to_searchable_text(self) -> str:
+        """将对象转换为用于Embedding的长文本"""
+        dishes_text = " ".join(self.signature_dishes) if self.signature_dishes else ""
+        tags_text = " ".join(self.tags) if self.tags else ""
+        return f"餐厅：{self.name}。菜系：{self.cuisine_type}。城市：{self.city}。招牌菜：{dishes_text}。描述：{self.description}。标签：{tags_text}"
 
 
-class FoodRecommendationService:
-    """美食推荐服务"""
+class FoodTool:
+    """美食查询工具 - RAG实现"""
     
-    def __init__(self):
-        logger.info("美食推荐服务初始化完成")
-        # Mock数据库
-        self.restaurants_db = self._init_mock_data()
-    
-    def get_restaurants_for_attractions(
-        self,
-        attractions: List[Dict],
-        top_k_per_attraction: int = 2
-    ) -> Dict[str, List[Dict]]:
-        """
-        为每个景点推荐附近餐厅
+    def __init__(self, json_path: str = None):
+        logger.info("正在初始化美食查询 RAG 服务...")
         
-        Args:
-            attractions: 景点列表
-            top_k_per_attraction: 每个景点推荐餐厅数量
+        # 延迟导入langchain相关库
+        try:
+            from langchain_community.vectorstores import Chroma
+            from langchain_core.documents import Document
+            from langchain_community.embeddings import HuggingFaceEmbeddings
+            
+            self.Chroma = Chroma
+            self.Document = Document
+            self.HuggingFaceEmbeddings = HuggingFaceEmbeddings
+        except ImportError as e:
+            logger.error(f"无法导入langchain库: {e}")
+            logger.warning("RAG功能将不可用，请安装: pip install langchain-community langchain-core chromadb sentence-transformers")
+            self.Chroma = None
+            return
         
-        Returns:
-            {景点名称: [餐厅列表]}
-        """
-        logger.info(f"为 {len(attractions)} 个景点推荐餐厅")
-        
-        result = {}
-        for attraction in attractions:
-            attraction_name = attraction.get("name", "")
-            # 根据景点名称返回附近餐厅
-            nearby_restaurants = self._get_nearby_restaurants(
-                attraction_name, 
-                top_k_per_attraction
+        # 设置数据文件路径
+        if json_path is None:
+            # 从backend/tools出发，回到项目根目录
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+            restaurants_dir = os.path.join(project_root, "data", "restaurants")
+
+            # 智能查找餐厅数据文件（优先使用100家餐厅数据）
+            possible_files = [
+                "hangzhou_restaurants_100.json",
+                "hangzhou_restaurants.json"
+            ]
+
+            self.json_path = None
+            for filename in possible_files:
+                file_path = os.path.join(restaurants_dir, filename)
+                if os.path.exists(file_path):
+                    self.json_path = file_path
+                    logger.info(f"✅ 找到餐厅数据文件: {filename}")
+                    break
+
+            if self.json_path is None:
+                # 如果都找不到，使用默认路径（会在后面报错）
+                self.json_path = os.path.join(restaurants_dir, "hangzhou_restaurants_100.json")
+                logger.warning(f"⚠️ 未找到餐厅数据文件，将尝试使用: {self.json_path}")
+        else:
+            self.json_path = json_path
+
+        logger.info(f"餐厅数据文件路径: {self.json_path}")
+
+        # 存储原始餐厅数据（用于 get_all_restaurants 方法）
+        self._raw_restaurants = []
+
+        # 初始化Embedding模型（使用与attraction相同的模型）
+        try:
+            logger.info("正在加载 Embedding 模型...")
+            self.embedding_model = self.HuggingFaceEmbeddings(
+                model_name="sentence-transformers/all-MiniLM-L6-v2"
             )
-            result[attraction_name] = [asdict(r) for r in nearby_restaurants]
-        
-        return result
-    
-    def _get_nearby_restaurants(
-        self, 
-        attraction_name: str, 
-        top_k: int
-    ) -> List[Restaurant]:
-        """获取景点附近餐厅（Mock）"""
-        
-        # 根据景点返回对应的餐厅
-        attraction_restaurants = {
-            "西湖": ["外婆家(湖滨店)", "楼外楼(孤山店)", "知味观(湖滨店)"],
-            "灵隐寺": ["灵隐寺素斋", "龙井茶室", "山外山"],
-            "雷峰塔": "西湖周边餐厅",
-            "河坊街": ["状元馆", "咬不得生煎", "新丰小吃"],
-            "宋城": ["宋城千古情餐厅", "杭州酒家", "外婆家(宋城店)"],
-            "西溪湿地": ["西溪湿地餐厅", "绿茶餐厅", "炉鱼"],
-            "千岛湖": ["千岛湖鱼头", "农家菜", "湖鲜馆"],
-            "南浔古镇": ["南浔特色菜", "古镇小吃", "江南菜馆"]
-        }
-        
-        # 获取餐厅名称列表
-        restaurant_names = attraction_restaurants.get(attraction_name, [])
-        if isinstance(restaurant_names, str):
-            # 如果是字符串，使用西湖的餐厅作为默认
-            restaurant_names = attraction_restaurants["西湖"]
-        
-        # 返回Top K
-        restaurants = []
-        for name in restaurant_names[:top_k]:
-            restaurant = self.restaurants_db.get(name)
-            if restaurant:
-                restaurants.append(restaurant)
-        
-        return restaurants
-    
-    def _init_mock_data(self) -> Dict[str, Restaurant]:
-        """初始化Mock餐厅数据"""
-        restaurants = [
-            # 西湖周边
-            Restaurant(
-                id="hz_food_001",
-                name="外婆家(湖滨店)",
-                cuisine_type="杭帮菜",
-                rating=4.5,
-                avg_price=80,
-                location={"lat": 30.2591, "lng": 120.1653, "address": "杭州市上城区平海路124号"},
-                distance_km=0.5,
-                signature_dishes=["西湖醋鱼", "东坡肉", "龙井虾仁"],
-                description="杭州知名连锁餐厅，主打杭帮菜，性价比高",
-                opening_hours="10:30-21:30",
-                tags=["必吃", "网红店", "排队"],
-                phone="0571-87777777"
-            ),
-            Restaurant(
-                id="hz_food_002",
-                name="楼外楼(孤山店)",
-                cuisine_type="杭帮菜",
-                rating=4.7,
-                avg_price=150,
-                location={"lat": 30.2611, "lng": 120.1423, "address": "杭州市西湖区孤山路30号"},
-                distance_km=0.8,
-                signature_dishes=["叫化鸡", "西湖醋鱼", "龙井虾仁", "宋嫂鱼羹"],
-                description="百年老字号，西湖边最有名的餐厅，杭帮菜代表",
-                opening_hours="11:00-21:00",
-                tags=["老字号", "必吃", "景观好"],
-                phone="0571-87969682"
-            ),
-            Restaurant(
-                id="hz_food_003",
-                name="知味观(湖滨店)",
-                cuisine_type="杭帮菜/小吃",
-                rating=4.4,
-                avg_price=60,
-                location={"lat": 30.2571, "lng": 120.1643, "address": "杭州市上城区仁和路83号"},
-                distance_km=0.6,
-                signature_dishes=["猫耳朵", "片儿川", "小笼包", "虾爆鳝面"],
-                description="杭州老字号小吃店，早餐和小吃很受欢迎",
-                opening_hours="06:30-21:00",
-                tags=["老字号", "小吃", "早餐"],
-                phone="0571-87065921"
-            ),
-            
-            # 灵隐寺周边
-            Restaurant(
-                id="hz_food_004",
-                name="灵隐寺素斋",
-                cuisine_type="素食",
-                rating=4.6,
-                avg_price=100,
-                location={"lat": 30.2411, "lng": 120.0967, "address": "杭州市西湖区灵隐路法云弄16号"},
-                distance_km=0.2,
-                signature_dishes=["罗汉斋", "素鹅", "素鸡", "笋干老鸭煲"],
-                description="寺庙素斋，环境清幽，菜品精致",
-                opening_hours="10:30-20:00",
-                tags=["素食", "特色", "环境好"],
-                phone="0571-87968665"
-            ),
-            Restaurant(
-                id="hz_food_005",
-                name="龙井茶室",
-                cuisine_type="茶餐厅",
-                rating=4.5,
-                avg_price=80,
-                location={"lat": 30.2381, "lng": 120.1087, "address": "杭州市西湖区龙井路1号"},
-                distance_km=1.5,
-                signature_dishes=["龙井虾仁", "龙井茶", "茶香鸡", "茶叶蛋"],
-                description="龙井茶园旁，可以品茶用餐，环境优美",
-                opening_hours="09:00-21:00",
-                tags=["特色", "茶文化", "环境好"],
-                phone="0571-87964221"
-            ),
-            Restaurant(
-                id="hz_food_006",
-                name="山外山",
-                cuisine_type="杭帮菜",
-                rating=4.6,
-                avg_price=120,
-                location={"lat": 30.2421, "lng": 120.1007, "address": "杭州市西湖区玉古路5号"},
-                distance_km=0.8,
-                signature_dishes=["西湖醋鱼", "东坡肉", "叫化鸡"],
-                description="西湖边老牌餐厅，环境好，菜品正宗",
-                opening_hours="11:00-21:00",
-                tags=["老字号", "环境好"],
-                phone="0571-87977688"
-            ),
-            
-            # 河坊街周边
-            Restaurant(
-                id="hz_food_007",
-                name="状元馆",
-                cuisine_type="杭帮菜",
-                rating=4.3,
-                avg_price=70,
-                location={"lat": 30.2451, "lng": 120.1701, "address": "杭州市上城区河坊街85号"},
-                distance_km=0.1,
-                signature_dishes=["状元蹄", "叫化鸡", "西湖醋鱼"],
-                description="河坊街老店，环境古色古香",
-                opening_hours="10:30-21:30",
-                tags=["老字号", "特色"],
-                phone="0571-87813777"
-            ),
-            Restaurant(
-                id="hz_food_008",
-                name="咬不得生煎",
-                cuisine_type="小吃",
-                rating=4.5,
-                avg_price=30,
-                location={"lat": 30.2461, "lng": 120.1691, "address": "杭州市上城区河坊街158号"},
-                distance_km=0.05,
-                signature_dishes=["生煎包", "小笼包", "馄饨"],
-                description="河坊街网红小吃店，生煎很有特色",
-                opening_hours="08:00-20:00",
-                tags=["网红店", "小吃", "排队"],
-                phone="0571-87065432"
-            ),
-            Restaurant(
-                id="hz_food_009",
-                name="新丰小吃",
-                cuisine_type="小吃",
-                rating=4.4,
-                avg_price=25,
-                location={"lat": 30.2471, "lng": 120.1681, "address": "杭州市上城区中山中路123号"},
-                distance_km=0.3,
-                signature_dishes=["虾肉小笼", "牛肉粉丝", "馄饨"],
-                description="杭州本地连锁小吃店，价格实惠",
-                opening_hours="06:30-21:00",
-                tags=["小吃", "实惠", "早餐"],
-                phone="0571-87023456"
-            ),
-            
-            # 宋城周边
-            Restaurant(
-                id="hz_food_010",
-                name="外婆家(宋城店)",
-                cuisine_type="杭帮菜",
-                rating=4.4,
-                avg_price=75,
-                location={"lat": 30.2121, "lng": 120.1143, "address": "杭州市西湖区之江路148号"},
-                distance_km=0.5,
-                signature_dishes=["茶香鸡", "麻婆豆腐", "青豆泥"],
-                description="外婆家连锁店，宋城附近用餐方便",
-                opening_hours="10:30-21:30",
-                tags=["连锁", "性价比高"],
-                phone="0571-87333333"
-            ),
-            
-            # 西溪湿地周边
-            Restaurant(
-                id="hz_food_011",
-                name="绿茶餐厅",
-                cuisine_type="创意杭帮菜",
-                rating=4.6,
-                avg_price=90,
-                location={"lat": 30.2691, "lng": 120.0753, "address": "杭州市西湖区文二西路551号"},
-                distance_km=1.0,
-                signature_dishes=["面包诱惑", "绿茶烤鱼", "石锅牛蛙"],
-                description="网红餐厅，环境好，菜品创新",
-                opening_hours="10:30-22:00",
-                tags=["网红店", "环境好", "排队"],
-                phone="0571-88812345"
-            ),
-        ]
-        
-        # 转换为字典
-        return {r.name: r for r in restaurants}
+            logger.success("✅ Embedding 模型加载成功")
+        except Exception as e:
+            logger.error(f"❌ Embedding 模型加载失败: {e}")
+            logger.warning("可能是首次运行，正在下载模型（约90MB）...")
+            logger.warning("如果下载失败，请检查网络连接或使用镜像：")
+            logger.warning("export HF_ENDPOINT=https://hf-mirror.com")
+            self.embedding_model = None
+            return
+
+        # 向量数据库路径
+        backend_dir = os.path.dirname(os.path.dirname(__file__))
+        self.db_path = os.path.join(backend_dir, "chroma_db_restaurants")
+        logger.info(f"向量数据库路径: {self.db_path}")
+
+        # 初始化向量数据库（添加错误处理）
+        try:
+            self.vector_db = self.Chroma(
+                collection_name="restaurants_db",
+                embedding_function=self.embedding_model,
+                persist_directory=self.db_path
+            )
+            logger.success("✅ 向量数据库初始化成功")
+        except Exception as e:
+            logger.error(f"❌ 向量数据库初始化失败: {e}")
+            logger.warning("将使用降级方案（不使用RAG）")
+            self.vector_db = None
+            return
+
+        # 检查数据库是否为空
+        try:
+            db_count = self.vector_db._collection.count()
+            logger.info(f"当前数据库中有 {db_count} 条餐厅数据")
+
+            if db_count == 0:
+                logger.info(f"数据库为空，准备从 {self.json_path} 加载数据...")
+                self._load_json_data(self.json_path)
+            else:
+                logger.info("使用现有数据库数据")
+                # 即使数据库已存在，也需要加载原始数据供 get_all_restaurants 使用
+                self._load_raw_data(self.json_path)
+        except Exception as e:
+            logger.error(f"❌ 检查数据库状态失败: {e}")
+            logger.warning("将尝试加载数据...")
+
+    def _load_raw_data(self, json_path: str):
+        """只加载原始数据，不写入向量库"""
+        if not os.path.exists(json_path):
+            logger.warning(f"⚠️ 找不到数据文件 {json_path}")
+            return
+
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                self._raw_restaurants = json.load(f)
+            logger.info(f"✅ 已加载 {len(self._raw_restaurants)} 条原始餐厅数据")
+        except Exception as e:
+            logger.error(f"❌ 加载原始数据失败: {e}")
+            self._raw_restaurants = []
+
+    def _load_json_data(self, json_path: str):
+        """读取JSON文件并存入向量库"""
+        if not os.path.exists(json_path):
+            logger.error(f"❌ 错误：找不到文件 {json_path}")
+            return
+
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                raw_list = json.load(f)
+
+            # 保存原始数据
+            self._raw_restaurants = raw_list
+
+            documents = []
+            logger.info(f"找到 {len(raw_list)} 条餐厅数据，正在处理...")
+
+            for item in raw_list:
+                # 处理数据
+                restaurant = Restaurant(
+                    id=item.get("id", ""),
+                    name=item.get("name", ""),
+                    city=item.get("city", ""),
+                    cuisine_type=item.get("cuisine_type", ""),
+                    rating=float(item.get("rating", 0.0)),
+                    avg_price=float(item.get("avg_price", 0)),
+                    location=item.get("location", {}),
+                    signature_dishes=item.get("signature_dishes", []),
+                    description=item.get("description", ""),
+                    opening_hours=item.get("opening_hours", ""),
+                    tags=item.get("tags", []),
+                    phone=item.get("phone", "")
+                )
+
+                # 准备metadata
+                meta = asdict(restaurant)
+                meta['location'] = json.dumps(meta['location'], ensure_ascii=False)
+                meta['signature_dishes'] = json.dumps(meta['signature_dishes'], ensure_ascii=False)
+                meta['tags'] = json.dumps(meta['tags'], ensure_ascii=False)
+
+                # 创建Document
+                doc = self.Document(
+                    page_content=restaurant.to_searchable_text(),
+                    metadata=meta
+                )
+                documents.append(doc)
+
+            if documents:
+                self.vector_db.add_documents(documents)
+                logger.success(f"✅ 成功写入 {len(documents)} 条餐厅数据到向量库！")
+
+        except Exception as e:
+            logger.error(f"数据加载失败: {e}")
+            import traceback
+            traceback.print_exc()
+
+    def query_restaurants(
+        self,
+        city: str,
+        category: str = None,
+        preferences: List[str] = None,
+        price_max: float = 1000,
+        rating_min: float = 0.0,
+        location_range: Dict = None,
+        top_k: int = 5
+    ) -> List[Dict]:
+        """
+        查询餐厅（符合README.md接口规范）
+
+        Args:
+            city: 城市名称
+            category: 菜系类别
+            preferences: 用户偏好（预留）
+            price_max: 最高人均价格
+            rating_min: 最低评分
+            location_range: 位置范围（预留）
+            top_k: 返回结果数量
+
+        Returns:
+            餐厅信息列表
+        """
+        # 检查RAG是否可用
+        if self.Chroma is None:
+            logger.error("❌ RAG功能未初始化（langchain库未安装）")
+            return []
+
+        if self.vector_db is None:
+            logger.error("❌ 向量数据库未初始化")
+            return []
+
+        if self.embedding_model is None:
+            logger.error("❌ Embedding模型未加载")
+            return []
+
+        try:
+            # 构建查询文本
+            query_text = f"{city} 餐厅"
+            if category:
+                query_text += f" {category}"
+            if preferences:
+                query_text += f" {' '.join(preferences)}"
+
+            logger.info(f"查询文本: {query_text}")
+
+            # 构建过滤条件
+            where_clause = {
+                "$and": [
+                    {"city": {"$eq": city}},
+                    {"avg_price": {"$lte": price_max}},
+                    {"rating": {"$gte": rating_min}}
+                ]
+            }
+
+            # 如果指定了菜系类别，添加过滤条件
+            if category:
+                where_clause["$and"].append(
+                    {"cuisine_type": {"$eq": category}}
+                )
+
+            # 执行相似度搜索
+            results = self.vector_db.similarity_search(
+                query=query_text,
+                k=top_k * 2,  # 多获取一些，然后再过滤
+                filter=where_clause
+            )
+
+            # 处理结果
+            restaurants = []
+            for doc in results[:top_k]:
+                data = doc.metadata
+
+                # 解析JSON字段
+                if isinstance(data.get('location'), str):
+                    data['location'] = json.loads(data['location'])
+                if isinstance(data.get('signature_dishes'), str):
+                    data['signature_dishes'] = json.loads(data['signature_dishes'])
+                if isinstance(data.get('tags'), str):
+                    data['tags'] = json.loads(data['tags'])
+
+                # 按照README.md接口规范返回数据
+                restaurant_info = {
+                    "name": data.get("name"),
+                    "city": data.get("city"),
+                    "cuisine_type": data.get("cuisine_type"),
+                    "rating": data.get("rating"),
+                    "avg_price": data.get("avg_price"),
+                    "location": data.get("location"),
+                    "signature_dishes": data.get("signature_dishes"),
+                    "description": data.get("description"),
+                    "opening_hours": data.get("opening_hours"),
+                    "tags": data.get("tags")
+                }
+
+                restaurants.append(restaurant_info)
+
+            logger.info(f"检索到 {len(restaurants)} 家餐厅")
+            return restaurants
+
+        except Exception as e:
+            logger.error(f"RAG检索出错: {e}")
+            import traceback
+            traceback.print_exc()
+            return []
+
+    def get_all_restaurants(self) -> List[Dict]:
+        """
+        获取所有餐厅数据
+
+        Returns:
+            所有餐厅的列表
+        """
+        return self._raw_restaurants
+
+    @property
+    def restaurants_db(self) -> List[Dict]:
+        """
+        为了向后兼容，提供 restaurants_db 属性
+        返回所有餐厅数据
+        """
+        return self._raw_restaurants
 
 
-# 单例
-_food_service = None
+# 全局单例
+_food_tool = None
+_init_failed = False
 
-def get_food_service() -> FoodRecommendationService:
-    """获取美食服务单例"""
-    global _food_service
-    if _food_service is None:
-        _food_service = FoodRecommendationService()
-    return _food_service
+def get_food_tool() -> FoodTool:
+    """获取美食工具单例"""
+    global _food_tool, _init_failed
 
+    # 如果之前初始化失败，直接返回None
+    if _init_failed:
+        return None
+
+    if _food_tool is None:
+        try:
+            _food_tool = FoodTool()
+            # 检查是否初始化成功
+            if _food_tool.vector_db is None or _food_tool.embedding_model is None:
+                logger.error("❌ 美食查询工具初始化失败")
+                _init_failed = True
+                _food_tool = None
+        except Exception as e:
+            logger.error(f"❌ 创建美食查询工具失败: {e}")
+            _init_failed = True
+            _food_tool = None
+
+    return _food_tool
+
+
+# 为兼容性提供别名
+def get_food_service() -> FoodTool:
+    """获取美食服务（get_food_tool的别名）"""
+    return get_food_tool()
+
+
+if __name__ == "__main__":
+    import shutil
+
+    # 测试时删除旧数据库
+    db_path = "./chroma_db_restaurants"
+    if os.path.exists(db_path):
+        try:
+            shutil.rmtree(db_path)
+            print("已删除旧数据库")
+        except:
+            pass
+
+    # 创建工具实例
+    tool = get_food_tool()
+
+    # 测试1: 查询杭帮菜
+    print("\n=== 测试1: 查询杭帮菜 ===")
+    results = tool.query_restaurants(
+        city="杭州",
+        category="杭帮菜",
+        price_max=200,
+        rating_min=4.0,
+        top_k=5
+    )
+    for i, r in enumerate(results, 1):
+        print(f"{i}. {r['name']} - {r['cuisine_type']} - ¥{r['avg_price']} - ⭐{r['rating']}")
+        print(f"   招牌菜: {', '.join(r['signature_dishes'][:3])}")
+
+    # 测试2: 查询小吃
+    print("\n=== 测试2: 查询小吃 ===")
+    results = tool.query_restaurants(
+        city="杭州",
+        category="小吃",
+        price_max=50,
+        top_k=5
+    )
+    for i, r in enumerate(results, 1):
+        print(f"{i}. {r['name']} - {r['cuisine_type']} - ¥{r['avg_price']}")
+
+    # 测试3: 查询高评分餐厅
+    print("\n=== 测试3: 查询高评分餐厅 ===")
+    results = tool.query_restaurants(
+        city="杭州",
+        rating_min=4.5,
+        price_max=150,
+        top_k=5
+    )
+    for i, r in enumerate(results, 1):
+        print(f"{i}. {r['name']} - ⭐{r['rating']} - ¥{r['avg_price']}")
